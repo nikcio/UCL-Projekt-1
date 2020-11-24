@@ -25,16 +25,16 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.MenuBar = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Minimize = new System.Windows.Forms.Button();
             this.CloseApp = new System.Windows.Forms.Button();
             this.BodyPanel = new System.Windows.Forms.Panel();
+            this.Body = new System.Windows.Forms.Panel();
             this.Kunder = new System.Windows.Forms.Button();
             this.Personale = new System.Windows.Forms.Button();
             this.Boliger = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
-            this.Body = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             this.BodyPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -52,9 +52,21 @@
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Margin = new System.Windows.Forms.Padding(0);
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(1440, 30);
+            this.MenuBar.Size = new System.Drawing.Size(1920, 37);
             this.MenuBar.TabIndex = 0;
             this.MenuBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuBar_OnMouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "RealBolig A/S";
             // 
             // Minimize
             // 
@@ -67,10 +79,10 @@
             this.Minimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Minimize.ForeColor = System.Drawing.Color.White;
-            this.Minimize.Location = new System.Drawing.Point(1300, 0);
+            this.Minimize.Location = new System.Drawing.Point(1733, 0);
             this.Minimize.Margin = new System.Windows.Forms.Padding(0);
             this.Minimize.Name = "Minimize";
-            this.Minimize.Size = new System.Drawing.Size(70, 30);
+            this.Minimize.Size = new System.Drawing.Size(93, 37);
             this.Minimize.TabIndex = 1;
             this.Minimize.UseVisualStyleBackColor = false;
             this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
@@ -86,10 +98,10 @@
             this.CloseApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(35)))), ((int)(((byte)(31)))));
             this.CloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseApp.ForeColor = System.Drawing.Color.White;
-            this.CloseApp.Location = new System.Drawing.Point(1370, 0);
+            this.CloseApp.Location = new System.Drawing.Point(1827, 0);
             this.CloseApp.Margin = new System.Windows.Forms.Padding(0);
             this.CloseApp.Name = "CloseApp";
-            this.CloseApp.Size = new System.Drawing.Size(70, 30);
+            this.CloseApp.Size = new System.Drawing.Size(93, 37);
             this.CloseApp.TabIndex = 0;
             this.CloseApp.UseVisualStyleBackColor = false;
             this.CloseApp.Click += new System.EventHandler(this.CloseApp_Click);
@@ -107,23 +119,34 @@
             this.BodyPanel.Controls.Add(this.Logo);
             this.BodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BodyPanel.Location = new System.Drawing.Point(0, 0);
-            this.BodyPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.BodyPanel.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.BodyPanel.Name = "BodyPanel";
-            this.BodyPanel.Size = new System.Drawing.Size(1440, 770);
+            this.BodyPanel.Size = new System.Drawing.Size(1920, 948);
             this.BodyPanel.TabIndex = 1;
+            // 
+            // Body
+            // 
+            this.Body.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Body.Location = new System.Drawing.Point(0, 196);
+            this.Body.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Body.Name = "Body";
+            this.Body.Size = new System.Drawing.Size(1920, 748);
+            this.Body.TabIndex = 5;
             // 
             // Kunder
             // 
             this.Kunder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Kunder.AutoSize = true;
             this.Kunder.BackColor = System.Drawing.Color.Transparent;
             this.Kunder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Kunder.FlatAppearance.BorderSize = 0;
             this.Kunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Kunder.Font = new System.Drawing.Font("Roboto Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Kunder.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Kunder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
-            this.Kunder.Location = new System.Drawing.Point(1312, 58);
+            this.Kunder.Location = new System.Drawing.Point(1715, 79);
+            this.Kunder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Kunder.Name = "Kunder";
-            this.Kunder.Size = new System.Drawing.Size(141, 58);
+            this.Kunder.Size = new System.Drawing.Size(188, 71);
             this.Kunder.TabIndex = 4;
             this.Kunder.Text = "Kunder";
             this.Kunder.UseCompatibleTextRendering = true;
@@ -133,15 +156,17 @@
             // Personale
             // 
             this.Personale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Personale.AutoSize = true;
             this.Personale.BackColor = System.Drawing.Color.Transparent;
             this.Personale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Personale.FlatAppearance.BorderSize = 0;
             this.Personale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Personale.Font = new System.Drawing.Font("Roboto Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Personale.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Personale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
-            this.Personale.Location = new System.Drawing.Point(1173, 58);
+            this.Personale.Location = new System.Drawing.Point(1530, 79);
+            this.Personale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Personale.Name = "Personale";
-            this.Personale.Size = new System.Drawing.Size(141, 58);
+            this.Personale.Size = new System.Drawing.Size(188, 71);
             this.Personale.TabIndex = 3;
             this.Personale.Text = "Mæglere";
             this.Personale.UseCompatibleTextRendering = true;
@@ -151,15 +176,17 @@
             // Boliger
             // 
             this.Boliger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Boliger.AutoSize = true;
             this.Boliger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(154)))), ((int)(((byte)(224)))));
             this.Boliger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Boliger.FlatAppearance.BorderSize = 0;
             this.Boliger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boliger.Font = new System.Drawing.Font("Roboto Condensed", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boliger.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Boliger.ForeColor = System.Drawing.Color.White;
-            this.Boliger.Location = new System.Drawing.Point(1035, 58);
+            this.Boliger.Location = new System.Drawing.Point(1334, 79);
+            this.Boliger.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Boliger.Name = "Boliger";
-            this.Boliger.Size = new System.Drawing.Size(141, 58);
+            this.Boliger.Size = new System.Drawing.Size(188, 71);
             this.Boliger.TabIndex = 2;
             this.Boliger.Text = "Boliger";
             this.Boliger.UseCompatibleTextRendering = true;
@@ -169,8 +196,9 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -179,52 +207,36 @@
             // 
             this.Logo.BackColor = System.Drawing.Color.Transparent;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(13, 64);
+            this.Logo.Location = new System.Drawing.Point(17, 79);
+            this.Logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(300, 89);
+            this.Logo.Size = new System.Drawing.Size(400, 110);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
             // 
-            // Body
-            // 
-            this.Body.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Body.Location = new System.Drawing.Point(0, 159);
-            this.Body.Name = "Body";
-            this.Body.Size = new System.Drawing.Size(1440, 608);
-            this.Body.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "RealBolig A/S";
-            // 
             // BaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
-            this.ClientSize = new System.Drawing.Size(1440, 800);
+            this.ClientSize = new System.Drawing.Size(1920, 985);
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.BodyPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1440, 800);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1918, 985);
             this.Name = "BaseForm";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 37);
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RealBolig A/S";
             this.MenuBar.ResumeLayout(false);
             this.MenuBar.PerformLayout();
             this.BodyPanel.ResumeLayout(false);
+            this.BodyPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
