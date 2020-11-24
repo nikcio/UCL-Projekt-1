@@ -25,18 +25,19 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.MenuBar = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Minimize = new System.Windows.Forms.Button();
             this.CloseApp = new System.Windows.Forms.Button();
             this.BodyPanel = new System.Windows.Forms.Panel();
-            this.Body = new System.Windows.Forms.Panel();
-            this.Kunder = new System.Windows.Forms.Button();
-            this.Personale = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Boliger = new System.Windows.Forms.Button();
+            this.Personale = new System.Windows.Forms.Button();
+            this.Kunder = new System.Windows.Forms.Button();
+            this.Body = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.MenuBar.SuspendLayout();
             this.BodyPanel.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,6 @@
             this.MenuBar.AutoSize = true;
             this.MenuBar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.MenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
-            this.MenuBar.Controls.Add(this.label1);
             this.MenuBar.Controls.Add(this.Minimize);
             this.MenuBar.Controls.Add(this.CloseApp);
             this.MenuBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -55,18 +55,6 @@
             this.MenuBar.Size = new System.Drawing.Size(1920, 37);
             this.MenuBar.TabIndex = 0;
             this.MenuBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuBar_OnMouseDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "RealBolig A/S";
             // 
             // Minimize
             // 
@@ -109,12 +97,9 @@
             // BodyPanel
             // 
             this.BodyPanel.AutoSize = true;
-            this.BodyPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BodyPanel.BackColor = System.Drawing.Color.White;
+            this.BodyPanel.Controls.Add(this.flowLayoutPanel1);
             this.BodyPanel.Controls.Add(this.Body);
-            this.BodyPanel.Controls.Add(this.Kunder);
-            this.BodyPanel.Controls.Add(this.Personale);
-            this.BodyPanel.Controls.Add(this.Boliger);
             this.BodyPanel.Controls.Add(this.button1);
             this.BodyPanel.Controls.Add(this.Logo);
             this.BodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,54 +109,17 @@
             this.BodyPanel.Size = new System.Drawing.Size(1920, 948);
             this.BodyPanel.TabIndex = 1;
             // 
-            // Body
+            // flowLayoutPanel1
             // 
-            this.Body.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Body.Location = new System.Drawing.Point(0, 196);
-            this.Body.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Body.Name = "Body";
-            this.Body.Size = new System.Drawing.Size(1920, 748);
-            this.Body.TabIndex = 5;
-            // 
-            // Kunder
-            // 
-            this.Kunder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Kunder.AutoSize = true;
-            this.Kunder.BackColor = System.Drawing.Color.Transparent;
-            this.Kunder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Kunder.FlatAppearance.BorderSize = 0;
-            this.Kunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Kunder.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kunder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
-            this.Kunder.Location = new System.Drawing.Point(1715, 79);
-            this.Kunder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Kunder.Name = "Kunder";
-            this.Kunder.Size = new System.Drawing.Size(188, 71);
-            this.Kunder.TabIndex = 4;
-            this.Kunder.Text = "Kunder";
-            this.Kunder.UseCompatibleTextRendering = true;
-            this.Kunder.UseVisualStyleBackColor = false;
-            this.Kunder.Click += new System.EventHandler(this.Kunder_Click);
-            // 
-            // Personale
-            // 
-            this.Personale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Personale.AutoSize = true;
-            this.Personale.BackColor = System.Drawing.Color.Transparent;
-            this.Personale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Personale.FlatAppearance.BorderSize = 0;
-            this.Personale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Personale.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Personale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
-            this.Personale.Location = new System.Drawing.Point(1530, 79);
-            this.Personale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Personale.Name = "Personale";
-            this.Personale.Size = new System.Drawing.Size(188, 71);
-            this.Personale.TabIndex = 3;
-            this.Personale.Text = "Mæglere";
-            this.Personale.UseCompatibleTextRendering = true;
-            this.Personale.UseVisualStyleBackColor = false;
-            this.Personale.Click += new System.EventHandler(this.Personale_Click);
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.Boliger);
+            this.flowLayoutPanel1.Controls.Add(this.Personale);
+            this.flowLayoutPanel1.Controls.Add(this.Kunder);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1443, 79);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(450, 68);
+            this.flowLayoutPanel1.TabIndex = 6;
             // 
             // Boliger
             // 
@@ -181,22 +129,71 @@
             this.Boliger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Boliger.FlatAppearance.BorderSize = 0;
             this.Boliger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Boliger.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Boliger.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.Boliger.ForeColor = System.Drawing.Color.White;
-            this.Boliger.Location = new System.Drawing.Point(1334, 79);
-            this.Boliger.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Boliger.Location = new System.Drawing.Point(4, 4);
+            this.Boliger.Margin = new System.Windows.Forms.Padding(4);
             this.Boliger.Name = "Boliger";
-            this.Boliger.Size = new System.Drawing.Size(188, 71);
+            this.Boliger.Size = new System.Drawing.Size(141, 58);
             this.Boliger.TabIndex = 2;
             this.Boliger.Text = "Boliger";
             this.Boliger.UseCompatibleTextRendering = true;
             this.Boliger.UseVisualStyleBackColor = false;
             this.Boliger.Click += new System.EventHandler(this.Boliger_Click);
             // 
+            // Personale
+            // 
+            this.Personale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Personale.AutoSize = true;
+            this.Personale.BackColor = System.Drawing.Color.Transparent;
+            this.Personale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Personale.FlatAppearance.BorderSize = 0;
+            this.Personale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Personale.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Personale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
+            this.Personale.Location = new System.Drawing.Point(153, 4);
+            this.Personale.Margin = new System.Windows.Forms.Padding(4);
+            this.Personale.Name = "Personale";
+            this.Personale.Size = new System.Drawing.Size(143, 58);
+            this.Personale.TabIndex = 3;
+            this.Personale.Text = "Mæglere";
+            this.Personale.UseCompatibleTextRendering = true;
+            this.Personale.UseVisualStyleBackColor = false;
+            this.Personale.Click += new System.EventHandler(this.Personale_Click);
+            // 
+            // Kunder
+            // 
+            this.Kunder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Kunder.AutoSize = true;
+            this.Kunder.BackColor = System.Drawing.Color.Transparent;
+            this.Kunder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Kunder.FlatAppearance.BorderSize = 0;
+            this.Kunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Kunder.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Kunder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
+            this.Kunder.Location = new System.Drawing.Point(304, 4);
+            this.Kunder.Margin = new System.Windows.Forms.Padding(4);
+            this.Kunder.Name = "Kunder";
+            this.Kunder.Size = new System.Drawing.Size(141, 58);
+            this.Kunder.TabIndex = 4;
+            this.Kunder.Text = "Kunder";
+            this.Kunder.UseCompatibleTextRendering = true;
+            this.Kunder.UseVisualStyleBackColor = false;
+            this.Kunder.Click += new System.EventHandler(this.Kunder_Click);
+            // 
+            // Body
+            // 
+            this.Body.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Body.Location = new System.Drawing.Point(0, 196);
+            this.Body.Margin = new System.Windows.Forms.Padding(4);
+            this.Body.Name = "Body";
+            this.Body.Size = new System.Drawing.Size(1920, 748);
+            this.Body.TabIndex = 5;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
@@ -208,7 +205,7 @@
             this.Logo.BackColor = System.Drawing.Color.Transparent;
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.Location = new System.Drawing.Point(17, 79);
-            this.Logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Logo.Margin = new System.Windows.Forms.Padding(4);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(400, 110);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -226,7 +223,7 @@
             this.Controls.Add(this.BodyPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1918, 985);
             this.Name = "BaseForm";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 37);
@@ -234,9 +231,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RealBolig A/S";
             this.MenuBar.ResumeLayout(false);
-            this.MenuBar.PerformLayout();
             this.BodyPanel.ResumeLayout(false);
             this.BodyPanel.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,7 +253,7 @@
         private System.Windows.Forms.Button Personale;
         private System.Windows.Forms.Button Kunder;
         private System.Windows.Forms.Panel Body;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
