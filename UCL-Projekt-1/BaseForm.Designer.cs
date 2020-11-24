@@ -183,7 +183,7 @@
             // 
             // Body
             // 
-            this.Body.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Body.AutoSize = true;
             this.Body.Location = new System.Drawing.Point(0, 196);
             this.Body.Margin = new System.Windows.Forms.Padding(4);
             this.Body.Name = "Body";
