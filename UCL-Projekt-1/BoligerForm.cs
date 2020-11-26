@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using UCL_Projekt_1.Models;
 
 namespace UCL_Projekt_1 {
     public partial class BoligerForm : Form {
         
         private static readonly string ConnectionString = @"Data Source=den1.mssql8.gear.host;User ID=proevedatabase;Password=Ph0CSw_9V-FS;Database=proevedatabase;";
         private SqlConnection conn = new SqlConnection(ConnectionString);
-        
 
 
         public BoligerForm() {
@@ -40,7 +40,13 @@ namespace UCL_Projekt_1 {
         private void Vis_Click(object sender, EventArgs e)
         {
             //VIS
-
+            Bolig b = SQLRead.VisBolig(Bolig_id_tb.Text);
+            Adresse_tb.Text = b.Addresse;
+            Grund_areal_tb.Text = b.Grund_areal.ToString();
+            Bolig_areal_tb.Text = b.Bolig_areal.ToString();
+            Bolig_type_tb.Text = b.Boligtype;
+            Udbudspris_tb.Text = b.Udbuds_pris.ToString();
+            Status_tb.Text = b.Solgt.ToString();
         }
 
         private void Rediger_Click(object sender, EventArgs e)

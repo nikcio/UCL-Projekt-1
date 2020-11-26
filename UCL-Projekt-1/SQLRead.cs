@@ -18,6 +18,17 @@ namespace UCL_Projekt_1 {
             return boliger.ToArray();
         }
 
+        public static Bolig VisBolig(string Bolig_id_tb)
+        {
+            List<Bolig> boliger = new List<Bolig>();
+
+            SqlCommand command = new SqlCommand("SELECT * FROM Bolig WHERE Bolig_id = @Bolig_id_tb", BaseForm.conn);
+            command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb);
+            FindBolig(boliger, command);
+
+            return boliger.FirstOrDefault();
+        }
+
         public static void FindBolig(List<Bolig> boliger, SqlCommand command) {
             BaseForm.conn.Open();
             using (SqlDataReader reader = command.ExecuteReader()) {
@@ -36,6 +47,7 @@ namespace UCL_Projekt_1 {
             }
             BaseForm.conn.Close();
         }
+
 
         public static Bolig[] LoadBoliger(string adresse) {
             List<Bolig> boliger = new List<Bolig>();
