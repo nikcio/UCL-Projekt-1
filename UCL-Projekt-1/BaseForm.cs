@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -12,6 +13,9 @@ using System.Windows.Forms;
 
 namespace UCL_Projekt_1 {
     public partial class BaseForm : Form {
+
+        private static readonly string ConnectionString = @"Data Source=den1.mssql8.gear.host;User ID=proevedatabase;Password=Ph0CSw_9V-FS;Database=proevedatabase;";
+        public static SqlConnection conn = new SqlConnection(ConnectionString);
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
