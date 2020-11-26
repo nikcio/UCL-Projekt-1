@@ -177,6 +177,7 @@ namespace UCL_Projekt_1 {
             this.Find_kunde.TabIndex = 13;
             this.Find_kunde.Text = "Find Kunde";
             this.Find_kunde.UseVisualStyleBackColor = true;
+            this.Find_kunde.Click += new System.EventHandler(this.Find_kunde_Click);
             // 
             // Rediger_kunde
             // 

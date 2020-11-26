@@ -31,12 +31,12 @@ namespace UCL_Projekt_1 {
                 conn.Open();
                 command.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("fuck, det virkede " +OpretK);
+                MessageBox.Show("Kunde oprettet" /*+OpretK*/);
                 
             }
             catch (Exception exc)
             {
-                MessageBox.Show("fejl, prøv igen "+ OpretK);
+                MessageBox.Show("Der opstod en fejl, prøv igen "+ OpretK);
             }
         }
 
@@ -54,12 +54,12 @@ namespace UCL_Projekt_1 {
                 conn.Open();
                 command.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("fuck, det virkede " + RedigerK);
+                MessageBox.Show("Kunde redigeret" /*+ RedigerK*/);
 
             }
             catch (Exception exc)
             {
-                MessageBox.Show("fejl, prøv igen " + RedigerK);
+                MessageBox.Show("Der opstod en fejl, prøv igen " + RedigerK);
             }
 
         }
@@ -75,17 +75,20 @@ namespace UCL_Projekt_1 {
                 conn.Open();
                 command.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("fuck, det virkede " + SletK);
+                MessageBox.Show("Kunde slettet" /*+ SletK*/);
 
                 }
             catch (Exception exc)
                 {
-                MessageBox.Show("fejl, prøv igen " + SletK);
+                MessageBox.Show("Der opstod en fejl, prøv igen " + SletK);
                 }
 
             
         }
 
+        private void Find_kunde_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
