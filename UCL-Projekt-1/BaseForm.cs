@@ -95,5 +95,9 @@ namespace UCL_Projekt_1 {
         private void Kunder_Click(object sender, EventArgs e) {
             OpenChildForm(new KunderForm());
         }
+
+        private void Udskriv_Click(object sender, EventArgs e) {
+            OpenChildForm(new UdskrivingsForm());
+        }
     }
 }
