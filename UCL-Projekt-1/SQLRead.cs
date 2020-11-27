@@ -76,7 +76,23 @@ namespace UCL_Projekt_1 {
             FindKunder(Kunder, command);
 
             return Kunder.ToArray();
+
+            
         }
+
+        public static Kunde VisKunder(string kunde_id)
+        {
+            List<Kunde> Kunder = new List<Kunde>();
+
+            SqlCommand command = new SqlCommand("SELECT * FROM Kunde WHERE Kunde_id = @Kunde_id_tb", BaseForm.conn);
+            command.Parameters.AddWithValue("@Kunde_id_tb", kunde_id);
+            FindKunder(Kunder, command);
+
+            return Kunder.FirstOrDefault();
+
+            
+        }
+
         public static void FindKunder(List<Kunde> Kunder, SqlCommand command) {
             BaseForm.conn.Open();
             using (SqlDataReader reader = command.ExecuteReader()) {
@@ -86,8 +102,8 @@ namespace UCL_Projekt_1 {
                         reader.GetInt32(reader.GetOrdinal("Telefon")),
                         reader.GetString(reader.GetOrdinal("Email")),
                         reader.GetInt32(reader.GetOrdinal("Kunde_Id")),
-                        reader.IsDBNull(reader.GetOrdinal("Er_sælger")) ? reader.GetBoolean(reader.GetOrdinal("Er_sælger")) : false,
-                        reader.IsDBNull(reader.GetOrdinal("Er_køber")) ? reader.GetBoolean(reader.GetOrdinal("Er_Køber")) : false
+                        !reader.IsDBNull(reader.GetOrdinal("Er_sælger")) ? reader.GetBoolean(reader.GetOrdinal("Er_sælger")) : false,
+                        !reader.IsDBNull(reader.GetOrdinal("Er_køber")) ? reader.GetBoolean(reader.GetOrdinal("Er_Køber")) : false
                         ));
                 }
             }
