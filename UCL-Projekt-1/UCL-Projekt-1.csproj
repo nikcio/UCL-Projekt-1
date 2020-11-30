@@ -52,29 +52,29 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BoligerForm.cs">
+    <Compile Include="RedigerBoligerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BoligerForm.Designer.cs">
-      <DependentUpon>BoligerForm.cs</DependentUpon>
+    <Compile Include="RedigerBoligerForm.Designer.cs">
+      <DependentUpon>RedigerBoligerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Converter.cs" />
-    <Compile Include="KunderForm.cs">
+    <Compile Include="RedigerKunderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KunderForm.Designer.cs">
-      <DependentUpon>KunderForm.cs</DependentUpon>
+    <Compile Include="RedigerKunderForm.Designer.cs">
+      <DependentUpon>RedigerKunderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Bolig.cs" />
     <Compile Include="Models\Ejendomsmægler.cs" />
     <Compile Include="Models\Kunde.cs" />
     <Compile Include="Models\IPerson.cs" />
     <Compile Include="Models\Salg.cs" />
-    <Compile Include="PersonaleForm.cs">
+    <Compile Include="RedigerMæglerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonaleForm.Designer.cs">
-      <DependentUpon>PersonaleForm.cs</DependentUpon>
+    <Compile Include="RedigerMæglerForm.Designer.cs">
+      <DependentUpon>RedigerMæglerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,14 +88,14 @@
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BoligerForm.resx">
-      <DependentUpon>BoligerForm.cs</DependentUpon>
+    <EmbeddedResource Include="RedigerBoligerForm.resx">
+      <DependentUpon>RedigerBoligerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KunderForm.resx">
-      <DependentUpon>KunderForm.cs</DependentUpon>
+    <EmbeddedResource Include="RedigerKunderForm.resx">
+      <DependentUpon>RedigerKunderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonaleForm.resx">
-      <DependentUpon>PersonaleForm.cs</DependentUpon>
+    <EmbeddedResource Include="RedigerMæglerForm.resx">
+      <DependentUpon>RedigerMæglerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,6 @@
 ﻿
 namespace UCL_Projekt_1 {
-    partial class PersonaleForm {
+    partial class RedigerMæglerForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>

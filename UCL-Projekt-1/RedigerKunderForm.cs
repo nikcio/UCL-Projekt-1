@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace UCL_Projekt_1 {
-    public partial class KunderForm : Form {
+    public partial class RedigerKunderForm : Form {
         private static readonly string ConnectionString = @"Data Source=den1.mssql8.gear.host;User ID=proevedatabase;Password=Ph0CSw_9V-FS;Database=proevedatabase;";
         private SqlConnection conn = new SqlConnection(ConnectionString);
 
-        public KunderForm() {
+        public RedigerKunderForm() {
             InitializeComponent();
         }
 

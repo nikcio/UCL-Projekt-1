@@ -8,7 +8,7 @@ namespace UCL_Projekt_1
 {
     class Converter
     {
-        public int RomerTalConverter(string number)
+        public static int RomerTalConverter(string number)
         {
             number = number.ToUpper();
             var result = 0;
@@ -29,7 +29,7 @@ namespace UCL_Projekt_1
             return result;
         }
 
-        private int ConvertBogstavToTal(char Romertal)
+        private static int ConvertBogstavToTal(char Romertal)
         {
             switch (Romertal)
             {
