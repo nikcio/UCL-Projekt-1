@@ -58,6 +58,7 @@
     <Compile Include="BoligerForm.Designer.cs">
       <DependentUpon>BoligerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Converter.cs" />
     <Compile Include="KunderForm.cs">
       <SubType>Form</SubType>
     </Compile>
