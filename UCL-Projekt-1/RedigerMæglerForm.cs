@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UCL_Projekt_1 {
-    public partial class PersonaleForm : Form {
-        public PersonaleForm() {
+    public partial class RedigerMæglerForm : Form {
+        public RedigerMæglerForm() {
             InitializeComponent();
         }
     }

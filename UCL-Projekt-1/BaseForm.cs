@@ -89,15 +89,15 @@ namespace UCL_Projekt_1 {
         }
 
         private void Boliger_Click(object sender, EventArgs e) {
-            OpenChildForm(new BoligerForm());
+            OpenChildForm(new RedigerBoligerForm());
         }
 
         private void Personale_Click(object sender, EventArgs e) {
-            OpenChildForm(new PersonaleForm());
+            OpenChildForm(new RedigerMæglerForm());
         }
 
         private void Kunder_Click(object sender, EventArgs e) {
-            OpenChildForm(new KunderForm());
+            OpenChildForm(new RedigerKunderForm());
         }
 
         private void Udskriv_Click(object sender, EventArgs e) {

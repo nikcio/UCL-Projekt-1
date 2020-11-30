@@ -85,11 +85,22 @@ namespace UCL_Projekt_1 {
         public static Ejendomsmægler[] LoadEjendomsmægler() {
             List<Ejendomsmægler> Ejendomsmæglere = new List<Ejendomsmægler>();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM FindEjendomsmægler", BaseForm.conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM Ejendomsmægler", BaseForm.conn);
             FindEjendomsmægler(Ejendomsmæglere, command);
 
             return Ejendomsmæglere.ToArray();
         }
+
+        public static Ejendomsmægler VisEjendomsmægler(int id) {
+            List<Ejendomsmægler> Ejendomsmæglere = new List<Ejendomsmægler>();
+
+            SqlCommand command = new SqlCommand("SELECT * FROM Ejendomsmægler WHERE Mægler_Id=@id", BaseForm.conn);
+            command.Parameters.AddWithValue("@id", id);
+            FindEjendomsmægler(Ejendomsmæglere, command);
+
+            return Ejendomsmæglere.FirstOrDefault();
+        }
+
         public static void FindEjendomsmægler(List<Ejendomsmægler> Ejendomsmæglere, SqlCommand command) {
             BaseForm.conn.Open();
             using (SqlDataReader reader = command.ExecuteReader()) {
