@@ -29,7 +29,7 @@ namespace UCL_Projekt_1 {
         }
 
         private Form activeForm = null;
-        private void OpenChildForm(Form childForm) {
+        public void OpenChildForm(Form childForm) {
             if(activeForm != null) 
             {
                 activeForm.Close();
@@ -89,19 +89,19 @@ namespace UCL_Projekt_1 {
         }
 
         private void Boliger_Click(object sender, EventArgs e) {
-            OpenChildForm(new RedigerBoligerForm());
+            OpenChildForm(new BoligerForm(this));
         }
 
         private void Personale_Click(object sender, EventArgs e) {
-            OpenChildForm(new RedigerMæglerForm());
+            OpenChildForm(new RedigerMæglerForm(this));
         }
 
         private void Kunder_Click(object sender, EventArgs e) {
-            OpenChildForm(new RedigerKunderForm());
+            OpenChildForm(new RedigerKunderForm(this));
         }
 
         private void Udskriv_Click(object sender, EventArgs e) {
-            OpenChildForm(new UdskrivingsForm());
+            OpenChildForm(new UdskrivingsForm(this));
         }
     }
 }

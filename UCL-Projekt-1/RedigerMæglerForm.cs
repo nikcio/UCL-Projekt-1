@@ -12,8 +12,12 @@ using UCL_Projekt_1.Models;
 
 namespace UCL_Projekt_1 {
     public partial class RedigerMæglerForm : Form {
-        public RedigerMæglerForm() {
+
+        private BaseForm _baseForm;
+
+        public RedigerMæglerForm(BaseForm form) {
             InitializeComponent();
+            _baseForm = form;
         }
 
         private void Opret_mægler_Click(object sender, EventArgs e)

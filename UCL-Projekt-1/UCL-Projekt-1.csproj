@@ -52,6 +52,24 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BoligerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoligerForm.Designer.cs">
+      <DependentUpon>BoligerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KunderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KunderForm.Designer.cs">
+      <DependentUpon>KunderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MæglerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MæglerForm.Designer.cs">
+      <DependentUpon>MæglerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RedigerBoligerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +105,15 @@
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoligerForm.resx">
+      <DependentUpon>BoligerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KunderForm.resx">
+      <DependentUpon>KunderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MæglerForm.resx">
+      <DependentUpon>MæglerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RedigerBoligerForm.resx">
       <DependentUpon>RedigerBoligerForm.cs</DependentUpon>
