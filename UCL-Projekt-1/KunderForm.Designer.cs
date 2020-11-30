@@ -52,6 +52,7 @@ namespace UCL_Projekt_1 {
             this.Kunde_id.Size = new System.Drawing.Size(115, 29);
             this.Kunde_id.TabIndex = 0;
             this.Kunde_id.Text = "Kunde Id:";
+            this.Kunde_id.Click += new System.EventHandler(this.Kunde_id_Click);
             // 
             // Navn
             // 
@@ -62,6 +63,7 @@ namespace UCL_Projekt_1 {
             this.Navn.Size = new System.Drawing.Size(74, 29);
             this.Navn.TabIndex = 1;
             this.Navn.Text = "Navn:";
+            this.Navn.Click += new System.EventHandler(this.Navn_Click);
             // 
             // Telefon
             // 
@@ -72,6 +74,7 @@ namespace UCL_Projekt_1 {
             this.Telefon.Size = new System.Drawing.Size(47, 29);
             this.Telefon.TabIndex = 2;
             this.Telefon.Text = "Tlf:";
+            this.Telefon.Click += new System.EventHandler(this.Telefon_Click);
             // 
             // Email
             // 
@@ -82,6 +85,7 @@ namespace UCL_Projekt_1 {
             this.Email.Size = new System.Drawing.Size(80, 29);
             this.Email.TabIndex = 3;
             this.Email.Text = "Email:";
+            this.Email.Click += new System.EventHandler(this.Email_Click);
             // 
             // Køber
             // 
@@ -92,6 +96,7 @@ namespace UCL_Projekt_1 {
             this.Køber.Size = new System.Drawing.Size(79, 29);
             this.Køber.TabIndex = 4;
             this.Køber.Text = "Køber";
+            this.Køber.Click += new System.EventHandler(this.Køber_Click);
             // 
             // Kunde_id_tb
             // 
@@ -100,6 +105,7 @@ namespace UCL_Projekt_1 {
             this.Kunde_id_tb.Name = "Kunde_id_tb";
             this.Kunde_id_tb.Size = new System.Drawing.Size(165, 35);
             this.Kunde_id_tb.TabIndex = 5;
+            this.Kunde_id_tb.TextChanged += new System.EventHandler(this.Kunde_id_tb_TextChanged);
             // 
             // Kunde_navn_tb
             // 
@@ -108,6 +114,7 @@ namespace UCL_Projekt_1 {
             this.Kunde_navn_tb.Name = "Kunde_navn_tb";
             this.Kunde_navn_tb.Size = new System.Drawing.Size(165, 35);
             this.Kunde_navn_tb.TabIndex = 6;
+            this.Kunde_navn_tb.TextChanged += new System.EventHandler(this.Kunde_navn_tb_TextChanged);
             // 
             // Kunde_tlf_tb
             // 
@@ -116,6 +123,7 @@ namespace UCL_Projekt_1 {
             this.Kunde_tlf_tb.Name = "Kunde_tlf_tb";
             this.Kunde_tlf_tb.Size = new System.Drawing.Size(165, 35);
             this.Kunde_tlf_tb.TabIndex = 7;
+            this.Kunde_tlf_tb.TextChanged += new System.EventHandler(this.Kunde_tlf_tb_TextChanged);
             // 
             // Kunde_email_tb
             // 
@@ -124,6 +132,7 @@ namespace UCL_Projekt_1 {
             this.Kunde_email_tb.Name = "Kunde_email_tb";
             this.Kunde_email_tb.Size = new System.Drawing.Size(165, 35);
             this.Kunde_email_tb.TabIndex = 8;
+            this.Kunde_email_tb.TextChanged += new System.EventHandler(this.Kunde_email_tb_TextChanged);
             // 
             // checkBox1
             // 
@@ -135,6 +144,7 @@ namespace UCL_Projekt_1 {
             this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Sælger
             // 
@@ -145,6 +155,7 @@ namespace UCL_Projekt_1 {
             this.Sælger.Size = new System.Drawing.Size(92, 29);
             this.Sælger.TabIndex = 10;
             this.Sælger.Text = "Sælger";
+            this.Sælger.Click += new System.EventHandler(this.Sælger_Click);
             // 
             // checkBox2
             // 
@@ -156,6 +167,7 @@ namespace UCL_Projekt_1 {
             this.checkBox2.TabIndex = 11;
             this.checkBox2.Text = "checkBox2";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Opret_kunde
             // 
@@ -177,6 +189,7 @@ namespace UCL_Projekt_1 {
             this.Find_kunde.TabIndex = 13;
             this.Find_kunde.Text = "Find Kunde";
             this.Find_kunde.UseVisualStyleBackColor = true;
+            this.Find_kunde.Click += new System.EventHandler(this.Find_kunde_Click);
             // 
             // Rediger_kunde
             // 
@@ -209,6 +222,7 @@ namespace UCL_Projekt_1 {
             this.Se_alle_kunder.TabIndex = 16;
             this.Se_alle_kunder.Text = "Se alle ";
             this.Se_alle_kunder.UseVisualStyleBackColor = true;
+            this.Se_alle_kunder.Click += new System.EventHandler(this.Se_alle_kunder_Click);
             // 
             // KunderForm
             // 

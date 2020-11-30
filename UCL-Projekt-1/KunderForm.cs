@@ -86,6 +86,74 @@ namespace UCL_Projekt_1 {
             
         }
 
+        private void Find_kunde_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void Se_alle_kunder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sælger_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Kunde_email_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Kunde_tlf_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Kunde_navn_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Kunde_id_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Køber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Email_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Telefon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Navn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Kunde_id_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
