@@ -22,11 +22,14 @@ namespace UCL_Projekt_1 {
 
         private void Opret_kunde_Click(object sender, EventArgs e)
         {
-            string OpretK = $"INSERT INTO Kunde (Navn, Telefon, Email) VALUES (@Kunde_navn_tb, @Kunde_tlf_tb, @Kunde_email_tb)";
+            string OpretK = $"INSERT INTO Kunde (Navn, Telefon, Email,Er_sælger, Er_køber) VALUES (@Kunde_navn_tb, @Kunde_tlf_tb, @Kunde_email_tb, @Er_sælger, @Er_køber)";
             SqlCommand command = new SqlCommand(OpretK, BaseForm.conn);
             command.Parameters.AddWithValue("@Kunde_navn_tb", Kunde_navn_tb.Text);
             command.Parameters.AddWithValue("@Kunde_tlf_tb", Kunde_tlf_tb.Text);
             command.Parameters.AddWithValue("@Kunde_email_tb", Kunde_email_tb.Text);
+            command.Parameters.AddWithValue("@Er_sælger", Er_sælger.Checked);
+            command.Parameters.AddWithValue("@Er_køber", Er_køber.Checked);
+            
 
             try
             {
@@ -44,13 +47,15 @@ namespace UCL_Projekt_1 {
 
         private void Rediger_kunde_Click(object sender, EventArgs e)
         {
-            string RedigerK = $"UPDATE Kunde SET Navn=@Kunde_navn_tb, Telefon=@Kunde_tlf_tb, Email=@Kunde_email_tb WHERE Kunde_id=@Kunde_id_tb";
+            string RedigerK = $"UPDATE Kunde SET Navn=@Kunde_navn_tb, Telefon=@Kunde_tlf_tb, Email=@Kunde_email_tb, Er_sælger=@Er_sælger, Er_køber=@Er_køber  WHERE Kunde_id=@Kunde_id_tb";
             SqlCommand command = new SqlCommand(RedigerK, BaseForm.conn);
             command.Parameters.AddWithValue("@Kunde_navn_tb", Kunde_navn_tb.Text);
             command.Parameters.AddWithValue("@Kunde_tlf_tb", Kunde_tlf_tb.Text);
             command.Parameters.AddWithValue("@Kunde_email_tb", Kunde_email_tb.Text);
             command.Parameters.AddWithValue("@Kunde_id_tb", Kunde_id_tb.Text);
-            
+            command.Parameters.AddWithValue("@Er_sælger", Er_sælger.Checked);
+            command.Parameters.AddWithValue("@Er_køber", Er_køber.Checked);
+
             try
             {
                 BaseForm.conn.Open();
@@ -87,75 +92,15 @@ namespace UCL_Projekt_1 {
 
         private void Find_kunde_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Se_alle_kunder_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Sælger_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Kunde_email_tb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Kunde_tlf_tb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Kunde_navn_tb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Kunde_id_tb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Køber_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Email_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Telefon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Navn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Kunde_id_Click(object sender, EventArgs e)
-        {
             Models.Kunde k = SQLRead.VisKunder(Kunde_id_tb.Text);
             Kunde_navn_tb.Text = k.Navn;
             Kunde_tlf_tb.Text = k.Telefon.ToString();
             Kunde_email_tb.Text = k.Email;
+            Er_sælger.Checked = (bool)k.Er_sælger;
+            Er_køber.Checked = (bool)k.Er_køber;
+
+
+                       
         }
     }
 }
