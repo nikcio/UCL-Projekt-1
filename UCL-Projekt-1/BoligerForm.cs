@@ -15,10 +15,79 @@ namespace UCL_Projekt_1 {
         public BoligerForm(BaseForm form) {
             InitializeComponent();
             _baseForm = form;
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
+            VisBoliger();
         }
 
         private void TilføjBolig_Click(object sender, EventArgs e) {
             _baseForm.OpenChildForm(new RedigerBoligerForm(_baseForm));
+        }
+
+        private void VisBoliger() {
+            var Bolig = new Panel();
+            var Adresse = new Label();
+            var By = new Label();
+            var Pris = new Label();
+            var SeBolig = new Button();
+            // 
+            // Bolig
+            // 
+            Bolig.Controls.Add(SeBolig);
+            Bolig.Controls.Add(Pris);
+            Bolig.Controls.Add(By);
+            Bolig.Controls.Add(Adresse);
+            Bolig.Location = new Point(49, 41);
+            Bolig.Name = "Bolig";
+            Bolig.Size = new Size(327, 208);
+            Bolig.TabIndex = 0;
+            // 
+            // Adresse
+            // 
+            Adresse.AutoSize = true;
+            Adresse.Location = new Point(23, 25);
+            Adresse.Name = "Adresse";
+            Adresse.Size = new Size(125, 17);
+            Adresse.TabIndex = 0;
+            Adresse.Text = "Vejlevej 251, Lønå";
+            // 
+            // By
+            // 
+            By.AutoSize = true;
+            By.Location = new Point(26, 58);
+            By.Name = "By";
+            By.Size = new Size(73, 17);
+            By.TabIndex = 1;
+            By.Text = "7323 Give";
+            // 
+            // Pris
+            // 
+            Pris.AutoSize = true;
+            Pris.Location = new Point(209, 152);
+            Pris.Name = "Pris";
+            Pris.Size = new Size(80, 17);
+            Pris.TabIndex = 2;
+            Pris.Text = "400.000 kr.";
+            // 
+            // SeBolig
+            // 
+            SeBolig.Location = new Point(29, 145);
+            SeBolig.Name = "SeBolig";
+            SeBolig.Size = new Size(84, 32);
+            SeBolig.TabIndex = 3;
+            SeBolig.Text = "Se bolig";
+            SeBolig.UseVisualStyleBackColor = true;
+
+            FlowLayout.Controls.Add(Bolig);
         }
     }
 }
