@@ -73,7 +73,34 @@ namespace UCL_Projekt_1
                         throw new ArgumentException("Ugyldigt bogstav");
                     }
             }
+        }
+    }
+    class TilRomerTal
+    {
+        string s = "";
 
+        public string TilRomer(int number)
+        {
+
+            if ((number < 0) || (number > 3999))
+            {
+                s = s + "Ugyldigt imput";
+            }
+            if (number < 1) return s;
+            if (number >= 1000) { s = s + "M"; TilRomer(number - 1000); }
+            if (number >= 900) { s = s + "CM"; TilRomer(number - 900); }
+            if (number >= 500) { s = s + "D"; TilRomer(number - 500); }
+            if (number >= 400) { s = s + "CD"; TilRomer(number - 400); }
+            if (number >= 100) { s = s + "C"; TilRomer(number - 100); }
+            if (number >= 90) { s = s + "XC"; TilRomer(number - 90); }
+            if (number >= 50) { s = s + "L"; TilRomer(number - 50); }
+            if (number >= 40) { s = s + "XL"; TilRomer(number - 40); }
+            if (number >= 10) { s = s + "X"; TilRomer(number - 10); }
+            if (number >= 9) { s = s + "IX"; TilRomer(number - 9); }
+            if (number >= 5) { s = s + "V"; TilRomer(number - 5); }
+            if (number >= 4) { s = s + "IV"; TilRomer(number - 4); }
+            if (number >= 1) { s = s + "I"; TilRomer(number - 1); }
+            return s;
         }
     }
 
