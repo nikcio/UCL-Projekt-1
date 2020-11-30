@@ -1,6 +1,6 @@
 ﻿
 namespace UCL_Projekt_1 {
-    partial class KunderForm {
+    partial class RedigerKunderForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
