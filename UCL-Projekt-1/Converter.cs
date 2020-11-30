@@ -75,11 +75,12 @@ namespace UCL_Projekt_1
             }
         }
     }
+
     class TilRomerTal
     {
-        string s = "";
+        static string s = "";
 
-        public string TilRomer(int number)
+        public static string TilRomer(int number)
         {
 
             if ((number < 0) || (number > 3999))
