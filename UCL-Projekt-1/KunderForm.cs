@@ -59,7 +59,6 @@ namespace UCL_Projekt_1 {
             {
                 MessageBox.Show("Der opstod en fejl, prøv igen " + RedigerK);
             }
-
         }
 
         private void Slet_Kunde_Click(object sender, EventArgs e)
@@ -79,9 +78,7 @@ namespace UCL_Projekt_1 {
             catch (Exception exc)
                 {
                 MessageBox.Show("Der opstod en fejl, prøv igen " + SletK);
-                }
-
-            
+                }    
         }
 
         private void Find_kunde_Click(object sender, EventArgs e)
