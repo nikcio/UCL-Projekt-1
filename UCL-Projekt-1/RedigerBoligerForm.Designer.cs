@@ -1,6 +1,6 @@
 ﻿
 namespace UCL_Projekt_1 {
-    partial class BoligerForm {
+    partial class RedigerBoligerForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
