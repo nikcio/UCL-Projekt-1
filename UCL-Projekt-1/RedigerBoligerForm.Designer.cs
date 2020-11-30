@@ -58,7 +58,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Bolig_id.AutoSize = true;
             this.Bolig_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_id.Location = new System.Drawing.Point(241, 35);
+            this.Bolig_id.Location = new System.Drawing.Point(825, 102);
             this.Bolig_id.Name = "Bolig_id";
             this.Bolig_id.Size = new System.Drawing.Size(95, 29);
             this.Bolig_id.TabIndex = 1;
@@ -117,7 +117,7 @@ namespace UCL_Projekt_1 {
             // Bolig_id_tb
             // 
             this.Bolig_id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_id_tb.Location = new System.Drawing.Point(506, 35);
+            this.Bolig_id_tb.Location = new System.Drawing.Point(981, 99);
             this.Bolig_id_tb.Name = "Bolig_id_tb";
             this.Bolig_id_tb.Size = new System.Drawing.Size(139, 35);
             this.Bolig_id_tb.TabIndex = 7;
@@ -172,7 +172,7 @@ namespace UCL_Projekt_1 {
             // 
             // Opret
             // 
-            this.Opret.Location = new System.Drawing.Point(872, 60);
+            this.Opret.Location = new System.Drawing.Point(342, 528);
             this.Opret.Name = "Opret";
             this.Opret.Size = new System.Drawing.Size(142, 54);
             this.Opret.TabIndex = 14;
@@ -182,7 +182,7 @@ namespace UCL_Projekt_1 {
             // 
             // Vis
             // 
-            this.Vis.Location = new System.Drawing.Point(872, 153);
+            this.Vis.Location = new System.Drawing.Point(893, 185);
             this.Vis.Name = "Vis";
             this.Vis.Size = new System.Drawing.Size(142, 54);
             this.Vis.TabIndex = 15;
@@ -192,7 +192,7 @@ namespace UCL_Projekt_1 {
             // 
             // Rediger
             // 
-            this.Rediger.Location = new System.Drawing.Point(872, 245);
+            this.Rediger.Location = new System.Drawing.Point(893, 267);
             this.Rediger.Name = "Rediger";
             this.Rediger.Size = new System.Drawing.Size(142, 54);
             this.Rediger.TabIndex = 16;
@@ -202,7 +202,7 @@ namespace UCL_Projekt_1 {
             // 
             // Slet
             // 
-            this.Slet.Location = new System.Drawing.Point(872, 338);
+            this.Slet.Location = new System.Drawing.Point(893, 347);
             this.Slet.Name = "Slet";
             this.Slet.Size = new System.Drawing.Size(142, 54);
             this.Slet.TabIndex = 17;

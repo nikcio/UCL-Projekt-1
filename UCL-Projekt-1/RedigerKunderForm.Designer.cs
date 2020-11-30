@@ -40,18 +40,18 @@ namespace UCL_Projekt_1 {
             this.Find_kunde = new System.Windows.Forms.Button();
             this.Rediger_kunde = new System.Windows.Forms.Button();
             this.Slet_Kunde = new System.Windows.Forms.Button();
-            this.Se_alle_kunder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Kunde_id
             // 
             this.Kunde_id.AutoSize = true;
             this.Kunde_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kunde_id.Location = new System.Drawing.Point(61, 94);
+            this.Kunde_id.Location = new System.Drawing.Point(743, 146);
             this.Kunde_id.Name = "Kunde_id";
             this.Kunde_id.Size = new System.Drawing.Size(115, 29);
             this.Kunde_id.TabIndex = 0;
             this.Kunde_id.Text = "Kunde Id:";
+            this.Kunde_id.Click += new System.EventHandler(this.Kunde_id_Click);
             // 
             // Navn
             // 
@@ -62,6 +62,7 @@ namespace UCL_Projekt_1 {
             this.Navn.Size = new System.Drawing.Size(74, 29);
             this.Navn.TabIndex = 1;
             this.Navn.Text = "Navn:";
+            this.Navn.Click += new System.EventHandler(this.Navn_Click);
             // 
             // Telefon
             // 
@@ -72,6 +73,7 @@ namespace UCL_Projekt_1 {
             this.Telefon.Size = new System.Drawing.Size(47, 29);
             this.Telefon.TabIndex = 2;
             this.Telefon.Text = "Tlf:";
+            this.Telefon.Click += new System.EventHandler(this.Telefon_Click);
             // 
             // Email
             // 
@@ -82,6 +84,7 @@ namespace UCL_Projekt_1 {
             this.Email.Size = new System.Drawing.Size(80, 29);
             this.Email.TabIndex = 3;
             this.Email.Text = "Email:";
+            this.Email.Click += new System.EventHandler(this.Email_Click);
             // 
             // Køber
             // 
@@ -92,14 +95,16 @@ namespace UCL_Projekt_1 {
             this.Køber.Size = new System.Drawing.Size(79, 29);
             this.Køber.TabIndex = 4;
             this.Køber.Text = "Køber";
+            this.Køber.Click += new System.EventHandler(this.Køber_Click);
             // 
             // Kunde_id_tb
             // 
             this.Kunde_id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kunde_id_tb.Location = new System.Drawing.Point(261, 94);
+            this.Kunde_id_tb.Location = new System.Drawing.Point(943, 146);
             this.Kunde_id_tb.Name = "Kunde_id_tb";
             this.Kunde_id_tb.Size = new System.Drawing.Size(165, 35);
             this.Kunde_id_tb.TabIndex = 5;
+            this.Kunde_id_tb.TextChanged += new System.EventHandler(this.Kunde_id_tb_TextChanged);
             // 
             // Kunde_navn_tb
             // 
@@ -108,6 +113,7 @@ namespace UCL_Projekt_1 {
             this.Kunde_navn_tb.Name = "Kunde_navn_tb";
             this.Kunde_navn_tb.Size = new System.Drawing.Size(165, 35);
             this.Kunde_navn_tb.TabIndex = 6;
+            this.Kunde_navn_tb.TextChanged += new System.EventHandler(this.Kunde_navn_tb_TextChanged);
             // 
             // Kunde_tlf_tb
             // 
@@ -116,6 +122,7 @@ namespace UCL_Projekt_1 {
             this.Kunde_tlf_tb.Name = "Kunde_tlf_tb";
             this.Kunde_tlf_tb.Size = new System.Drawing.Size(165, 35);
             this.Kunde_tlf_tb.TabIndex = 7;
+            this.Kunde_tlf_tb.TextChanged += new System.EventHandler(this.Kunde_tlf_tb_TextChanged);
             // 
             // Kunde_email_tb
             // 
@@ -124,6 +131,7 @@ namespace UCL_Projekt_1 {
             this.Kunde_email_tb.Name = "Kunde_email_tb";
             this.Kunde_email_tb.Size = new System.Drawing.Size(165, 35);
             this.Kunde_email_tb.TabIndex = 8;
+            this.Kunde_email_tb.TextChanged += new System.EventHandler(this.Kunde_email_tb_TextChanged);
             // 
             // checkBox1
             // 
@@ -135,6 +143,7 @@ namespace UCL_Projekt_1 {
             this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Sælger
             // 
@@ -145,6 +154,7 @@ namespace UCL_Projekt_1 {
             this.Sælger.Size = new System.Drawing.Size(92, 29);
             this.Sælger.TabIndex = 10;
             this.Sælger.Text = "Sælger";
+            this.Sælger.Click += new System.EventHandler(this.Sælger_Click);
             // 
             // checkBox2
             // 
@@ -156,11 +166,12 @@ namespace UCL_Projekt_1 {
             this.checkBox2.TabIndex = 11;
             this.checkBox2.Text = "checkBox2";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Opret_kunde
             // 
             this.Opret_kunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Opret_kunde.Location = new System.Drawing.Point(448, 91);
+            this.Opret_kunde.Location = new System.Drawing.Point(460, 146);
             this.Opret_kunde.Name = "Opret_kunde";
             this.Opret_kunde.Size = new System.Drawing.Size(208, 35);
             this.Opret_kunde.TabIndex = 12;
@@ -171,17 +182,18 @@ namespace UCL_Projekt_1 {
             // Find_kunde
             // 
             this.Find_kunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Find_kunde.Location = new System.Drawing.Point(448, 144);
+            this.Find_kunde.Location = new System.Drawing.Point(900, 209);
             this.Find_kunde.Name = "Find_kunde";
             this.Find_kunde.Size = new System.Drawing.Size(208, 35);
             this.Find_kunde.TabIndex = 13;
             this.Find_kunde.Text = "Find Kunde";
             this.Find_kunde.UseVisualStyleBackColor = true;
+            this.Find_kunde.Click += new System.EventHandler(this.Find_kunde_Click);
             // 
             // Rediger_kunde
             // 
             this.Rediger_kunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rediger_kunde.Location = new System.Drawing.Point(448, 203);
+            this.Rediger_kunde.Location = new System.Drawing.Point(900, 262);
             this.Rediger_kunde.Name = "Rediger_kunde";
             this.Rediger_kunde.Size = new System.Drawing.Size(208, 41);
             this.Rediger_kunde.TabIndex = 14;
@@ -192,7 +204,7 @@ namespace UCL_Projekt_1 {
             // Slet_Kunde
             // 
             this.Slet_Kunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Slet_Kunde.Location = new System.Drawing.Point(448, 265);
+            this.Slet_Kunde.Location = new System.Drawing.Point(900, 324);
             this.Slet_Kunde.Name = "Slet_Kunde";
             this.Slet_Kunde.Size = new System.Drawing.Size(208, 37);
             this.Slet_Kunde.TabIndex = 15;
@@ -200,22 +212,9 @@ namespace UCL_Projekt_1 {
             this.Slet_Kunde.UseVisualStyleBackColor = true;
             this.Slet_Kunde.Click += new System.EventHandler(this.Slet_Kunde_Click);
             // 
-            // Se_alle_kunder
-            // 
-            this.Se_alle_kunder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Se_alle_kunder.Location = new System.Drawing.Point(448, 318);
-            this.Se_alle_kunder.Name = "Se_alle_kunder";
-            this.Se_alle_kunder.Size = new System.Drawing.Size(208, 36);
-            this.Se_alle_kunder.TabIndex = 16;
-            this.Se_alle_kunder.Text = "Se alle ";
-            this.Se_alle_kunder.UseVisualStyleBackColor = true;
-            // 
-            // KunderForm
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.Se_alle_kunder);
             this.Controls.Add(this.Slet_Kunde);
             this.Controls.Add(this.Rediger_kunde);
             this.Controls.Add(this.Find_kunde);
@@ -259,6 +258,5 @@ namespace UCL_Projekt_1 {
         private System.Windows.Forms.Button Find_kunde;
         private System.Windows.Forms.Button Rediger_kunde;
         private System.Windows.Forms.Button Slet_Kunde;
-        private System.Windows.Forms.Button Se_alle_kunder;
     }
 }
