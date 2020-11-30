@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 620);
+            this.ClientSize = new System.Drawing.Size(1920, 748);
             this.Controls.Add(this.AreaText);
             this.Controls.Add(this.Area);
             this.Controls.Add(this.UdskrivArea);
