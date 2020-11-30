@@ -16,8 +16,11 @@ using System.Diagnostics;
 namespace UCL_Projekt_1 {
     public partial class UdskrivingsForm : Form {
 
-        public UdskrivingsForm() {
+        private BaseForm _baseForm;
+
+        public UdskrivingsForm(BaseForm form) {
             InitializeComponent();
+            _baseForm = form;
         }
 
         private void UdskrivSolgte_Click(object sender, EventArgs e) {

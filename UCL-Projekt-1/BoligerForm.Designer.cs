@@ -23,13 +23,25 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.TilføjBolig = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // TilføjBolig
+            // 
+            this.TilføjBolig.Location = new System.Drawing.Point(26, 12);
+            this.TilføjBolig.Name = "TilføjBolig";
+            this.TilføjBolig.Size = new System.Drawing.Size(193, 47);
+            this.TilføjBolig.TabIndex = 0;
+            this.TilføjBolig.Text = "Tilføj Bolig";
+            this.TilføjBolig.UseVisualStyleBackColor = true;
+            this.TilføjBolig.Click += new System.EventHandler(this.TilføjBolig_Click);
             // 
             // BoligerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1920, 748);
+            this.Controls.Add(this.TilføjBolig);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BoligerForm";
             this.Text = "BoligerForm";
@@ -38,5 +50,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button TilføjBolig;
     }
 }

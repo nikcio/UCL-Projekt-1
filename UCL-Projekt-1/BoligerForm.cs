@@ -10,8 +10,15 @@ using System.Windows.Forms;
 
 namespace UCL_Projekt_1 {
     public partial class BoligerForm : Form {
-        public BoligerForm() {
+        private BaseForm _baseForm;
+
+        public BoligerForm(BaseForm form) {
             InitializeComponent();
+            _baseForm = form;
+        }
+
+        private void TilføjBolig_Click(object sender, EventArgs e) {
+            _baseForm.OpenChildForm(new RedigerBoligerForm(_baseForm));
         }
     }
 }

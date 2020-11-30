@@ -12,11 +12,12 @@ using System.Data.SqlClient;
 namespace UCL_Projekt_1 {
 
     public partial class RedigerKunderForm : Form {
-        private static readonly string ConnectionString = @"Data Source=den1.mssql8.gear.host;User ID=proevedatabase;Password=Ph0CSw_9V-FS;Database=proevedatabase;";
-        private SqlConnection conn = new SqlConnection(ConnectionString);
 
-        public RedigerKunderForm() {
+        private BaseForm _baseForm;
+
+        public RedigerKunderForm(BaseForm form) {
             InitializeComponent();
+            _baseForm = form;
         }
 
         private void Opret_kunde_Click(object sender, EventArgs e)

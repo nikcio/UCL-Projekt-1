@@ -10,8 +10,16 @@ using System.Windows.Forms;
 
 namespace UCL_Projekt_1 {
     public partial class MæglerForm : Form {
-        public MæglerForm() {
+
+        private BaseForm _baseForm;
+
+        public MæglerForm(BaseForm form) {
             InitializeComponent();
+            _baseForm = form;
+        }
+
+        private void TilføjMægler_Click(object sender, EventArgs e) {
+            _baseForm.OpenChildForm(new RedigerMæglerForm(_baseForm));
         }
     }
 }

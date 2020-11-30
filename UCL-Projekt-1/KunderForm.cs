@@ -10,8 +10,16 @@ using System.Windows.Forms;
 
 namespace UCL_Projekt_1 {
     public partial class KunderForm : Form {
-        public KunderForm() {
+
+        private BaseForm _baseForm;
+
+        public KunderForm(BaseForm form) {
             InitializeComponent();
+            _baseForm = form;
+        }
+
+        private void TilføjKunde_Click(object sender, EventArgs e) {
+            _baseForm.OpenChildForm(new RedigerKunderForm(_baseForm));
         }
     }
 }
