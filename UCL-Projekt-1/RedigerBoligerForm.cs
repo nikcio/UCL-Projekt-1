@@ -68,6 +68,8 @@ namespace UCL_Projekt_1 {
             Bolig_type_tb.Text = b.Boligtype;
             Udbudspris_tb.Text = b.Udbuds_pris.ToString();
             solgt.Checked = b.Solgt;
+            Bolig_id_tb.Text = b.Bolig_Id.ToString();
+            Mægler_id_tb.Text = b.Mægler_Id.ToString();
 
             try
             {
