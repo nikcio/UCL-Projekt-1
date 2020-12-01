@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.TilføjMægler = new System.Windows.Forms.Button();
+            this.FlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // TilføjMægler
@@ -36,11 +37,23 @@
             this.TilføjMægler.UseVisualStyleBackColor = true;
             this.TilføjMægler.Click += new System.EventHandler(this.TilføjMægler_Click);
             // 
+            // FlowLayout
+            // 
+            this.FlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FlowLayout.AutoScroll = true;
+            this.FlowLayout.Location = new System.Drawing.Point(12, 70);
+            this.FlowLayout.Name = "FlowLayout";
+            this.FlowLayout.Size = new System.Drawing.Size(1896, 666);
+            this.FlowLayout.TabIndex = 1;
+            // 
             // MæglerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 748);
+            this.Controls.Add(this.FlowLayout);
             this.Controls.Add(this.TilføjMægler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MæglerForm";
@@ -52,5 +65,6 @@
         #endregion
 
         private System.Windows.Forms.Button TilføjMægler;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayout;
     }
 }

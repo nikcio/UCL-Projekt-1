@@ -93,11 +93,11 @@ namespace UCL_Projekt_1 {
         }
 
         private void Personale_Click(object sender, EventArgs e) {
-            OpenChildForm(new RedigerMæglerForm(this));
+            OpenChildForm(new MæglerForm(this));
         }
 
         private void Kunder_Click(object sender, EventArgs e) {
-            OpenChildForm(new RedigerKunderForm(this));
+            OpenChildForm(new KunderForm(this));
         }
 
         private void Udskriv_Click(object sender, EventArgs e) {

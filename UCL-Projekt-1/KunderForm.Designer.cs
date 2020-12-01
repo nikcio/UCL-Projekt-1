@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.TilføjKunde = new System.Windows.Forms.Button();
+            this.FlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // TilføjKunde
@@ -36,11 +37,21 @@
             this.TilføjKunde.UseVisualStyleBackColor = true;
             this.TilføjKunde.Click += new System.EventHandler(this.TilføjKunde_Click);
             // 
+            // FlowLayout
+            // 
+            this.FlowLayout.AutoScroll = true;
+            this.FlowLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.FlowLayout.Location = new System.Drawing.Point(12, 55);
+            this.FlowLayout.Name = "FlowLayout";
+            this.FlowLayout.Size = new System.Drawing.Size(1896, 681);
+            this.FlowLayout.TabIndex = 1;
+            // 
             // KunderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 748);
+            this.Controls.Add(this.FlowLayout);
             this.Controls.Add(this.TilføjKunde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KunderForm";
@@ -52,5 +63,6 @@
         #endregion
 
         private System.Windows.Forms.Button TilføjKunde;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayout;
     }
 }
