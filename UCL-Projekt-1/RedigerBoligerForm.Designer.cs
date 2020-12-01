@@ -284,7 +284,7 @@ namespace UCL_Projekt_1 {
             this.Controls.Add(this.Bolig_id);
             this.Controls.Add(this.Adresse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RedigerBoligerForm";
             this.Text = "Boliger";
             this.ResumeLayout(false);

@@ -99,8 +99,8 @@
             // 
             this.BodyPanel.AutoSize = true;
             this.BodyPanel.BackColor = System.Drawing.Color.White;
-            this.BodyPanel.Controls.Add(this.flowLayoutPanel1);
             this.BodyPanel.Controls.Add(this.Body);
+            this.BodyPanel.Controls.Add(this.flowLayoutPanel1);
             this.BodyPanel.Controls.Add(this.button1);
             this.BodyPanel.Controls.Add(this.Logo);
             this.BodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -205,11 +205,13 @@
             // 
             // Body
             // 
-            this.Body.AutoSize = true;
-            this.Body.Location = new System.Drawing.Point(0, 196);
+            this.Body.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Body.Location = new System.Drawing.Point(4, 197);
             this.Body.Margin = new System.Windows.Forms.Padding(4);
             this.Body.Name = "Body";
-            this.Body.Size = new System.Drawing.Size(1920, 748);
+            this.Body.Size = new System.Drawing.Size(1912, 747);
             this.Body.TabIndex = 5;
             // 
             // button1

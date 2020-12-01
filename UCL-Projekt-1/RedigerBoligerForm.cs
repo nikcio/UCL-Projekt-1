@@ -21,6 +21,12 @@ namespace UCL_Projekt_1 {
             _baseForm = form;
         }
 
+        public RedigerBoligerForm(BaseForm form, int id) {
+            InitializeComponent();
+            _baseForm = form;
+            VisInformation(id.ToString());
+        }
+
         private void Opret_Click(object sender, EventArgs e)
         {
             //OPRET
@@ -50,8 +56,12 @@ namespace UCL_Projekt_1 {
 
         private void Vis_Click(object sender, EventArgs e)
         {
+            VisInformation(Bolig_id_tb.Text);
+        }
+
+        private void VisInformation(string id) {
             //VIS
-            Bolig b = SQLRead.VisBolig(Bolig_id_tb.Text);
+            Bolig b = SQLRead.VisBolig(id);
             Adresse_tb.Text = b.Addresse;
             Grund_areal_tb.Text = b.Grund_areal.ToString();
             Bolig_areal_tb.Text = b.Bolig_areal.ToString();
