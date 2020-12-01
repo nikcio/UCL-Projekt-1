@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UCL_Projekt_1.Models;
 
 namespace UCL_Projekt_1 {
     public partial class BoligerForm : Form {
@@ -16,17 +17,6 @@ namespace UCL_Projekt_1 {
             InitializeComponent();
             _baseForm = form;
             VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
-            VisBoliger();
         }
 
         private void TilføjBolig_Click(object sender, EventArgs e) {
@@ -34,6 +24,16 @@ namespace UCL_Projekt_1 {
         }
 
         private void VisBoliger() {
+            Bolig[] boliger = SQLRead.LoadBoliger();
+            foreach (var item in boliger) {
+                string[] adresse = item.Addresse.Split(',');
+                if(adresse.Length == 2) {
+                    VisEnBolig(adresse[0], adresse[1], item.Udbuds_pris.ToString(), item.Bolig_Id);
+                }
+            }
+        }
+
+        private void VisEnBolig(string adresse, string by, string pris, int id) {
             var Bolig = new Panel();
             var Adresse = new Label();
             var By = new Label();
@@ -58,7 +58,7 @@ namespace UCL_Projekt_1 {
             Adresse.Name = "Adresse";
             Adresse.Size = new Size(125, 17);
             Adresse.TabIndex = 0;
-            Adresse.Text = "Vejlevej 251, Lønå";
+            Adresse.Text = adresse;
             // 
             // By
             // 
@@ -67,7 +67,7 @@ namespace UCL_Projekt_1 {
             By.Name = "By";
             By.Size = new Size(73, 17);
             By.TabIndex = 1;
-            By.Text = "7323 Give";
+            By.Text = by;
             // 
             // Pris
             // 
@@ -76,7 +76,7 @@ namespace UCL_Projekt_1 {
             Pris.Name = "Pris";
             Pris.Size = new Size(80, 17);
             Pris.TabIndex = 2;
-            Pris.Text = "400.000 kr.";
+            Pris.Text = pris;
             // 
             // SeBolig
             // 
@@ -86,8 +86,13 @@ namespace UCL_Projekt_1 {
             SeBolig.TabIndex = 3;
             SeBolig.Text = "Se bolig";
             SeBolig.UseVisualStyleBackColor = true;
+            SeBolig.Click += new EventHandler((sender, e) => SeBolig_Click(sender, e, id));
 
             FlowLayout.Controls.Add(Bolig);
+        }
+
+        private void SeBolig_Click(object sender, EventArgs e, int id) {
+            _baseForm.OpenChildForm(new RedigerBoligerForm(_baseForm, id));
         }
     }
 }

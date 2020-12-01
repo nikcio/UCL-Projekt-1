@@ -1,5 +1,5 @@
 ﻿namespace UCL_Projekt_1 {
-    partial class TemplateForm {
+    partial class BoligTemplateForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,10 +24,10 @@
         /// </summary>
         private void InitializeComponent() {
             this.Bolig = new System.Windows.Forms.Panel();
-            this.Adresse = new System.Windows.Forms.Label();
-            this.By = new System.Windows.Forms.Label();
-            this.Pris = new System.Windows.Forms.Label();
             this.SeBolig = new System.Windows.Forms.Button();
+            this.Pris = new System.Windows.Forms.Label();
+            this.By = new System.Windows.Forms.Label();
+            this.Adresse = new System.Windows.Forms.Label();
             this.Bolig.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,23 +42,15 @@
             this.Bolig.Size = new System.Drawing.Size(327, 208);
             this.Bolig.TabIndex = 0;
             // 
-            // Adresse
+            // SeBolig
             // 
-            this.Adresse.AutoSize = true;
-            this.Adresse.Location = new System.Drawing.Point(23, 25);
-            this.Adresse.Name = "Adresse";
-            this.Adresse.Size = new System.Drawing.Size(125, 17);
-            this.Adresse.TabIndex = 0;
-            this.Adresse.Text = "Vejlevej 251, Lønå";
-            // 
-            // By
-            // 
-            this.By.AutoSize = true;
-            this.By.Location = new System.Drawing.Point(26, 58);
-            this.By.Name = "By";
-            this.By.Size = new System.Drawing.Size(73, 17);
-            this.By.TabIndex = 1;
-            this.By.Text = "7323 Give";
+            this.SeBolig.Location = new System.Drawing.Point(29, 145);
+            this.SeBolig.Name = "SeBolig";
+            this.SeBolig.Size = new System.Drawing.Size(84, 32);
+            this.SeBolig.TabIndex = 3;
+            this.SeBolig.Text = "Se bolig";
+            this.SeBolig.UseVisualStyleBackColor = true;
+            this.SeBolig.Click += new System.EventHandler(this.SeBolig_Click);
             // 
             // Pris
             // 
@@ -69,14 +61,23 @@
             this.Pris.TabIndex = 2;
             this.Pris.Text = "400.000 kr.";
             // 
-            // SeBolig
+            // By
             // 
-            this.SeBolig.Location = new System.Drawing.Point(29, 145);
-            this.SeBolig.Name = "SeBolig";
-            this.SeBolig.Size = new System.Drawing.Size(84, 32);
-            this.SeBolig.TabIndex = 3;
-            this.SeBolig.Text = "Se bolig";
-            this.SeBolig.UseVisualStyleBackColor = true;
+            this.By.AutoSize = true;
+            this.By.Location = new System.Drawing.Point(26, 58);
+            this.By.Name = "By";
+            this.By.Size = new System.Drawing.Size(73, 17);
+            this.By.TabIndex = 1;
+            this.By.Text = "7323 Give";
+            // 
+            // Adresse
+            // 
+            this.Adresse.AutoSize = true;
+            this.Adresse.Location = new System.Drawing.Point(23, 25);
+            this.Adresse.Name = "Adresse";
+            this.Adresse.Size = new System.Drawing.Size(125, 17);
+            this.Adresse.TabIndex = 0;
+            this.Adresse.Text = "Vejlevej 251, Lønå";
             // 
             // TemplateForm
             // 
