@@ -41,10 +41,10 @@ namespace UCL_Projekt_1 {
             // Slet_mægler
             // 
             this.Slet_mægler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Slet_mægler.Location = new System.Drawing.Point(825, 420);
+            this.Slet_mægler.Location = new System.Drawing.Point(960, 397);
             this.Slet_mægler.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Slet_mægler.Name = "Slet_mægler";
-            this.Slet_mægler.Size = new System.Drawing.Size(208, 42);
+            this.Slet_mægler.Size = new System.Drawing.Size(234, 49);
             this.Slet_mægler.TabIndex = 32;
             this.Slet_mægler.Text = "Slet mægler";
             this.Slet_mægler.UseVisualStyleBackColor = true;
@@ -53,10 +53,10 @@ namespace UCL_Projekt_1 {
             // Rediger_mægler
             // 
             this.Rediger_mægler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rediger_mægler.Location = new System.Drawing.Point(825, 339);
+            this.Rediger_mægler.Location = new System.Drawing.Point(960, 301);
             this.Rediger_mægler.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Rediger_mægler.Name = "Rediger_mægler";
-            this.Rediger_mægler.Size = new System.Drawing.Size(208, 42);
+            this.Rediger_mægler.Size = new System.Drawing.Size(234, 49);
             this.Rediger_mægler.TabIndex = 31;
             this.Rediger_mægler.Text = "Rediger mægler";
             this.Rediger_mægler.UseVisualStyleBackColor = true;
@@ -65,10 +65,10 @@ namespace UCL_Projekt_1 {
             // Vis_mægler
             // 
             this.Vis_mægler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vis_mægler.Location = new System.Drawing.Point(825, 258);
+            this.Vis_mægler.Location = new System.Drawing.Point(960, 211);
             this.Vis_mægler.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Vis_mægler.Name = "Vis_mægler";
-            this.Vis_mægler.Size = new System.Drawing.Size(208, 42);
+            this.Vis_mægler.Size = new System.Drawing.Size(234, 49);
             this.Vis_mægler.TabIndex = 30;
             this.Vis_mægler.Text = "Vis mægler";
             this.Vis_mægler.UseVisualStyleBackColor = true;
@@ -77,10 +77,10 @@ namespace UCL_Projekt_1 {
             // Opret_mægler
             // 
             this.Opret_mægler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Opret_mægler.Location = new System.Drawing.Point(365, 405);
+            this.Opret_mægler.Location = new System.Drawing.Point(425, 391);
             this.Opret_mægler.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Opret_mægler.Name = "Opret_mægler";
-            this.Opret_mægler.Size = new System.Drawing.Size(190, 42);
+            this.Opret_mægler.Size = new System.Drawing.Size(234, 49);
             this.Opret_mægler.TabIndex = 29;
             this.Opret_mægler.Text = "Opret mægler";
             this.Opret_mægler.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@ namespace UCL_Projekt_1 {
             // Mægler_email_tb
             // 
             this.Mægler_email_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mægler_email_tb.Location = new System.Drawing.Point(473, 309);
+            this.Mægler_email_tb.Location = new System.Drawing.Point(1029, 144);
             this.Mægler_email_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Mægler_email_tb.Name = "Mægler_email_tb";
             this.Mægler_email_tb.Size = new System.Drawing.Size(165, 35);
@@ -98,7 +98,7 @@ namespace UCL_Projekt_1 {
             // Mægler_telefon_tb
             // 
             this.Mægler_telefon_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mægler_telefon_tb.Location = new System.Drawing.Point(473, 226);
+            this.Mægler_telefon_tb.Location = new System.Drawing.Point(484, 301);
             this.Mægler_telefon_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Mægler_telefon_tb.Name = "Mægler_telefon_tb";
             this.Mægler_telefon_tb.Size = new System.Drawing.Size(165, 35);
@@ -107,7 +107,7 @@ namespace UCL_Projekt_1 {
             // Mægler_navn_tb
             // 
             this.Mægler_navn_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mægler_navn_tb.Location = new System.Drawing.Point(473, 142);
+            this.Mægler_navn_tb.Location = new System.Drawing.Point(484, 222);
             this.Mægler_navn_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Mægler_navn_tb.Name = "Mægler_navn_tb";
             this.Mægler_navn_tb.Size = new System.Drawing.Size(165, 35);
@@ -116,7 +116,7 @@ namespace UCL_Projekt_1 {
             // Mægler_id_tb
             // 
             this.Mægler_id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mægler_id_tb.Location = new System.Drawing.Point(903, 142);
+            this.Mægler_id_tb.Location = new System.Drawing.Point(484, 144);
             this.Mægler_id_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Mægler_id_tb.Name = "Mægler_id_tb";
             this.Mægler_id_tb.Size = new System.Drawing.Size(165, 35);
@@ -156,7 +156,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Kunde_id.AutoSize = true;
             this.Kunde_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kunde_id.Location = new System.Drawing.Point(769, 148);
+            this.Kunde_id.Location = new System.Drawing.Point(831, 148);
             this.Kunde_id.Name = "Kunde_id";
             this.Kunde_id.Size = new System.Drawing.Size(128, 29);
             this.Kunde_id.TabIndex = 17;

@@ -51,7 +51,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Adresse.AutoSize = true;
             this.Adresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Adresse.Location = new System.Drawing.Point(246, 35);
+            this.Adresse.Location = new System.Drawing.Point(241, 96);
             this.Adresse.Name = "Adresse";
             this.Adresse.Size = new System.Drawing.Size(102, 29);
             this.Adresse.TabIndex = 0;
@@ -71,7 +71,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Udbudspris.AutoSize = true;
             this.Udbudspris.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Udbudspris.Location = new System.Drawing.Point(246, 293);
+            this.Udbudspris.Location = new System.Drawing.Point(243, 358);
             this.Udbudspris.Name = "Udbudspris";
             this.Udbudspris.Size = new System.Drawing.Size(137, 29);
             this.Udbudspris.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Grund_areal.AutoSize = true;
             this.Grund_areal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grund_areal.Location = new System.Drawing.Point(246, 105);
+            this.Grund_areal.Location = new System.Drawing.Point(241, 152);
             this.Grund_areal.Name = "Grund_areal";
             this.Grund_areal.Size = new System.Drawing.Size(139, 29);
             this.Grund_areal.TabIndex = 3;
@@ -91,7 +91,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Bolig_areal.AutoSize = true;
             this.Bolig_areal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_areal.Location = new System.Drawing.Point(246, 167);
+            this.Bolig_areal.Location = new System.Drawing.Point(241, 219);
             this.Bolig_areal.Name = "Bolig_areal";
             this.Bolig_areal.Size = new System.Drawing.Size(129, 29);
             this.Bolig_areal.TabIndex = 4;
@@ -101,7 +101,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Bolig_type.AutoSize = true;
             this.Bolig_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_type.Location = new System.Drawing.Point(246, 231);
+            this.Bolig_type.Location = new System.Drawing.Point(241, 286);
             this.Bolig_type.Name = "Bolig_type";
             this.Bolig_type.Size = new System.Drawing.Size(120, 29);
             this.Bolig_type.TabIndex = 5;
@@ -129,7 +129,7 @@ namespace UCL_Projekt_1 {
             // Adresse_tb
             // 
             this.Adresse_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Adresse_tb.Location = new System.Drawing.Point(506, 49);
+            this.Adresse_tb.Location = new System.Drawing.Point(506, 96);
             this.Adresse_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Adresse_tb.Name = "Adresse_tb";
             this.Adresse_tb.Size = new System.Drawing.Size(139, 35);
@@ -138,7 +138,7 @@ namespace UCL_Projekt_1 {
             // Grund_areal_tb
             // 
             this.Grund_areal_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grund_areal_tb.Location = new System.Drawing.Point(506, 99);
+            this.Grund_areal_tb.Location = new System.Drawing.Point(506, 152);
             this.Grund_areal_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Grund_areal_tb.Name = "Grund_areal_tb";
             this.Grund_areal_tb.Size = new System.Drawing.Size(139, 35);
@@ -147,7 +147,7 @@ namespace UCL_Projekt_1 {
             // Bolig_areal_tb
             // 
             this.Bolig_areal_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_areal_tb.Location = new System.Drawing.Point(506, 161);
+            this.Bolig_areal_tb.Location = new System.Drawing.Point(506, 219);
             this.Bolig_areal_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Bolig_areal_tb.Name = "Bolig_areal_tb";
             this.Bolig_areal_tb.Size = new System.Drawing.Size(139, 35);
@@ -156,7 +156,7 @@ namespace UCL_Projekt_1 {
             // Bolig_type_tb
             // 
             this.Bolig_type_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_type_tb.Location = new System.Drawing.Point(506, 225);
+            this.Bolig_type_tb.Location = new System.Drawing.Point(506, 286);
             this.Bolig_type_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Bolig_type_tb.Name = "Bolig_type_tb";
             this.Bolig_type_tb.Size = new System.Drawing.Size(139, 35);
@@ -165,7 +165,7 @@ namespace UCL_Projekt_1 {
             // Udbudspris_tb
             // 
             this.Udbudspris_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Udbudspris_tb.Location = new System.Drawing.Point(506, 293);
+            this.Udbudspris_tb.Location = new System.Drawing.Point(506, 358);
             this.Udbudspris_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Udbudspris_tb.Name = "Udbudspris_tb";
             this.Udbudspris_tb.Size = new System.Drawing.Size(139, 35);
@@ -173,6 +173,7 @@ namespace UCL_Projekt_1 {
             // 
             // Opret
             // 
+            this.Opret.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Opret.Location = new System.Drawing.Point(342, 528);
             this.Opret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret.Name = "Opret";
@@ -184,6 +185,7 @@ namespace UCL_Projekt_1 {
             // 
             // Vis
             // 
+            this.Vis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Vis.Location = new System.Drawing.Point(893, 185);
             this.Vis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Vis.Name = "Vis";
@@ -195,6 +197,7 @@ namespace UCL_Projekt_1 {
             // 
             // Rediger
             // 
+            this.Rediger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Rediger.Location = new System.Drawing.Point(893, 268);
             this.Rediger.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Rediger.Name = "Rediger";
@@ -206,6 +209,7 @@ namespace UCL_Projekt_1 {
             // 
             // Slet
             // 
+            this.Slet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Slet.Location = new System.Drawing.Point(893, 348);
             this.Slet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Slet.Name = "Slet";
