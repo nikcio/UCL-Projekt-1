@@ -119,7 +119,7 @@ namespace UCL_Projekt_1 {
             return Ejendomsmæglere.ToArray();
         }
 
-        public static Ejendomsmægler VisEjendomsmægler(int id) {
+        public static Ejendomsmægler VisEjendomsmægler(string id) {
             List<Ejendomsmægler> Ejendomsmæglere = new List<Ejendomsmægler>();
 
             SqlCommand command = new SqlCommand("SELECT * FROM Ejendomsmægler WHERE Mægler_Id=@id", BaseForm.conn);

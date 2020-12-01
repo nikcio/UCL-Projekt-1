@@ -29,7 +29,7 @@ namespace UCL_Projekt_1 {
             string path = $"{Environment.CurrentDirectory}/SolgteBoliger.txt";
             using (StreamWriter streamWriter = new StreamWriter(path)) {
                 foreach(Bolig item in boliger) {
-                    Ejendomsmægler mægler = SQLRead.VisEjendomsmægler((int)item.Mægler_Id);
+                    Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(item.Mægler_Id.ToString());
                     string mæglerInfo = "";
                     if(mægler != null) {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
@@ -45,7 +45,7 @@ namespace UCL_Projekt_1 {
             string path = $"{Environment.CurrentDirectory}/TilSalgBoliger.txt";
             using (StreamWriter streamWriter = new StreamWriter(path)) {
                 foreach (Bolig item in boliger) {
-                    Ejendomsmægler mægler = SQLRead.VisEjendomsmægler((int)item.Mægler_Id);
+                    Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(item.Mægler_Id.ToString());
                     string mæglerInfo = "";
                     if (mægler != null) {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
@@ -61,7 +61,7 @@ namespace UCL_Projekt_1 {
             string path = $"{Environment.CurrentDirectory}/AreaBoliger.txt";
             using (StreamWriter streamWriter = new StreamWriter(path)) {
                 foreach (Bolig item in boliger) {
-                    Ejendomsmægler mægler = SQLRead.VisEjendomsmægler((int)item.Mægler_Id);
+                    Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(item.Mægler_Id.ToString());
                     string mæglerInfo = "";
                     if (mægler != null) {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
