@@ -24,17 +24,28 @@ namespace UCL_Projekt_1 {
         private void Opret_Click(object sender, EventArgs e)
         {
             //OPRET
-            string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @Status_tb)";
+            string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt)";
             SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
             command.Parameters.AddWithValue("@Adresse_tb", Adresse_tb.Text);
             command.Parameters.AddWithValue("@Grund_areal_tb", Grund_areal_tb.Text);
             command.Parameters.AddWithValue("@Bolig_areal_tb", Bolig_areal_tb.Text);
             command.Parameters.AddWithValue("@Bolig_type_tb", Bolig_type_tb.Text);
             command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
-            command.Parameters.AddWithValue("@Status_tb", Status_tb.Text);
-            BaseForm.conn.Open();
-            command.ExecuteNonQuery();
-            BaseForm.conn.Close();
+            command.Parameters.AddWithValue("@solgt", solgt.Checked);
+
+
+            try
+            {
+                BaseForm.conn.Open();
+                command.ExecuteNonQuery();
+                BaseForm.conn.Close();
+                MessageBox.Show("Bolig oprettet" /*+Opret*/);
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Der opstod en fejl, prøv igen " + Opret);
+            }
         }
 
         private void Vis_Click(object sender, EventArgs e)
@@ -46,7 +57,20 @@ namespace UCL_Projekt_1 {
             Bolig_areal_tb.Text = b.Bolig_areal.ToString();
             Bolig_type_tb.Text = b.Boligtype;
             Udbudspris_tb.Text = b.Udbuds_pris.ToString();
-            Status_tb.Text = b.Solgt.ToString();
+            solgt.Checked = b.Solgt;
+
+            try
+            {
+               /* BaseForm.conn.Open();
+                command.ExecuteNonQuery();
+                BaseForm.conn.Close();*/
+                //MessageBox.Show("Bolig oprettet");
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Der opstod en fejl, prøv igen ");
+            }
         }
 
         private void Rediger_Click(object sender, EventArgs e)
@@ -56,7 +80,7 @@ namespace UCL_Projekt_1 {
             SqlCommand command = new SqlCommand(Rediger, BaseForm.conn);
             command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
             command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
-            command.Parameters.AddWithValue("@Status_tb", Status_tb.Text);
+            command.Parameters.AddWithValue("@Status_tb", solgt.Checked);
             BaseForm.conn.Open();
             command.ExecuteNonQuery();
             BaseForm.conn.Close();
