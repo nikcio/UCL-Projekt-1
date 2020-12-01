@@ -229,7 +229,7 @@ namespace UCL_Projekt_1 {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1946, 935);
+            this.ClientSize = new System.Drawing.Size(1520, 748);
             this.Controls.Add(this.Slet);
             this.Controls.Add(this.Rediger);
             this.Controls.Add(this.Vis);
@@ -249,7 +249,7 @@ namespace UCL_Projekt_1 {
             this.Controls.Add(this.Bolig_id);
             this.Controls.Add(this.Adresse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RedigerBoligerForm";
             this.Text = "Boliger";
             this.ResumeLayout(false);

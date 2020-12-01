@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.TilføjBolig = new System.Windows.Forms.Button();
+            this.FlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // TilføjBolig
@@ -36,11 +37,24 @@
             this.TilføjBolig.UseVisualStyleBackColor = true;
             this.TilføjBolig.Click += new System.EventHandler(this.TilføjBolig_Click);
             // 
+            // FlowLayout
+            // 
+            this.FlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FlowLayout.AutoScroll = true;
+            this.FlowLayout.Location = new System.Drawing.Point(12, 65);
+            this.FlowLayout.Name = "FlowLayout";
+            this.FlowLayout.Size = new System.Drawing.Size(1496, 671);
+            this.FlowLayout.TabIndex = 0;
+            // 
             // BoligerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 748);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1520, 748);
+            this.Controls.Add(this.FlowLayout);
             this.Controls.Add(this.TilføjBolig);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BoligerForm";
@@ -52,5 +66,6 @@
         #endregion
 
         private System.Windows.Forms.Button TilføjBolig;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayout;
     }
 }
