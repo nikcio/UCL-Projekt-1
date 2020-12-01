@@ -33,28 +33,34 @@ namespace UCL_Projekt_1
 
         private void Opret_Click(object sender, EventArgs e)
         {
-            //OPRET
-            string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt)";
-            SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
-            command.Parameters.AddWithValue("@Adresse_tb", Adresse_tb.Text);
-            command.Parameters.AddWithValue("@Grund_areal_tb", Grund_areal_tb.Text);
-            command.Parameters.AddWithValue("@Bolig_areal_tb", Bolig_areal_tb.Text);
-            command.Parameters.AddWithValue("@Bolig_type_tb", Bolig_type_tb.Text);
-            command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
-            command.Parameters.AddWithValue("@solgt", solgt.Checked);
-
-
-            try
+            if (TjekBolig() == true)
             {
-                BaseForm.conn.Open();
-                command.ExecuteNonQuery();
-                BaseForm.conn.Close();
-                MessageBox.Show("Bolig oprettet" /*+Opret*/);
+                //OPRET
+                string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt)";
+                SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
+                command.Parameters.AddWithValue("@Adresse_tb", Adresse_tb.Text);
+                command.Parameters.AddWithValue("@Grund_areal_tb", Grund_areal_tb.Text);
+                command.Parameters.AddWithValue("@Bolig_areal_tb", Bolig_areal_tb.Text);
+                command.Parameters.AddWithValue("@Bolig_type_tb", Bolig_type_tb.Text);
+                command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
+                command.Parameters.AddWithValue("@solgt", solgt.Checked);
 
+                try
+                {
+                    BaseForm.conn.Open();
+                    command.ExecuteNonQuery();
+                    BaseForm.conn.Close();
+                    MessageBox.Show("Bolig oprettet" /*+Opret*/);
+
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("Der opstod en fejl, prøv igen " + Opret);
+                }
             }
-            catch (Exception exc)
+            else
             {
-                MessageBox.Show("Der opstod en fejl, prøv igen " + Opret);
+                MessageBox.Show("Der opstod en fejl, prøv igen");
             }
         }
 
@@ -87,7 +93,7 @@ namespace UCL_Projekt_1
 
         private void Rediger_Click(object sender, EventArgs e)
         {
-            if (TjekRedigeringsværdier() == true)
+            if (TjekBolig() == true)
             {
                 //REDIGER
                 string Rediger = $"UPDATE Bolig SET Udbuds_pris=@Udbudspris_tb, Solgt=@Status_tb WHERE Bolig_id = @Bolig_id_tb";
@@ -116,7 +122,19 @@ namespace UCL_Projekt_1
             
         }
 
-        private bool TjekRedigeringsværdier()
+      
+        private void Slet_Click(object sender, EventArgs e)
+        {
+            //SLET
+            string Slet = $"DELETE FROM Bolig WHERE Bolig_id = @Bolig_id_tb";
+            SqlCommand command = new SqlCommand(Slet, BaseForm.conn);
+            command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
+            BaseForm.conn.Open();
+            command.ExecuteNonQuery();
+            BaseForm.conn.Close();
+        }
+
+        private bool TjekBolig()
         {
             int i = 0;
             if (!int.TryParse(Bolig_id_tb.Text, out i))
@@ -125,7 +143,7 @@ namespace UCL_Projekt_1
             }
 
             int j = 0;
-            if(!int.TryParse(Grund_areal_tb.Text, out j))
+            if (!int.TryParse(Grund_areal_tb.Text, out j))
             {
                 return false;
             }
@@ -151,15 +169,5 @@ namespace UCL_Projekt_1
             return true;
         }
 
-        private void Slet_Click(object sender, EventArgs e)
-        {
-            //SLET
-            string Slet = $"DELETE FROM Bolig WHERE Bolig_id = @Bolig_id_tb";
-            SqlCommand command = new SqlCommand(Slet, BaseForm.conn);
-            command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
-            BaseForm.conn.Open();
-            command.ExecuteNonQuery();
-            BaseForm.conn.Close();
-        }
     }
 }
