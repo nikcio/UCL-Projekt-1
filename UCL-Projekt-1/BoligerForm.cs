@@ -9,31 +9,39 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UCL_Projekt_1.Models;
 
-namespace UCL_Projekt_1 {
-    public partial class BoligerForm : Form {
+namespace UCL_Projekt_1
+{
+    public partial class BoligerForm : Form
+    {
         private BaseForm _baseForm;
 
-        public BoligerForm(BaseForm form) {
+        public BoligerForm(BaseForm form)
+        {
             InitializeComponent();
             _baseForm = form;
             VisBoliger();
         }
 
-        private void TilføjBolig_Click(object sender, EventArgs e) {
+        private void TilføjBolig_Click(object sender, EventArgs e)
+        {
             _baseForm.OpenChildForm(new RedigerBoligerForm(_baseForm));
         }
 
-        private void VisBoliger() {
+        private void VisBoliger()
+        {
             Bolig[] boliger = SQLRead.LoadBoliger();
-            foreach (var item in boliger) {
+            foreach (var item in boliger)
+            {
                 string[] adresse = item.Addresse.Split(',');
-                if(adresse.Length == 2) {
+                if (adresse.Length == 2)
+                {
                     VisEnBolig(adresse[0], adresse[1], item.Udbuds_pris.ToString(), item.Bolig_Id);
                 }
             }
         }
 
-        private void VisEnBolig(string adresse, string by, string pris, int id) {
+        private void VisEnBolig(string adresse, string by, string pris, int id)
+        {
             var Bolig = new Panel();
             var Adresse = new Label();
             var By = new Label();
@@ -91,7 +99,8 @@ namespace UCL_Projekt_1 {
             FlowLayout.Controls.Add(Bolig);
         }
 
-        private void SeBolig_Click(object sender, EventArgs e, int id) {
+        private void SeBolig_Click(object sender, EventArgs e, int id)
+        {
             _baseForm.OpenChildForm(new RedigerBoligerForm(_baseForm, id));
         }
     }

@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UCL_Projekt_1 {
-    public partial class BoligTemplateForm : Form {
-        public BoligTemplateForm() {
+namespace UCL_Projekt_1
+{
+    public partial class BoligTemplateForm : Form
+    {
+        public BoligTemplateForm()
+        {
             InitializeComponent();
         }
 
-        private void SeBolig_Click(object sender, EventArgs e) {
+        private void SeBolig_Click(object sender, EventArgs e)
+        {
 
         }
     }

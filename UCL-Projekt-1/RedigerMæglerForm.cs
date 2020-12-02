@@ -11,17 +11,21 @@ using System.Data.SqlClient;
 using UCL_Projekt_1.Models;
 using System.Text.RegularExpressions;
 
-namespace UCL_Projekt_1 {
-    public partial class RedigerMæglerForm : Form {
+namespace UCL_Projekt_1
+{
+    public partial class RedigerMæglerForm : Form
+    {
 
         private BaseForm _baseForm;
 
-        public RedigerMæglerForm(BaseForm form) {
+        public RedigerMæglerForm(BaseForm form)
+        {
             InitializeComponent();
             _baseForm = form;
         }
 
-        public RedigerMæglerForm(BaseForm form, int id) {
+        public RedigerMæglerForm(BaseForm form, int id)
+        {
             InitializeComponent();
             _baseForm = form;
             VisInformation(id.ToString());
@@ -58,7 +62,7 @@ namespace UCL_Projekt_1 {
             {
                 MessageBox.Show("Der opstod en fejl, prøv igen ");
             }
-        
+
         }
 
         private void Find_mægler_Click(object sender, EventArgs e)
@@ -66,7 +70,8 @@ namespace UCL_Projekt_1 {
             VisInformation(Mægler_id_tb.Text);
         }
 
-        private void VisInformation(string id) {
+        private void VisInformation(string id)
+        {
             //VIS
             Ejendomsmægler m = SQLRead.VisEjendomsmægler(id);
             Mægler_navn_tb.Text = m.Navn.ToString();
@@ -107,7 +112,7 @@ namespace UCL_Projekt_1 {
             {
                 MessageBox.Show("Der opstod en fejl, prøv igen ");
             }
-        
+
         }
 
 

@@ -9,29 +9,36 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UCL_Projekt_1.Models;
 
-namespace UCL_Projekt_1 {
-    public partial class KunderForm : Form {
+namespace UCL_Projekt_1
+{
+    public partial class KunderForm : Form
+    {
 
         private BaseForm _baseForm;
 
-        public KunderForm(BaseForm form) {
+        public KunderForm(BaseForm form)
+        {
             InitializeComponent();
             _baseForm = form;
             VisKunder();
         }
 
-        private void TilføjKunde_Click(object sender, EventArgs e) {
+        private void TilføjKunde_Click(object sender, EventArgs e)
+        {
             _baseForm.OpenChildForm(new RedigerKunderForm(_baseForm));
         }
 
-        private void VisKunder() {
-            Kunde[] kunder =  SQLRead.LoadKunder();
-            foreach(var item in kunder) {
+        private void VisKunder()
+        {
+            Kunde[] kunder = SQLRead.LoadKunder();
+            foreach (var item in kunder)
+            {
                 VisEnKunde(item.Kunde_Id.ToString(), item.Navn, item.Email, item.Telefon.ToString(), (bool)item.Er_køber, (bool)item.Er_sælger);
             }
         }
 
-        private void VisEnKunde(string id, string navn, string email, string tlf, bool Er_køber, bool Er_sælger) {
+        private void VisEnKunde(string id, string navn, string email, string tlf, bool Er_køber, bool Er_sælger)
+        {
             var Kunde = new Panel();
             var KundeId = new Label();
             var Navn = new Label();
