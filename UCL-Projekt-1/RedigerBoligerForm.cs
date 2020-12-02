@@ -10,18 +10,22 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using UCL_Projekt_1.Models;
 
-namespace UCL_Projekt_1 {
+namespace UCL_Projekt_1
+{
 
-    public partial class RedigerBoligerForm : Form {
+    public partial class RedigerBoligerForm : Form
+    {
 
         private BaseForm _baseForm;
 
-        public RedigerBoligerForm(BaseForm form) {
+        public RedigerBoligerForm(BaseForm form)
+        {
             InitializeComponent();
             _baseForm = form;
         }
 
-        public RedigerBoligerForm(BaseForm form, int id) {
+        public RedigerBoligerForm(BaseForm form, int id)
+        {
             InitializeComponent();
             _baseForm = form;
             VisInformation(id.ToString());
@@ -29,28 +33,34 @@ namespace UCL_Projekt_1 {
 
         private void Opret_Click(object sender, EventArgs e)
         {
-            //OPRET
-            string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt)";
-            SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
-            command.Parameters.AddWithValue("@Adresse_tb", Adresse_tb.Text);
-            command.Parameters.AddWithValue("@Grund_areal_tb", Grund_areal_tb.Text);
-            command.Parameters.AddWithValue("@Bolig_areal_tb", Bolig_areal_tb.Text);
-            command.Parameters.AddWithValue("@Bolig_type_tb", Bolig_type_tb.Text);
-            command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
-            command.Parameters.AddWithValue("@solgt", solgt.Checked);
-
-
-            try
+            if (TjekBolig() == true)
             {
-                BaseForm.conn.Open();
-                command.ExecuteNonQuery();
-                BaseForm.conn.Close();
-                MessageBox.Show("Bolig oprettet" /*+Opret*/);
+                //OPRET
+                string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt)";
+                SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
+                command.Parameters.AddWithValue("@Adresse_tb", Adresse_tb.Text);
+                command.Parameters.AddWithValue("@Grund_areal_tb", Grund_areal_tb.Text);
+                command.Parameters.AddWithValue("@Bolig_areal_tb", Bolig_areal_tb.Text);
+                command.Parameters.AddWithValue("@Bolig_type_tb", Bolig_type_tb.Text);
+                command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
+                command.Parameters.AddWithValue("@solgt", solgt.Checked);
 
+                try
+                {
+                    BaseForm.conn.Open();
+                    command.ExecuteNonQuery();
+                    BaseForm.conn.Close();
+                    MessageBox.Show("Bolig oprettet" /*+Opret*/);
+
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("Der opstod en fejl, prøv igen " + Opret);
+                }
             }
-            catch (Exception exc)
+            else
             {
-                MessageBox.Show("Der opstod en fejl, prøv igen " + Opret);
+                MessageBox.Show("Der opstod en fejl, prøv igen");
             }
         }
 
@@ -59,54 +69,105 @@ namespace UCL_Projekt_1 {
             VisInformation(Bolig_id_tb.Text);
         }
 
-        private void VisInformation(string id) {
+        private void VisInformation(string id)
+        {
             //VIS
             Bolig b = SQLRead.VisBolig(id);
-            Adresse_tb.Text = b.Addresse;
-            Grund_areal_tb.Text = b.Grund_areal.ToString();
-            Bolig_areal_tb.Text = b.Bolig_areal.ToString();
-            Bolig_type_tb.Text = b.Boligtype;
-            Udbudspris_tb.Text = b.Udbuds_pris.ToString();
-            solgt.Checked = b.Solgt;
-            Bolig_id_tb.Text = b.Bolig_Id.ToString();
-            Mægler_id_tb.Text = b.Mægler_Id.ToString();
-
-            try
+            if (b != null)
             {
-               /* BaseForm.conn.Open();
-                command.ExecuteNonQuery();
-                BaseForm.conn.Close();*/
-                //MessageBox.Show("Bolig oprettet");
-
+                Adresse_tb.Text = b.Addresse;
+                Grund_areal_tb.Text = b.Grund_areal.ToString();
+                Bolig_areal_tb.Text = b.Bolig_areal.ToString();
+                Bolig_type_tb.Text = b.Boligtype;
+                Udbudspris_tb.Text = b.Udbuds_pris.ToString();
+                solgt.Checked = b.Solgt;
+                Bolig_id_tb.Text = b.Bolig_Id.ToString();
+                Mægler_id_tb.Text = b.Mægler_Id.ToString();
             }
-            catch (Exception exc)
+            else
             {
-                MessageBox.Show("Der opstod en fejl, prøv igen ");
+                MessageBox.Show("Der opstod en fejl, prøv igen");
             }
+
         }
 
         private void Rediger_Click(object sender, EventArgs e)
         {
-            //REDIGER
-            string Rediger = $"UPDATE Bolig SET Udbuds_pris=@Udbudspris_tb, Solgt=@Status_tb WHERE Bolig_id = @Bolig_id_tb";
-            SqlCommand command = new SqlCommand(Rediger, BaseForm.conn);
+            if (TjekBolig() == true)
+            {
+                //REDIGER
+                string Rediger = $"UPDATE Bolig SET Udbuds_pris=@Udbudspris_tb, Solgt=@Status_tb WHERE Bolig_id = @Bolig_id_tb";
+                SqlCommand command = new SqlCommand(Rediger, BaseForm.conn);
+                command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
+                command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
+                command.Parameters.AddWithValue("@Status_tb", solgt.Checked);
+
+                try
+                {
+                    BaseForm.conn.Open();
+                    command.ExecuteNonQuery();
+                    BaseForm.conn.Close();
+                    MessageBox.Show("Bolig redigeret" /*Rediger*/);
+
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("Der opstod en fejl, prøv igen " + Rediger);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Der opstod en fejl, prøv igen ");
+            }
+            
+        }
+
+      
+        private void Slet_Click(object sender, EventArgs e)
+        {
+            //SLET
+            string Slet = $"DELETE FROM Bolig WHERE Bolig_id = @Bolig_id_tb";
+            SqlCommand command = new SqlCommand(Slet, BaseForm.conn);
             command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
-            command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
-            command.Parameters.AddWithValue("@Status_tb", solgt.Checked);
             BaseForm.conn.Open();
             command.ExecuteNonQuery();
             BaseForm.conn.Close();
         }
 
-        private void Slet_Click(object sender, EventArgs e)
+        private bool TjekBolig()
         {
-            //SLET
-            string Slet = $"DELETE FROM Bolig WHERE Bolig_id = @Bolig_id_tb";
-            SqlCommand command= new SqlCommand(Slet, BaseForm.conn);
-            command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
-            BaseForm.conn.Open();
-            command.ExecuteNonQuery();
-            BaseForm.conn.Close();
+            int i = 0;
+            if (!int.TryParse(Bolig_id_tb.Text, out i))
+            {
+                return false;
+            }
+
+            int j = 0;
+            if (!int.TryParse(Grund_areal_tb.Text, out j))
+            {
+                return false;
+            }
+
+            int k = 0;
+            if (!int.TryParse(Bolig_areal_tb.Text, out k))
+            {
+                return false;
+            }
+
+            int l = 0;
+            if (!int.TryParse(Udbudspris_tb.Text, out l))
+            {
+                return false;
+            }
+
+            string[] adresse = Adresse_tb.Text.Split(',');
+            if (adresse.Length != 2)
+            {
+                return false;
+            }
+
+            return true;
         }
+
     }
 }
