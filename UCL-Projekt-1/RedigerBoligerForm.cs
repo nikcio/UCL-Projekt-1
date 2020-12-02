@@ -22,6 +22,12 @@ namespace UCL_Projekt_1
         {
             InitializeComponent();
             _baseForm = form;
+            Ejendomsmægler[] mæglers = SQLRead.LoadEjendomsmægler();
+            foreach(var item in mæglers) {
+                Mæglere.Items.Add(new KeyValuePair<string, string>(item.Mægler_Id.ToString(), $"Id: {item.Mægler_Id}, Navn: {item.Navn}"));
+            }
+            Mæglere.SelectedIndex = 1;
+            OpretForm();
         }
 
         public RedigerBoligerForm(BaseForm form, int id)
@@ -29,14 +35,32 @@ namespace UCL_Projekt_1
             InitializeComponent();
             _baseForm = form;
             VisInformation(id.ToString());
+            RedigerSletForm();
+        }
+
+        private void OpretForm() {
+            Bolig_id_tb.Visible = false;
+            Bolig_id.Visible = false;
+            Rediger.Visible = false;
+            Slet.Visible = false;
+            Vis.Visible = false;
+        }
+
+        private void RedigerSletForm() {
+            Adresse_tb.Enabled = false;
+            Grund_areal_tb.Enabled = false;
+            Bolig_areal_tb.Enabled = false;
+            Bolig_type_tb.Enabled = false;
+            Mæglere.Enabled = false;
+            Bolig_id_tb.Enabled = false;
         }
 
         private void Opret_Click(object sender, EventArgs e)
         {
-            if (TjekBolig() == true)
+            if (TjekOpretBolig() == true)
             {
                 //OPRET
-                string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt)";
+                string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt, Mægler_Id) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt, @mæglerId)";
                 SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
                 command.Parameters.AddWithValue("@Adresse_tb", Adresse_tb.Text);
                 command.Parameters.AddWithValue("@Grund_areal_tb", Grund_areal_tb.Text);
@@ -44,6 +68,7 @@ namespace UCL_Projekt_1
                 command.Parameters.AddWithValue("@Bolig_type_tb", Bolig_type_tb.Text);
                 command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
                 command.Parameters.AddWithValue("@solgt", solgt.Checked);
+                command.Parameters.AddWithValue("@mæglerId", ((KeyValuePair<string, string>)Mæglere.SelectedItem).Key);
 
                 try
                 {
@@ -82,7 +107,9 @@ namespace UCL_Projekt_1
                 Udbudspris_tb.Text = b.Udbuds_pris.ToString();
                 solgt.Checked = b.Solgt;
                 Bolig_id_tb.Text = b.Bolig_Id.ToString();
-                Mægler_id_tb.Text = b.Mægler_Id.ToString();
+                Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(b.Mægler_Id.ToString());
+                Mæglere.Items.Add($"Id: {mægler.Mægler_Id}, Navn: {mægler.Navn}");
+                Mæglere.SelectedIndex = 0;
             }
             else
             {
@@ -93,7 +120,7 @@ namespace UCL_Projekt_1
 
         private void Rediger_Click(object sender, EventArgs e)
         {
-            if (TjekBolig() == true)
+            if (TjekRedigerSletBolig() == true)
             {
                 //REDIGER
                 string Rediger = $"UPDATE Bolig SET Udbuds_pris=@Udbudspris_tb, Solgt=@Status_tb WHERE Bolig_id = @Bolig_id_tb";
@@ -134,35 +161,33 @@ namespace UCL_Projekt_1
             BaseForm.conn.Close();
         }
 
-        private bool TjekBolig()
-        {
+        private bool TjekRedigerSletBolig() {
             int i = 0;
-            if (!int.TryParse(Bolig_id_tb.Text, out i))
-            {
+            if (!int.TryParse(Bolig_id_tb.Text, out i)) {
                 return false;
             }
 
+            return true;
+        }
+
+        private bool TjekOpretBolig() {
             int j = 0;
-            if (!int.TryParse(Grund_areal_tb.Text, out j))
-            {
+            if (!int.TryParse(Grund_areal_tb.Text, out j)) {
                 return false;
             }
 
             int k = 0;
-            if (!int.TryParse(Bolig_areal_tb.Text, out k))
-            {
+            if (!int.TryParse(Bolig_areal_tb.Text, out k)) {
                 return false;
             }
 
             int l = 0;
-            if (!int.TryParse(Udbudspris_tb.Text, out l))
-            {
+            if (!int.TryParse(Udbudspris_tb.Text, out l)) {
                 return false;
             }
 
             string[] adresse = Adresse_tb.Text.Split(',');
-            if (adresse.Length != 2)
-            {
+            if (adresse.Length != 2) {
                 return false;
             }
 

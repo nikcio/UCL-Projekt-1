@@ -25,6 +25,11 @@
         private void InitializeComponent() {
             this.TilføjBolig = new System.Windows.Forms.Button();
             this.FlowLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.Søg = new System.Windows.Forms.TextBox();
+            this.Adresse = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.Label();
+            this.BoligId = new System.Windows.Forms.TextBox();
+            this.BoligIdValidation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TilføjBolig
@@ -48,18 +53,67 @@
             this.FlowLayout.Size = new System.Drawing.Size(1496, 671);
             this.FlowLayout.TabIndex = 0;
             // 
+            // Søg
+            // 
+            this.Søg.Location = new System.Drawing.Point(337, 12);
+            this.Søg.Name = "Søg";
+            this.Søg.Size = new System.Drawing.Size(261, 22);
+            this.Søg.TabIndex = 1;
+            this.Søg.TextChanged += new System.EventHandler(this.Søg_TextChanged);
+            // 
+            // Adresse
+            // 
+            this.Adresse.AutoSize = true;
+            this.Adresse.Location = new System.Drawing.Point(271, 12);
+            this.Adresse.Name = "Adresse";
+            this.Adresse.Size = new System.Drawing.Size(60, 17);
+            this.Adresse.TabIndex = 2;
+            this.Adresse.Text = "Adresse";
+            // 
+            // Id
+            // 
+            this.Id.AutoSize = true;
+            this.Id.Location = new System.Drawing.Point(660, 12);
+            this.Id.Name = "Id";
+            this.Id.Size = new System.Drawing.Size(19, 17);
+            this.Id.TabIndex = 3;
+            this.Id.Text = "Id";
+            // 
+            // BoligId
+            // 
+            this.BoligId.Location = new System.Drawing.Point(704, 12);
+            this.BoligId.Name = "BoligId";
+            this.BoligId.Size = new System.Drawing.Size(100, 22);
+            this.BoligId.TabIndex = 4;
+            this.BoligId.TextChanged += new System.EventHandler(this.BoligId_TextChanged);
+            // 
+            // BoligIdValidation
+            // 
+            this.BoligIdValidation.AutoSize = true;
+            this.BoligIdValidation.ForeColor = System.Drawing.Color.Red;
+            this.BoligIdValidation.Location = new System.Drawing.Point(701, 37);
+            this.BoligIdValidation.Name = "BoligIdValidation";
+            this.BoligIdValidation.Size = new System.Drawing.Size(0, 17);
+            this.BoligIdValidation.TabIndex = 5;
+            // 
             // BoligerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1520, 748);
+            this.Controls.Add(this.BoligIdValidation);
+            this.Controls.Add(this.BoligId);
+            this.Controls.Add(this.Id);
+            this.Controls.Add(this.Adresse);
+            this.Controls.Add(this.Søg);
             this.Controls.Add(this.FlowLayout);
             this.Controls.Add(this.TilføjBolig);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BoligerForm";
             this.Text = "BoligerForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -67,5 +121,10 @@
 
         private System.Windows.Forms.Button TilføjBolig;
         private System.Windows.Forms.FlowLayoutPanel FlowLayout;
+        private System.Windows.Forms.TextBox Søg;
+        private System.Windows.Forms.Label Adresse;
+        private System.Windows.Forms.Label Id;
+        private System.Windows.Forms.TextBox BoligId;
+        private System.Windows.Forms.Label BoligIdValidation;
     }
 }
