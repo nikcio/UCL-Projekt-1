@@ -23,7 +23,8 @@ namespace UCL_Projekt_1
             InitializeComponent();
             _baseForm = form;
             Ejendomsmægler[] mæglers = SQLRead.LoadEjendomsmægler();
-            foreach(var item in mæglers) {
+            foreach (var item in mæglers)
+            {
                 Mæglere.Items.Add(new KeyValuePair<string, string>(item.Mægler_Id.ToString(), $"Id: {item.Mægler_Id}, Navn: {item.Navn}"));
             }
             Mæglere.SelectedIndex = 1;
@@ -38,7 +39,8 @@ namespace UCL_Projekt_1
             RedigerSletForm();
         }
 
-        private void OpretForm() {
+        private void OpretForm()
+        {
             Bolig_id_tb.Visible = false;
             Bolig_id.Visible = false;
             Rediger.Visible = false;
@@ -46,7 +48,8 @@ namespace UCL_Projekt_1
             Vis.Visible = false;
         }
 
-        private void RedigerSletForm() {
+        private void RedigerSletForm()
+        {
             Adresse_tb.Enabled = false;
             Grund_areal_tb.Enabled = false;
             Bolig_areal_tb.Enabled = false;
@@ -161,33 +164,40 @@ namespace UCL_Projekt_1
             BaseForm.conn.Close();
         }
 
-        private bool TjekRedigerSletBolig() {
+        private bool TjekRedigerSletBolig()
+        {
             int i = 0;
-            if (!int.TryParse(Bolig_id_tb.Text, out i)) {
+            if (!int.TryParse(Bolig_id_tb.Text, out i))
+            {
                 return false;
             }
 
             return true;
         }
 
-        private bool TjekOpretBolig() {
+        private bool TjekOpretBolig()
+        {
             int j = 0;
-            if (!int.TryParse(Grund_areal_tb.Text, out j)) {
+            if (!int.TryParse(Grund_areal_tb.Text, out j))
+            {
                 return false;
             }
 
             int k = 0;
-            if (!int.TryParse(Bolig_areal_tb.Text, out k)) {
+            if (!int.TryParse(Bolig_areal_tb.Text, out k))
+            {
                 return false;
             }
 
             int l = 0;
-            if (!int.TryParse(Udbudspris_tb.Text, out l)) {
+            if (!int.TryParse(Udbudspris_tb.Text, out l))
+            {
                 return false;
             }
 
             string[] adresse = Adresse_tb.Text.Split(',');
-            if (adresse.Length != 2) {
+            if (adresse.Length != 2)
+            {
                 return false;
             }
 
