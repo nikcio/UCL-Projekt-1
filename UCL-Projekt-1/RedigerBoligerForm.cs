@@ -119,10 +119,10 @@ namespace UCL_Projekt_1
             {
                 MessageBox.Show("Der opstod en fejl, prøv igen ");
             }
-            
+
         }
 
-      
+
         private void Slet_Click(object sender, EventArgs e)
         {
             //SLET

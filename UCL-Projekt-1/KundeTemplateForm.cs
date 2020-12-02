@@ -8,9 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UCL_Projekt_1 {
-    public partial class KundeTemplateForm : Form {
-        public KundeTemplateForm() {
+namespace UCL_Projekt_1
+{
+    public partial class KundeTemplateForm : Form
+    {
+        public KundeTemplateForm()
+        {
             InitializeComponent();
         }
     }

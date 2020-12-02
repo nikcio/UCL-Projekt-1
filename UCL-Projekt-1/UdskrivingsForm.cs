@@ -13,25 +13,32 @@ using System.IO;
 using UCL_Projekt_1;
 using System.Diagnostics;
 
-namespace UCL_Projekt_1 {
-    public partial class UdskrivingsForm : Form {
+namespace UCL_Projekt_1
+{
+    public partial class UdskrivingsForm : Form
+    {
 
         private BaseForm _baseForm;
 
-        public UdskrivingsForm(BaseForm form) {
+        public UdskrivingsForm(BaseForm form)
+        {
             InitializeComponent();
             _baseForm = form;
         }
 
-        private void UdskrivSolgte_Click(object sender, EventArgs e) {
+        private void UdskrivSolgte_Click(object sender, EventArgs e)
+        {
             Bolig[] boliger = SQLRead.LoadBoliger(true);
 
             string path = $"{Environment.CurrentDirectory}/SolgteBoliger.txt";
-            using (StreamWriter streamWriter = new StreamWriter(path)) {
-                foreach(Bolig item in boliger) {
+            using (StreamWriter streamWriter = new StreamWriter(path))
+            {
+                foreach (Bolig item in boliger)
+                {
                     Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(item.Mægler_Id.ToString());
                     string mæglerInfo = "";
-                    if(mægler != null) {
+                    if (mægler != null)
+                    {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
                     }
                     streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Kunde id: {item.Kunde_Id}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
@@ -40,14 +47,18 @@ namespace UCL_Projekt_1 {
             Process.Start(path);
         }
 
-        private void UdskrivTilSalg_Click(object sender, EventArgs e) {
+        private void UdskrivTilSalg_Click(object sender, EventArgs e)
+        {
             Bolig[] boliger = SQLRead.LoadBoliger(false);
             string path = $"{Environment.CurrentDirectory}/TilSalgBoliger.txt";
-            using (StreamWriter streamWriter = new StreamWriter(path)) {
-                foreach (Bolig item in boliger) {
+            using (StreamWriter streamWriter = new StreamWriter(path))
+            {
+                foreach (Bolig item in boliger)
+                {
                     Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(item.Mægler_Id.ToString());
                     string mæglerInfo = "";
-                    if (mægler != null) {
+                    if (mægler != null)
+                    {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
                     }
                     streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Kunde id: {item.Kunde_Id}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
@@ -56,14 +67,18 @@ namespace UCL_Projekt_1 {
             Process.Start(path);
         }
 
-        private void UdskrivArea_Click(object sender, EventArgs e) {
+        private void UdskrivArea_Click(object sender, EventArgs e)
+        {
             Bolig[] boliger = SQLRead.LoadBoliger(Area.Text);
             string path = $"{Environment.CurrentDirectory}/AreaBoliger.txt";
-            using (StreamWriter streamWriter = new StreamWriter(path)) {
-                foreach (Bolig item in boliger) {
+            using (StreamWriter streamWriter = new StreamWriter(path))
+            {
+                foreach (Bolig item in boliger)
+                {
                     Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(item.Mægler_Id.ToString());
                     string mæglerInfo = "";
-                    if (mægler != null) {
+                    if (mægler != null)
+                    {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
                     }
                     streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Kunde id: {item.Kunde_Id}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
@@ -72,6 +87,6 @@ namespace UCL_Projekt_1 {
             Process.Start(path);
         }
 
-        
+
     }
 }

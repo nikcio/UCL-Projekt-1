@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 using UCL_Projekt_1.Models;
 using UCL_Projekt_1;
 
-namespace UCL_Projekt_1 {
-    public class SQLRead {
-        public static Bolig[] LoadBoliger() {
+namespace UCL_Projekt_1
+{
+    public class SQLRead
+    {
+        public static Bolig[] LoadBoliger()
+        {
             List<Bolig> boliger = new List<Bolig>();
 
             SqlCommand command = new SqlCommand("SELECT * FROM Bolig", BaseForm.conn);
@@ -29,10 +32,13 @@ namespace UCL_Projekt_1 {
             return boliger.FirstOrDefault();
         }
 
-        public static void FindBolig(List<Bolig> boliger, SqlCommand command) {
+        public static void FindBolig(List<Bolig> boliger, SqlCommand command)
+        {
             BaseForm.conn.Open();
-            using (SqlDataReader reader = command.ExecuteReader()) {
-                while (reader.Read()) {
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
                     boliger.Add(new Bolig(
                         reader.GetInt32(reader.GetOrdinal("Bolig_Id")),
                         reader.GetInt32(reader.GetOrdinal("Udbuds_pris")),
@@ -49,7 +55,8 @@ namespace UCL_Projekt_1 {
         }
 
 
-        public static Bolig[] LoadBoliger(string adresse) {
+        public static Bolig[] LoadBoliger(string adresse)
+        {
             List<Bolig> boliger = new List<Bolig>();
 
             SqlCommand command = new SqlCommand("SELECT * FROM Bolig WHERE Adresse LIKE @adresse", BaseForm.conn);
@@ -59,7 +66,8 @@ namespace UCL_Projekt_1 {
             return boliger.ToArray();
         }
 
-        public static Bolig[] LoadBoliger(bool solgt) {
+        public static Bolig[] LoadBoliger(bool solgt)
+        {
             List<Bolig> boliger = new List<Bolig>();
 
             SqlCommand command = new SqlCommand("SELECT * FROM Bolig WHERE Solgt=@solgt", BaseForm.conn);
@@ -69,7 +77,8 @@ namespace UCL_Projekt_1 {
             return boliger.ToArray();
         }
 
-        public static Kunde[] LoadKunder() {
+        public static Kunde[] LoadKunder()
+        {
             List<Kunde> Kunder = new List<Kunde>();
 
             SqlCommand command = new SqlCommand("SELECT * FROM Kunde", BaseForm.conn);
@@ -77,7 +86,7 @@ namespace UCL_Projekt_1 {
 
             return Kunder.ToArray();
 
-            
+
         }
 
         public static Kunde VisKunder(string kunde_id)
@@ -90,13 +99,16 @@ namespace UCL_Projekt_1 {
 
             return Kunder.FirstOrDefault();
 
-            
+
         }
 
-        public static void FindKunder(List<Kunde> Kunder, SqlCommand command) {
+        public static void FindKunder(List<Kunde> Kunder, SqlCommand command)
+        {
             BaseForm.conn.Open();
-            using (SqlDataReader reader = command.ExecuteReader()) {
-                while (reader.Read()) {
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
                     Kunder.Add(new Kunde(
                         reader.GetString(reader.GetOrdinal("Navn")),
                         reader.GetInt32(reader.GetOrdinal("Telefon")),
@@ -110,7 +122,8 @@ namespace UCL_Projekt_1 {
             BaseForm.conn.Close();
         }
 
-        public static Ejendomsmægler[] LoadEjendomsmægler() {
+        public static Ejendomsmægler[] LoadEjendomsmægler()
+        {
             List<Ejendomsmægler> Ejendomsmæglere = new List<Ejendomsmægler>();
 
             SqlCommand command = new SqlCommand("SELECT * FROM Ejendomsmægler", BaseForm.conn);
@@ -119,7 +132,8 @@ namespace UCL_Projekt_1 {
             return Ejendomsmæglere.ToArray();
         }
 
-        public static Ejendomsmægler VisEjendomsmægler(string id) {
+        public static Ejendomsmægler VisEjendomsmægler(string id)
+        {
             List<Ejendomsmægler> Ejendomsmæglere = new List<Ejendomsmægler>();
 
             SqlCommand command = new SqlCommand("SELECT * FROM Ejendomsmægler WHERE Mægler_Id=@id", BaseForm.conn);
@@ -129,10 +143,13 @@ namespace UCL_Projekt_1 {
             return Ejendomsmæglere.FirstOrDefault();
         }
 
-        public static void FindEjendomsmægler(List<Ejendomsmægler> Ejendomsmæglere, SqlCommand command) {
+        public static void FindEjendomsmægler(List<Ejendomsmægler> Ejendomsmæglere, SqlCommand command)
+        {
             BaseForm.conn.Open();
-            using (SqlDataReader reader = command.ExecuteReader()) {
-                while (reader.Read()) {
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
                     Ejendomsmæglere.Add(new Ejendomsmægler(
                         reader.GetInt32(reader.GetOrdinal("Mægler_Id")),
                         reader.GetString(reader.GetOrdinal("Navn")),
@@ -144,7 +161,8 @@ namespace UCL_Projekt_1 {
             BaseForm.conn.Close();
         }
 
-        public static Salg[] LoadSalg() {
+        public static Salg[] LoadSalg()
+        {
             List<Salg> Salgs = new List<Salg>();
 
             SqlCommand command = new SqlCommand("SELECT * FROM Salg", BaseForm.conn);
@@ -152,10 +170,13 @@ namespace UCL_Projekt_1 {
 
             return Salgs.ToArray();
         }
-        public static void FindSalg(List<Salg> Salgs, SqlCommand command) {
+        public static void FindSalg(List<Salg> Salgs, SqlCommand command)
+        {
             BaseForm.conn.Open();
-            using (SqlDataReader reader = command.ExecuteReader()) {
-                while (reader.Read()) {
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
                     Salgs.Add(new Salg(
                         reader.GetInt32(reader.GetOrdinal("Salgs_Id")),
                         reader.GetDateTime(reader.GetOrdinal("Dato")),

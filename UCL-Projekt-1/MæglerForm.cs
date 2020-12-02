@@ -9,33 +9,41 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UCL_Projekt_1.Models;
 
-namespace UCL_Projekt_1 {
-    public partial class MæglerForm : Form {
+namespace UCL_Projekt_1
+{
+    public partial class MæglerForm : Form
+    {
 
         private BaseForm _baseForm;
 
-        public MæglerForm(BaseForm form) {
+        public MæglerForm(BaseForm form)
+        {
             InitializeComponent();
             _baseForm = form;
             VisMæglere();
         }
 
-        private void TilføjMægler_Click(object sender, EventArgs e) {
+        private void TilføjMægler_Click(object sender, EventArgs e)
+        {
             _baseForm.OpenChildForm(new RedigerMæglerForm(_baseForm));
         }
 
-        private void RedigerMægler_Click(object sender, EventArgs e, int id) {
+        private void RedigerMægler_Click(object sender, EventArgs e, int id)
+        {
             _baseForm.OpenChildForm(new RedigerMæglerForm(_baseForm, id));
         }
 
-        private void VisMæglere() {
+        private void VisMæglere()
+        {
             Ejendomsmægler[] ejendomsmæglere = SQLRead.LoadEjendomsmægler();
-            foreach(var item in ejendomsmæglere) {
+            foreach (var item in ejendomsmæglere)
+            {
                 VisEnMægler(item.Mægler_Id, item.Navn, item.Email, item.Telefon.ToString());
             }
         }
 
-        private void VisEnMægler(int id, string navn, string email, string tlf) {
+        private void VisEnMægler(int id, string navn, string email, string tlf)
+        {
             var Mægler = new Panel();
             var Navn = new Label();
             var Ejendomsmægler = new Label();

@@ -10,18 +10,22 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 
-namespace UCL_Projekt_1 {
+namespace UCL_Projekt_1
+{
 
-    public partial class RedigerKunderForm : Form {
+    public partial class RedigerKunderForm : Form
+    {
 
         private BaseForm _baseForm;
 
-        public RedigerKunderForm(BaseForm form) {
+        public RedigerKunderForm(BaseForm form)
+        {
             InitializeComponent();
             _baseForm = form;
         }
 
-        public RedigerKunderForm(BaseForm form, int id) {
+        public RedigerKunderForm(BaseForm form, int id)
+        {
             InitializeComponent();
             _baseForm = form;
             VisInformation(id.ToString());
@@ -29,7 +33,7 @@ namespace UCL_Projekt_1 {
 
         private void Opret_kunde_Click(object sender, EventArgs e)
         {
-            if (tjekKundeVærdiger()==true)
+            if (tjekKundeVærdiger() == true)
             {
                 string OpretK = $"INSERT INTO Kunde (Navn, Telefon, Email,Er_sælger, Er_køber) VALUES (@Kunde_navn_tb, @Kunde_tlf_tb, @Kunde_email_tb, @Er_sælger, @Er_køber)";
                 SqlCommand command = new SqlCommand(OpretK, BaseForm.conn);
@@ -96,34 +100,35 @@ namespace UCL_Projekt_1 {
             string SletK = $"DELETE FROM Kunde WHERE Kunde_id=@Kunde_id_tb";
             SqlCommand command = new SqlCommand(SletK, BaseForm.conn);
             command.Parameters.AddWithValue(@"Kunde_id_tb", Kunde_id_tb.Text);
-        
-                try
-                {
+
+            try
+            {
                 BaseForm.conn.Open();
                 command.ExecuteNonQuery();
                 BaseForm.conn.Close();
                 MessageBox.Show("Kunde slettet" /*+ SletK*/);
 
-                }
+            }
             catch (Exception exc)
-                {
+            {
                 MessageBox.Show("Der opstod en fejl, prøv igen " + SletK);
-                }    
+            }
         }
 
         private void Find_kunde_Click(object sender, EventArgs e)
         {
             VisInformation(Kunde_id_tb.Text);
-                       
+
         }
 
-        private void VisInformation(string id) {
+        private void VisInformation(string id)
+        {
             Models.Kunde k = SQLRead.VisKunder(id);
             Kunde_navn_tb.Text = k.Navn;
             Kunde_tlf_tb.Text = k.Telefon.ToString();
             Kunde_email_tb.Text = k.Email;
             Er_sælger.Checked = (bool)k.Er_sælger;
-            Er_køber.Checked = (bool)k.Er_køber;           
+            Er_køber.Checked = (bool)k.Er_køber;
         }
 
         private bool tjekKundeVærdiger()
