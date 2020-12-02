@@ -21,6 +21,12 @@ namespace UCL_Projekt_1 {
             _baseForm = form;
         }
 
+        public RedigerKunderForm(BaseForm form, int id) {
+            InitializeComponent();
+            _baseForm = form;
+            VisInformation(id.ToString());
+        }
+
         private void Opret_kunde_Click(object sender, EventArgs e)
         {
             if (tjekKundeVærdiger()==true)
@@ -107,7 +113,12 @@ namespace UCL_Projekt_1 {
 
         private void Find_kunde_Click(object sender, EventArgs e)
         {
-            Models.Kunde k = SQLRead.VisKunder(Kunde_id_tb.Text);
+            VisInformation(Kunde_id_tb.Text);
+                       
+        }
+
+        private void VisInformation(string id) {
+            Models.Kunde k = SQLRead.VisKunder(id);
             Kunde_navn_tb.Text = k.Navn;
             Kunde_tlf_tb.Text = k.Telefon.ToString();
             Kunde_email_tb.Text = k.Email;

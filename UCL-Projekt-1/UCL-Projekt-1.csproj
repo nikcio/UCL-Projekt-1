@@ -64,11 +64,23 @@
     <Compile Include="KunderForm.Designer.cs">
       <DependentUpon>KunderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KundeTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KundeTemplateForm.Designer.cs">
+      <DependentUpon>KundeTemplateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MæglerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MæglerForm.Designer.cs">
       <DependentUpon>MæglerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MæglerTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MæglerTemplateForm.Designer.cs">
+      <DependentUpon>MæglerTemplateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RedigerBoligerForm.cs">
       <SubType>Form</SubType>
@@ -118,8 +130,14 @@
     <EmbeddedResource Include="KunderForm.resx">
       <DependentUpon>KunderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KundeTemplateForm.resx">
+      <DependentUpon>KundeTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MæglerForm.resx">
       <DependentUpon>MæglerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MæglerTemplateForm.resx">
+      <DependentUpon>MæglerTemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RedigerBoligerForm.resx">
       <DependentUpon>RedigerBoligerForm.cs</DependentUpon>

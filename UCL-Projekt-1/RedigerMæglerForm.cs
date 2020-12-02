@@ -21,6 +21,12 @@ namespace UCL_Projekt_1 {
             _baseForm = form;
         }
 
+        public RedigerMæglerForm(BaseForm form, int id) {
+            InitializeComponent();
+            _baseForm = form;
+            VisInformation(id.ToString());
+        }
+
         private void Opret_mægler_Click(object sender, EventArgs e)
         {
             if (TjekMægler() == true)
@@ -57,11 +63,16 @@ namespace UCL_Projekt_1 {
 
         private void Find_mægler_Click(object sender, EventArgs e)
         {
+            VisInformation(Mægler_id_tb.Text);
+        }
+
+        private void VisInformation(string id) {
             //VIS
-            Ejendomsmægler m = SQLRead.VisEjendomsmægler(Mægler_id_tb.Text);
+            Ejendomsmægler m = SQLRead.VisEjendomsmægler(id);
             Mægler_navn_tb.Text = m.Navn.ToString();
             Mægler_telefon_tb.Text = m.Telefon.ToString();
             Mægler_email_tb.Text = m.Email.ToString();
+            Mægler_id_tb.Text = id;
         }
 
         private void Rediger_mægler_Click(object sender, EventArgs e)
