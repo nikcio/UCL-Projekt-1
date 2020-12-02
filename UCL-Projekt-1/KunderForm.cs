@@ -37,6 +37,10 @@ namespace UCL_Projekt_1
             }
         }
 
+        private void RedigerKunde_Click(object sende, EventArgs e, string id) {
+
+        }
+
         private void VisEnKunde(string id, string navn, string email, string tlf, bool Er_køber, bool Er_sælger)
         {
             var Kunde = new Panel();
@@ -46,6 +50,7 @@ namespace UCL_Projekt_1
             var Email = new Label();
             var Sælger = new Label();
             var Køber = new Label();
+            var RedigerKunde = new Button();
             // 
             // Kunde
             // 
@@ -113,6 +118,16 @@ namespace UCL_Projekt_1
             Køber.Size = new Size(46, 17);
             Køber.TabIndex = 4;
             Køber.Text = Er_køber ? "Ja" : "Nej";
+            // 
+            // RedigerKunde
+            // 
+           RedigerKunde.Location = new System.Drawing.Point(424, 37);
+           RedigerKunde.Name = "RedigerKunde";
+           RedigerKunde.Size = new System.Drawing.Size(126, 23);
+           RedigerKunde.TabIndex = 5;
+           RedigerKunde.Text = "Rediger kunde";
+           RedigerKunde.UseVisualStyleBackColor = true;
+           RedigerKunde.Click += new System.EventHandler((sender, e) => RedigerKunde_Click(sender, e, id));
 
             FlowLayout.Controls.Add(Kunde);
         }

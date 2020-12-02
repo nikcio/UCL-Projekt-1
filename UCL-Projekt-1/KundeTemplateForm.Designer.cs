@@ -24,17 +24,19 @@
         /// </summary>
         private void InitializeComponent() {
             this.Kunde = new System.Windows.Forms.Panel();
-            this.KundeId = new System.Windows.Forms.Label();
-            this.Navn = new System.Windows.Forms.Label();
-            this.Tlf = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.Label();
-            this.Sælger = new System.Windows.Forms.Label();
             this.Køber = new System.Windows.Forms.Label();
+            this.Sælger = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
+            this.Tlf = new System.Windows.Forms.Label();
+            this.Navn = new System.Windows.Forms.Label();
+            this.KundeId = new System.Windows.Forms.Label();
+            this.RedigerKunde = new System.Windows.Forms.Button();
             this.Kunde.SuspendLayout();
             this.SuspendLayout();
             // 
             // Kunde
             // 
+            this.Kunde.Controls.Add(this.RedigerKunde);
             this.Kunde.Controls.Add(this.Køber);
             this.Kunde.Controls.Add(this.Sælger);
             this.Kunde.Controls.Add(this.Email);
@@ -43,44 +45,17 @@
             this.Kunde.Controls.Add(this.KundeId);
             this.Kunde.Location = new System.Drawing.Point(53, 101);
             this.Kunde.Name = "Kunde";
-            this.Kunde.Size = new System.Drawing.Size(455, 91);
+            this.Kunde.Size = new System.Drawing.Size(585, 91);
             this.Kunde.TabIndex = 0;
             // 
-            // KundeId
+            // Køber
             // 
-            this.KundeId.AutoSize = true;
-            this.KundeId.Location = new System.Drawing.Point(35, 37);
-            this.KundeId.Name = "KundeId";
-            this.KundeId.Size = new System.Drawing.Size(64, 17);
-            this.KundeId.TabIndex = 0;
-            this.KundeId.Text = "Kunde id";
-            // 
-            // Navn
-            // 
-            this.Navn.AutoSize = true;
-            this.Navn.Location = new System.Drawing.Point(121, 37);
-            this.Navn.Name = "Navn";
-            this.Navn.Size = new System.Drawing.Size(41, 17);
-            this.Navn.TabIndex = 1;
-            this.Navn.Text = "Navn";
-            // 
-            // Tlf
-            // 
-            this.Tlf.AutoSize = true;
-            this.Tlf.Location = new System.Drawing.Point(169, 37);
-            this.Tlf.Name = "Tlf";
-            this.Tlf.Size = new System.Drawing.Size(19, 17);
-            this.Tlf.TabIndex = 2;
-            this.Tlf.Text = "tlf";
-            // 
-            // Email
-            // 
-            this.Email.AutoSize = true;
-            this.Email.Location = new System.Drawing.Point(218, 37);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(42, 17);
-            this.Email.TabIndex = 1;
-            this.Email.Text = "EMail";
+            this.Køber.AutoSize = true;
+            this.Køber.Location = new System.Drawing.Point(372, 37);
+            this.Køber.Name = "Køber";
+            this.Køber.Size = new System.Drawing.Size(46, 17);
+            this.Køber.TabIndex = 4;
+            this.Køber.Text = "Køber";
             // 
             // Sælger
             // 
@@ -91,14 +66,51 @@
             this.Sælger.TabIndex = 3;
             this.Sælger.Text = "Sælger";
             // 
-            // Køber
+            // Email
             // 
-            this.Køber.AutoSize = true;
-            this.Køber.Location = new System.Drawing.Point(372, 37);
-            this.Køber.Name = "Køber";
-            this.Køber.Size = new System.Drawing.Size(46, 17);
-            this.Køber.TabIndex = 4;
-            this.Køber.Text = "Køber";
+            this.Email.AutoSize = true;
+            this.Email.Location = new System.Drawing.Point(218, 37);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(42, 17);
+            this.Email.TabIndex = 1;
+            this.Email.Text = "EMail";
+            // 
+            // Tlf
+            // 
+            this.Tlf.AutoSize = true;
+            this.Tlf.Location = new System.Drawing.Point(169, 37);
+            this.Tlf.Name = "Tlf";
+            this.Tlf.Size = new System.Drawing.Size(19, 17);
+            this.Tlf.TabIndex = 2;
+            this.Tlf.Text = "tlf";
+            // 
+            // Navn
+            // 
+            this.Navn.AutoSize = true;
+            this.Navn.Location = new System.Drawing.Point(121, 37);
+            this.Navn.Name = "Navn";
+            this.Navn.Size = new System.Drawing.Size(41, 17);
+            this.Navn.TabIndex = 1;
+            this.Navn.Text = "Navn";
+            // 
+            // KundeId
+            // 
+            this.KundeId.AutoSize = true;
+            this.KundeId.Location = new System.Drawing.Point(35, 37);
+            this.KundeId.Name = "KundeId";
+            this.KundeId.Size = new System.Drawing.Size(64, 17);
+            this.KundeId.TabIndex = 0;
+            this.KundeId.Text = "Kunde id";
+            // 
+            // RedigerKunde
+            // 
+            this.RedigerKunde.Location = new System.Drawing.Point(424, 37);
+            this.RedigerKunde.Name = "RedigerKunde";
+            this.RedigerKunde.Size = new System.Drawing.Size(126, 23);
+            this.RedigerKunde.TabIndex = 5;
+            this.RedigerKunde.Text = "Rediger kunde";
+            this.RedigerKunde.UseVisualStyleBackColor = true;
+            this.RedigerKunde.Click += new System.EventHandler(this.RedigerKunde_Click);
             // 
             // KundeTemplateForm
             // 
@@ -124,5 +136,6 @@
         private System.Windows.Forms.Label Tlf;
         private System.Windows.Forms.Label Navn;
         private System.Windows.Forms.Label KundeId;
+        private System.Windows.Forms.Button RedigerKunde;
     }
 }
