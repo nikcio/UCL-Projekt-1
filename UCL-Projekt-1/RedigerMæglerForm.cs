@@ -33,7 +33,7 @@ namespace UCL_Projekt_1
 
         private void Opret_mægler_Click(object sender, EventArgs e)
         {
-            if (TjekMægler() == true)
+            if (TjekOpretMægler() == true)
             {
                 //OPRET
                 string Opret = $"INSERT INTO Ejendomsmægler (Navn, Telefon, Email) VALUES (@Mægler_navn_tb, @Mægler_Telefon_tb, @Mægler_Email_tb)";
@@ -50,7 +50,7 @@ namespace UCL_Projekt_1
                     BaseForm.conn.Open();
                     command.ExecuteNonQuery();
                     BaseForm.conn.Close();
-                    MessageBox.Show("Bolig redigeret" /*Rediger*/);
+                    MessageBox.Show("Ejendomsmægler oprettet" /*Rediger*/);
 
                 }
                 catch (Exception exc)
@@ -82,7 +82,7 @@ namespace UCL_Projekt_1
 
         private void Rediger_mægler_Click(object sender, EventArgs e)
         {
-            if (TjekMægler() == true)
+            if (TjekSletRedigerMægler() == true)
             {
                 //REDIGER
                 string Rediger = $"UPDATE Ejendomsmægler SET Navn=@Mægler_navn_tb, Telefon=@Mægler_telefon_tb, Email=@Mægler_email_tb WHERE Mægler_id = @Mægler_id_tb";
@@ -100,7 +100,7 @@ namespace UCL_Projekt_1
                     BaseForm.conn.Open();
                     command.ExecuteNonQuery();
                     BaseForm.conn.Close();
-                    MessageBox.Show("Bolig redigeret" /*Rediger*/);
+                    MessageBox.Show("Ejendomsmægler redigeret" /*Rediger*/);
 
                 }
                 catch (Exception exc)
@@ -118,24 +118,47 @@ namespace UCL_Projekt_1
 
         private void Slet_mægler_Click(object sender, EventArgs e)
         {
-            //SLET
-            string Slet = $"DELETE FROM Ejendomsmægler WHERE Mægler_id = @Mægler_id_tb";
-            SqlCommand command = new SqlCommand(Slet, BaseForm.conn);
-            command.Parameters.AddWithValue("@Mægler_id_tb", Mægler_id_tb.Text);
-            BaseForm.conn.Open();
-            command.ExecuteNonQuery();
-            BaseForm.conn.Close();
+            if (TjekSletRedigerMægler()==true)
+            {
+                 //SLET
+                string Slet = $"DELETE FROM Ejendomsmægler WHERE Mægler_id = @Mægler_id_tb";
+                SqlCommand command = new SqlCommand(Slet, BaseForm.conn);
+                command.Parameters.AddWithValue("@Mægler_id_tb", Mægler_id_tb.Text);
+                BaseForm.conn.Open();
+                command.ExecuteNonQuery();
+                BaseForm.conn.Close();
+
+                try
+                {
+                    BaseForm.conn.Open();
+                    command.ExecuteNonQuery();
+                    BaseForm.conn.Close();
+                    MessageBox.Show("Ejendomsmægler slettet" /*Rediger*/);
+
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("Der opstod en fejl, prøv igen " + Slet);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Der opstod en fejl, prøv igen ");
+            }
         }
 
-
-        private bool TjekMægler()
+        private bool TjekSletRedigerMægler()
         {
             int i = 0;
             if (!int.TryParse(Mægler_id_tb.Text, out i))
             {
                 return false;
             }
+            return true;
+        }
 
+        private bool TjekOpretMægler()
+        {
             int j = 0;
             if (!int.TryParse(Mægler_telefon_tb.Text, out j))
             {
@@ -152,7 +175,6 @@ namespace UCL_Projekt_1
             {
                 return false;
             }
-
             return true;
         }
 
@@ -160,5 +182,6 @@ namespace UCL_Projekt_1
         {
             return Regex.IsMatch(input, "^[a-zA-Z æøåÆØÅ]+$");
         }
+
     }
 }
