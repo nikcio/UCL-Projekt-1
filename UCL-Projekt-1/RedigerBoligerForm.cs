@@ -25,7 +25,7 @@ namespace UCL_Projekt_1
             Ejendomsmægler[] mæglers = SQLRead.LoadEjendomsmægler();
             var options = new BindingList<KeyValuePair<string, string>>();
             foreach(var item in mæglers) {
-                options.Add(new KeyValuePair<string, string>(item.Mægler_Id.ToString(), $"Id: {item.Mægler_Id}, Navn: {item.Navn}"));
+                options.Add(new KeyValuePair<string, string>(item.Mægler_Id.ToString(), $"{item.Navn}, Id: {item.Mægler_Id}"));
             }
             Mæglere.DataSource = options;
             Mæglere.ValueMember = "Key";
