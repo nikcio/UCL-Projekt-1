@@ -39,18 +39,20 @@
             // 
             // FlowLayout
             // 
+            this.FlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FlowLayout.AutoScroll = true;
-            this.FlowLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.FlowLayout.Location = new System.Drawing.Point(12, 55);
             this.FlowLayout.Name = "FlowLayout";
-            this.FlowLayout.Size = new System.Drawing.Size(1896, 681);
+            this.FlowLayout.Size = new System.Drawing.Size(1496, 681);
             this.FlowLayout.TabIndex = 1;
             // 
             // KunderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 748);
+            this.ClientSize = new System.Drawing.Size(1520, 748);
             this.Controls.Add(this.FlowLayout);
             this.Controls.Add(this.TilføjKunde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

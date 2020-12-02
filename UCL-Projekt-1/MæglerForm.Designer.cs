@@ -45,14 +45,14 @@
             this.FlowLayout.AutoScroll = true;
             this.FlowLayout.Location = new System.Drawing.Point(12, 70);
             this.FlowLayout.Name = "FlowLayout";
-            this.FlowLayout.Size = new System.Drawing.Size(1896, 666);
+            this.FlowLayout.Size = new System.Drawing.Size(1496, 666);
             this.FlowLayout.TabIndex = 1;
             // 
             // MæglerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 748);
+            this.ClientSize = new System.Drawing.Size(1520, 748);
             this.Controls.Add(this.FlowLayout);
             this.Controls.Add(this.TilføjMægler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
