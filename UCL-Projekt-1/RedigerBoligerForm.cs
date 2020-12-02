@@ -102,26 +102,32 @@ namespace UCL_Projekt_1
 
         private void VisInformation(string id)
         {
-            //VIS
-            Bolig b = SQLRead.VisBolig(id);
-            if (b != null)
+            if (TjekOpretBolig() == true)
             {
-                Adresse_tb.Text = b.Addresse;
-                Grund_areal_tb.Text = b.Grund_areal.ToString();
-                Bolig_areal_tb.Text = b.Bolig_areal.ToString();
-                Bolig_type_tb.Text = b.Boligtype;
-                Udbudspris_tb.Text = b.Udbuds_pris.ToString();
-                solgt.Checked = b.Solgt;
-                Bolig_id_tb.Text = b.Bolig_Id.ToString();
-                Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(b.Mægler_Id.ToString());
-                Mæglere.Items.Add($"Id: {mægler.Mægler_Id}, Navn: {mægler.Navn}");
-                Mæglere.SelectedIndex = 0;
+                //VIS
+                Bolig b = SQLRead.VisBolig(id);
+                if (b != null)
+                {
+                    Adresse_tb.Text = b.Addresse;
+                    Grund_areal_tb.Text = b.Grund_areal.ToString();
+                    Bolig_areal_tb.Text = b.Bolig_areal.ToString();
+                    Bolig_type_tb.Text = b.Boligtype;
+                    Udbudspris_tb.Text = b.Udbuds_pris.ToString();
+                    solgt.Checked = b.Solgt;
+                    Bolig_id_tb.Text = b.Bolig_Id.ToString();
+                    Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(b.Mægler_Id.ToString());
+                    Mæglere.Items.Add($"Id: {mægler.Mægler_Id}, Navn: {mægler.Navn}");
+                    Mæglere.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Der opstod en fejl, prøv igen");
+                }
             }
             else
             {
-                MessageBox.Show("Der opstod en fejl, prøv igen");
+                MessageBox.Show("Der opstod en fejl, prøv igen ");
             }
-
         }
 
         private void Rediger_Click(object sender, EventArgs e)
@@ -152,19 +158,32 @@ namespace UCL_Projekt_1
             {
                 MessageBox.Show("Der opstod en fejl, prøv igen ");
             }
-
         }
-
 
         private void Slet_Click(object sender, EventArgs e)
         {
-            //SLET
-            string Slet = $"DELETE FROM Bolig WHERE Bolig_id = @Bolig_id_tb";
-            SqlCommand command = new SqlCommand(Slet, BaseForm.conn);
-            command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
-            BaseForm.conn.Open();
-            command.ExecuteNonQuery();
-            BaseForm.conn.Close();
+            if (TjekRedigerSletBolig() == true)
+            {
+                //SLET
+                string Slet = $"DELETE FROM Bolig WHERE Bolig_id = @Bolig_id_tb";
+                SqlCommand command = new SqlCommand(Slet, BaseForm.conn);
+                command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
+                try
+                {
+                    BaseForm.conn.Open();
+                    command.ExecuteNonQuery();
+                    BaseForm.conn.Close();
+                    MessageBox.Show("Bolig redigeret" /*Rediger*/);
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("Der opstod en fejl, prøv igen " + Rediger);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Der opstod en fejl, prøv igen ");
+            }
         }
 
         private bool TjekRedigerSletBolig()
@@ -174,7 +193,6 @@ namespace UCL_Projekt_1
             {
                 return false;
             }
-
             return true;
         }
 
@@ -203,9 +221,7 @@ namespace UCL_Projekt_1
             {
                 return false;
             }
-
             return true;
         }
-
     }
 }
