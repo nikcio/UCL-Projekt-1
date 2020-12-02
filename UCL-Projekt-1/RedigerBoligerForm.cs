@@ -23,10 +23,14 @@ namespace UCL_Projekt_1
             InitializeComponent();
             _baseForm = form;
             Ejendomsmægler[] mæglers = SQLRead.LoadEjendomsmægler();
+            var options = new BindingList<KeyValuePair<string, string>>();
             foreach(var item in mæglers) {
-                Mæglere.Items.Add(new KeyValuePair<string, string>(item.Mægler_Id.ToString(), $"Id: {item.Mægler_Id}, Navn: {item.Navn}"));
+                options.Add(new KeyValuePair<string, string>(item.Mægler_Id.ToString(), $"Id: {item.Mægler_Id}, Navn: {item.Navn}"));
             }
-            Mæglere.SelectedIndex = 1;
+            Mæglere.DataSource = options;
+            Mæglere.ValueMember = "Key";
+            Mæglere.DisplayMember = "Value";
+            Mæglere.SelectedIndex = 0;
             OpretForm();
         }
 
