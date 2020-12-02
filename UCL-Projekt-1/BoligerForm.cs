@@ -33,11 +33,25 @@ namespace UCL_Projekt_1
             foreach (var item in boliger)
             {
                 string[] adresse = item.Addresse.Split(',');
-                if (adresse.Length == 2)
-                {
-                    VisEnBolig(adresse[0], adresse[1], item.Udbuds_pris.ToString(), item.Bolig_Id);
-                }
+                VisEnBolig(adresse.Length >= 1 ? adresse[0] : "Mangler adresse", adresse.Length >= 2 ? adresse[1] : "Mangler by", item.Udbuds_pris.ToString(), item.Bolig_Id);
             }
+        }
+
+        private void VisBoliger(string område) {
+            Bolig[] boliger = SQLRead.LoadBoliger(område);
+            foreach (var item in boliger) {
+                string[] adresse = item.Addresse.Split(',');
+                VisEnBolig(adresse.Length >= 1 ? adresse[0] : "Mangler adresse", adresse.Length >= 2 ? adresse[1] : "Mangler by", item.Udbuds_pris.ToString(), item.Bolig_Id);
+            }
+        }
+
+        private void VisBoliger(int boligId) {
+            Bolig bolig = SQLRead.VisBolig(boligId.ToString());
+            if(bolig != null) {
+                string[] adresse = bolig.Addresse.Split(',');
+                VisEnBolig(adresse.Length >= 1 ? adresse[0] : "Mangler adresse", adresse.Length >= 2 ? adresse[1] : "Mangler by", bolig.Udbuds_pris.ToString(), bolig.Bolig_Id);
+            }
+            
         }
 
         private void VisEnBolig(string adresse, string by, string pris, int id)
@@ -102,6 +116,27 @@ namespace UCL_Projekt_1
         private void SeBolig_Click(object sender, EventArgs e, int id)
         {
             _baseForm.OpenChildForm(new RedigerBoligerForm(_baseForm, id));
+        }
+
+        private void Søg_TextChanged(object sender, EventArgs e) {
+            FlowLayout.Controls.Clear();
+            VisBoliger(Søg.Text);
+        }
+
+        private void BoligId_TextChanged(object sender, EventArgs e) {
+            FlowLayout.Controls.Clear();
+            if(int.TryParse(BoligId.Text, out int resultat)) {
+                BoligIdValidation.Text = "";
+                VisBoliger(resultat);
+            }
+            else if(BoligId.Text == "") {
+                BoligIdValidation.Text = "";
+                VisBoliger();
+            }
+            else {
+                BoligIdValidation.Text = "Id skal være et tal";
+            }
+            
         }
     }
 }

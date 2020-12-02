@@ -16,5 +16,9 @@ namespace UCL_Projekt_1
         {
             InitializeComponent();
         }
+
+        private void RedigerKunde_Click(object sender, EventArgs e) {
+
+        }
     }
 }
