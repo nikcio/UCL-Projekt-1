@@ -131,15 +131,20 @@ namespace UCL_Projekt_1
             Er_køber.Checked = (bool)k.Er_køber;
         }
 
+        private bool TjekSletRedigerMægler()
+        {
+            int j = 0;
+            if (!int.TryParse(Kunde_id_tb.Text, out j))
+            {
+                return false;
+            }
+            return true;
+        }
+        
         private bool tjekKundeVærdiger()
         {
             int i = 0;
             if (!int.TryParse(Kunde_tlf_tb.Text, out i))
-            {
-                return false;
-            }
-            int j = 0;
-            if (!int.TryParse(Kunde_id_tb.Text, out j))
             {
                 return false;
             }
