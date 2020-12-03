@@ -14,11 +14,13 @@ namespace UCL_Projekt_1
     public partial class BoligerForm : Form
     {
         private BaseForm _baseForm;
+        private Bolig[] boliger;
 
         public BoligerForm(BaseForm form)
         {
             InitializeComponent();
             _baseForm = form;
+            boliger = SQLRead.LoadBoliger();
             VisBoliger();
         }
 
@@ -29,7 +31,6 @@ namespace UCL_Projekt_1
 
         private void VisBoliger()
         {
-            Bolig[] boliger = SQLRead.LoadBoliger();
             foreach (var item in boliger)
             {
                 string[] adresse = item.Addresse.Split(',');
@@ -38,18 +39,18 @@ namespace UCL_Projekt_1
         }
 
         private void VisBoliger(string område) {
-            Bolig[] boliger = SQLRead.LoadBoliger(område);
-            foreach (var item in boliger) {
+            Bolig[] filterBoliger = boliger.Where(item => item.Addresse.Contains(område)).ToArray();
+            foreach (var item in filterBoliger) {
                 string[] adresse = item.Addresse.Split(',');
                 VisEnBolig(adresse.Length >= 1 ? adresse[0] : "Mangler adresse", adresse.Length >= 2 ? adresse[1] : "Mangler by", item.Udbuds_pris.ToString(), item.Bolig_Id);
             }
         }
 
         private void VisBoliger(int boligId) {
-            Bolig bolig = SQLRead.VisBolig(boligId.ToString());
-            if(bolig != null) {
-                string[] adresse = bolig.Addresse.Split(',');
-                VisEnBolig(adresse.Length >= 1 ? adresse[0] : "Mangler adresse", adresse.Length >= 2 ? adresse[1] : "Mangler by", bolig.Udbuds_pris.ToString(), bolig.Bolig_Id);
+            Bolig filterBolig = boliger.FirstOrDefault(item => item.Bolig_Id == boligId);
+            if (filterBolig != null) {
+                string[] adresse = filterBolig.Addresse.Split(',');
+                VisEnBolig(adresse.Length >= 1 ? adresse[0] : "Mangler adresse", adresse.Length >= 2 ? adresse[1] : "Mangler by", filterBolig.Udbuds_pris.ToString(), filterBolig.Bolig_Id);
             }
             
         }

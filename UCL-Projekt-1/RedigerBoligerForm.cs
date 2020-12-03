@@ -48,7 +48,9 @@ namespace UCL_Projekt_1
             Bolig_id.Visible = false;
             Rediger.Visible = false;
             Slet.Visible = false;
-            Vis.Visible = false;
+            Date.Visible = false;
+            Sælg_bolig.Visible = false;
+            SlagsDatoText.Visible = false;
         }
 
         private void RedigerSletForm()
@@ -59,6 +61,7 @@ namespace UCL_Projekt_1
             Bolig_type_tb.Enabled = false;
             Mæglere.Enabled = false;
             Bolig_id_tb.Enabled = false;
+            Opret.Visible = false;
         }
 
         private void Opret_Click(object sender, EventArgs e)
@@ -214,7 +217,7 @@ namespace UCL_Projekt_1
             SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
             command.Parameters.AddWithValue("@Udbudspris", Udbudspris_tb.Text);
             command.Parameters.AddWithValue("@Bolig_id", Bolig_id_tb.Text);
-            command.Parameters.AddWithValue("@Dato", DateTime.Now);
+            command.Parameters.AddWithValue("@Dato", Date.SelectionRange.Start.Date);
             command.Parameters.AddWithValue("@Mægler_id", ((KeyValuePair<string, string>)Mæglere.SelectedItem).Key);
 
             try
