@@ -30,7 +30,6 @@ namespace UCL_Projekt_1 {
             this.Grund_areal = new System.Windows.Forms.Label();
             this.Bolig_areal = new System.Windows.Forms.Label();
             this.Bolig_type = new System.Windows.Forms.Label();
-            this.Status = new System.Windows.Forms.Label();
             this.Bolig_id_tb = new System.Windows.Forms.TextBox();
             this.Adresse_tb = new System.Windows.Forms.TextBox();
             this.Grund_areal_tb = new System.Windows.Forms.TextBox();
@@ -38,13 +37,18 @@ namespace UCL_Projekt_1 {
             this.Bolig_type_tb = new System.Windows.Forms.TextBox();
             this.Udbudspris_tb = new System.Windows.Forms.TextBox();
             this.Opret = new System.Windows.Forms.Button();
-            this.Vis = new System.Windows.Forms.Button();
             this.Rediger = new System.Windows.Forms.Button();
             this.Slet = new System.Windows.Forms.Button();
-            this.solgt = new System.Windows.Forms.CheckBox();
             this.Mægler = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Mæglere = new System.Windows.Forms.ComboBox();
+            this.Sælg_bolig = new System.Windows.Forms.Button();
+            this.Date = new System.Windows.Forms.MonthCalendar();
+            this.SlagsDatoText = new System.Windows.Forms.Label();
+            this.Sælger_comboBox = new System.Windows.Forms.ComboBox();
+            this.Sælger = new System.Windows.Forms.Label();
+            this.Køber_comboBox = new System.Windows.Forms.ComboBox();
+            this.Køber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Adresse
@@ -61,7 +65,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Bolig_id.AutoSize = true;
             this.Bolig_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_id.Location = new System.Drawing.Point(733, 82);
+            this.Bolig_id.Location = new System.Drawing.Point(735, 31);
             this.Bolig_id.Name = "Bolig_id";
             this.Bolig_id.Size = new System.Drawing.Size(75, 25);
             this.Bolig_id.TabIndex = 1;
@@ -107,20 +111,10 @@ namespace UCL_Projekt_1 {
             this.Bolig_type.TabIndex = 5;
             this.Bolig_type.Text = "Bolig type";
             // 
-            // Status
-            // 
-            this.Status.AutoSize = true;
-            this.Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status.Location = new System.Drawing.Point(226, 340);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(68, 25);
-            this.Status.TabIndex = 6;
-            this.Status.Text = "Status";
-            // 
             // Bolig_id_tb
             // 
             this.Bolig_id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_id_tb.Location = new System.Drawing.Point(872, 79);
+            this.Bolig_id_tb.Location = new System.Drawing.Point(874, 28);
             this.Bolig_id_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Bolig_id_tb.Name = "Bolig_id_tb";
             this.Bolig_id_tb.Size = new System.Drawing.Size(124, 30);
@@ -174,7 +168,7 @@ namespace UCL_Projekt_1 {
             // Opret
             // 
             this.Opret.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Opret.Location = new System.Drawing.Point(304, 422);
+            this.Opret.Location = new System.Drawing.Point(332, 375);
             this.Opret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret.Name = "Opret";
             this.Opret.Size = new System.Drawing.Size(126, 43);
@@ -183,22 +177,10 @@ namespace UCL_Projekt_1 {
             this.Opret.UseVisualStyleBackColor = true;
             this.Opret.Click += new System.EventHandler(this.Opret_Click);
             // 
-            // Vis
-            // 
-            this.Vis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vis.Location = new System.Drawing.Point(794, 148);
-            this.Vis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Vis.Name = "Vis";
-            this.Vis.Size = new System.Drawing.Size(126, 43);
-            this.Vis.TabIndex = 15;
-            this.Vis.Text = "Vis";
-            this.Vis.UseVisualStyleBackColor = true;
-            this.Vis.Click += new System.EventHandler(this.Vis_Click);
-            // 
             // Rediger
             // 
             this.Rediger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rediger.Location = new System.Drawing.Point(794, 214);
+            this.Rediger.Location = new System.Drawing.Point(475, 375);
             this.Rediger.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Rediger.Name = "Rediger";
             this.Rediger.Size = new System.Drawing.Size(126, 43);
@@ -210,7 +192,7 @@ namespace UCL_Projekt_1 {
             // Slet
             // 
             this.Slet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Slet.Location = new System.Drawing.Point(794, 278);
+            this.Slet.Location = new System.Drawing.Point(622, 375);
             this.Slet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Slet.Name = "Slet";
             this.Slet.Size = new System.Drawing.Size(126, 43);
@@ -218,18 +200,6 @@ namespace UCL_Projekt_1 {
             this.Slet.Text = "Slet";
             this.Slet.UseVisualStyleBackColor = true;
             this.Slet.Click += new System.EventHandler(this.Slet_Click);
-            // 
-            // solgt
-            // 
-            this.solgt.AutoSize = true;
-            this.solgt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.solgt.Location = new System.Drawing.Point(460, 340);
-            this.solgt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.solgt.Name = "solgt";
-            this.solgt.Size = new System.Drawing.Size(79, 29);
-            this.solgt.TabIndex = 18;
-            this.solgt.Text = "Solgt";
-            this.solgt.UseVisualStyleBackColor = true;
             // 
             // Mægler
             // 
@@ -258,18 +228,88 @@ namespace UCL_Projekt_1 {
             this.Mæglere.Size = new System.Drawing.Size(232, 24);
             this.Mæglere.TabIndex = 22;
             // 
+            // Sælg_bolig
+            // 
+            this.Sælg_bolig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sælg_bolig.Location = new System.Drawing.Point(475, 433);
+            this.Sælg_bolig.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Sælg_bolig.Name = "Sælg_bolig";
+            this.Sælg_bolig.Size = new System.Drawing.Size(125, 43);
+            this.Sælg_bolig.TabIndex = 23;
+            this.Sælg_bolig.Text = "Sælg bolig";
+            this.Sælg_bolig.UseVisualStyleBackColor = true;
+            this.Sælg_bolig.Click += new System.EventHandler(this.Sælg_bolig_Click);
+            // 
+            // Date
+            // 
+            this.Date.Location = new System.Drawing.Point(874, 180);
+            this.Date.MaxSelectionCount = 1;
+            this.Date.Name = "Date";
+            this.Date.TabIndex = 24;
+            // 
+            // SlagsDatoText
+            // 
+            this.SlagsDatoText.AutoSize = true;
+            this.SlagsDatoText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SlagsDatoText.Location = new System.Drawing.Point(735, 180);
+            this.SlagsDatoText.Name = "SlagsDatoText";
+            this.SlagsDatoText.Size = new System.Drawing.Size(105, 25);
+            this.SlagsDatoText.TabIndex = 25;
+            this.SlagsDatoText.Text = "Salgs dato";
+            // 
+            // Sælger_comboBox
+            // 
+            this.Sælger_comboBox.FormattingEnabled = true;
+            this.Sælger_comboBox.Location = new System.Drawing.Point(874, 77);
+            this.Sælger_comboBox.Name = "Sælger_comboBox";
+            this.Sælger_comboBox.Size = new System.Drawing.Size(232, 24);
+            this.Sælger_comboBox.TabIndex = 27;
+            // 
+            // Sælger
+            // 
+            this.Sælger.AutoSize = true;
+            this.Sælger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sælger.Location = new System.Drawing.Point(735, 73);
+            this.Sælger.Name = "Sælger";
+            this.Sælger.Size = new System.Drawing.Size(75, 25);
+            this.Sælger.TabIndex = 26;
+            this.Sælger.Text = "Sælger";
+            // 
+            // Køber_comboBox
+            // 
+            this.Køber_comboBox.FormattingEnabled = true;
+            this.Køber_comboBox.Location = new System.Drawing.Point(874, 127);
+            this.Køber_comboBox.Name = "Køber_comboBox";
+            this.Køber_comboBox.Size = new System.Drawing.Size(232, 24);
+            this.Køber_comboBox.TabIndex = 29;
+            // 
+            // Køber
+            // 
+            this.Køber.AutoSize = true;
+            this.Køber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Køber.Location = new System.Drawing.Point(735, 123);
+            this.Køber.Name = "Køber";
+            this.Køber.Size = new System.Drawing.Size(65, 25);
+            this.Køber.TabIndex = 28;
+            this.Køber.Text = "Køber";
+            // 
             // RedigerBoligerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1351, 598);
+            this.Controls.Add(this.Køber_comboBox);
+            this.Controls.Add(this.Køber);
+            this.Controls.Add(this.Sælger_comboBox);
+            this.Controls.Add(this.Sælger);
+            this.Controls.Add(this.SlagsDatoText);
+            this.Controls.Add(this.Date);
+            this.Controls.Add(this.Sælg_bolig);
             this.Controls.Add(this.Mæglere);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Mægler);
-            this.Controls.Add(this.solgt);
             this.Controls.Add(this.Slet);
             this.Controls.Add(this.Rediger);
-            this.Controls.Add(this.Vis);
             this.Controls.Add(this.Opret);
             this.Controls.Add(this.Udbudspris_tb);
             this.Controls.Add(this.Bolig_type_tb);
@@ -277,7 +317,6 @@ namespace UCL_Projekt_1 {
             this.Controls.Add(this.Grund_areal_tb);
             this.Controls.Add(this.Adresse_tb);
             this.Controls.Add(this.Bolig_id_tb);
-            this.Controls.Add(this.Status);
             this.Controls.Add(this.Bolig_type);
             this.Controls.Add(this.Bolig_areal);
             this.Controls.Add(this.Grund_areal);
@@ -301,7 +340,6 @@ namespace UCL_Projekt_1 {
         private System.Windows.Forms.Label Grund_areal;
         private System.Windows.Forms.Label Bolig_areal;
         private System.Windows.Forms.Label Bolig_type;
-        private System.Windows.Forms.Label Status;
         private System.Windows.Forms.TextBox Bolig_id_tb;
         private System.Windows.Forms.TextBox Adresse_tb;
         private System.Windows.Forms.TextBox Grund_areal_tb;
@@ -309,12 +347,17 @@ namespace UCL_Projekt_1 {
         private System.Windows.Forms.TextBox Bolig_type_tb;
         private System.Windows.Forms.TextBox Udbudspris_tb;
         private System.Windows.Forms.Button Opret;
-        private System.Windows.Forms.Button Vis;
         private System.Windows.Forms.Button Rediger;
         private System.Windows.Forms.Button Slet;
-        private System.Windows.Forms.CheckBox solgt;
         private System.Windows.Forms.Label Mægler;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Mæglere;
+        private System.Windows.Forms.Button Sælg_bolig;
+        private System.Windows.Forms.MonthCalendar Date;
+        private System.Windows.Forms.Label SlagsDatoText;
+        private System.Windows.Forms.ComboBox Sælger_comboBox;
+        private System.Windows.Forms.Label Sælger;
+        private System.Windows.Forms.ComboBox Køber_comboBox;
+        private System.Windows.Forms.Label Køber;
     }
 }
