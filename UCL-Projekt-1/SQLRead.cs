@@ -46,7 +46,8 @@ namespace UCL_Projekt_1
                         reader.GetInt32(reader.GetOrdinal("Bolig_areal")),
                         reader.GetInt32(reader.GetOrdinal("Grund_areal")),
                         reader.GetString(reader.GetOrdinal("Adresse")),
-                        !reader.IsDBNull(reader.GetOrdinal("Kunde_Id")) ? reader.GetInt32(reader.GetOrdinal("Kunde_Id")) : -1,
+                        !reader.IsDBNull(reader.GetOrdinal("Kunde_køber")) ? reader.GetInt32(reader.GetOrdinal("Kunde_køber")) : -1,
+                        !reader.IsDBNull(reader.GetOrdinal("Kunde_sælger")) ? reader.GetInt32(reader.GetOrdinal("Kunde_sælger")) : -1,
                         !reader.IsDBNull(reader.GetOrdinal("Mægler_Id")) ? reader.GetInt32(reader.GetOrdinal("Mægler_Id")) : -1,
                         reader.GetBoolean(reader.GetOrdinal("Solgt"))));
                 }
