@@ -121,6 +121,12 @@
     <Compile Include="UdskrivingsForm.Designer.cs">
       <DependentUpon>UdskrivingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UdskrivingsItemTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UdskrivingsItemTemplate.Designer.cs">
+      <DependentUpon>UdskrivingsItemTemplate.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UdskrivingsForm.resx">
       <DependentUpon>UdskrivingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UdskrivingsItemTemplate.resx">
+      <DependentUpon>UdskrivingsItemTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

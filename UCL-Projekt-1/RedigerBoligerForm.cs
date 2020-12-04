@@ -20,20 +20,21 @@ namespace UCL_Projekt_1
         private Ejendomsmægler[] mæglers = SQLRead.LoadEjendomsmægler();
         private Kunde[] kunder = SQLRead.LoadKunder();
 
-        public RedigerBoligerForm(BaseForm form) {
+        public RedigerBoligerForm(BaseForm form)
+        {
             InitializeComponent();
             _baseForm = form;
-            Kunde[] købere = kunder.Where(item => item.Er_køber == true).ToArray();
             Kunde[] sælgere = kunder.Where(item => item.Er_sælger == true).ToArray();
             SætMæglereVærdier(mæglers);
-            SætKøbereSælgerVærdier(købere, Køber_comboBox);
             SætKøbereSælgerVærdier(sælgere, Sælger_comboBox);
             OpretForm();
         }
 
-        private void SætMæglereVærdier(Ejendomsmægler[] mæglers) {
+        private void SætMæglereVærdier(Ejendomsmægler[] mæglers)
+        {
             var options = new BindingList<KeyValuePair<string, string>>();
-            foreach (var item in mæglers) {
+            foreach (var item in mæglers)
+            {
                 options.Add(new KeyValuePair<string, string>(item.Mægler_Id.ToString(), $"{item.Navn}, Id: {item.Mægler_Id}"));
             }
             Mæglere.DataSource = options;
@@ -41,9 +42,11 @@ namespace UCL_Projekt_1
             Mæglere.DisplayMember = "Value";
         }
 
-        private void SætKøbereSælgerVærdier(Kunde[] mæglers, ComboBox comboBox) {
+        private void SætKøbereSælgerVærdier(Kunde[] mæglers, ComboBox comboBox)
+        {
             var options = new BindingList<KeyValuePair<string, string>>();
-            foreach (var item in mæglers) {
+            foreach (var item in mæglers)
+            {
                 options.Add(new KeyValuePair<string, string>(item.Kunde_Id.ToString(), $"{item.Navn}, Id: {item.Kunde_Id}"));
             }
             comboBox.DataSource = options;
@@ -68,6 +71,8 @@ namespace UCL_Projekt_1
             Date.Visible = false;
             Sælg_bolig.Visible = false;
             SlagsDatoText.Visible = false;
+            Køber.Visible = false;
+            Køber_comboBox.Visible = false;
         }
 
         private void RedigerSletForm()
@@ -79,6 +84,7 @@ namespace UCL_Projekt_1
             Mæglere.Enabled = false;
             Bolig_id_tb.Enabled = false;
             Opret.Visible = false;
+            Sælger_comboBox.Enabled = false;
         }
 
         private void Opret_Click(object sender, EventArgs e)
@@ -86,7 +92,7 @@ namespace UCL_Projekt_1
             if (TjekOpretBolig() == true)
             {
                 //OPRET
-                string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt, Mægler_Id) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt, @mæglerId)";
+                string Opret = $"INSERT INTO Bolig (Adresse, Grund_areal, Bolig_areal, Boligtype, Udbuds_pris, Solgt, Mægler_Id, Kunde_sælger) VALUES (@Adresse_tb, @Grund_areal_tb, @Bolig_areal_tb, @Bolig_type_tb, @Udbudspris_tb, @solgt, @mæglerId, @sælger)";
                 SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
                 command.Parameters.AddWithValue("@Adresse_tb", Adresse_tb.Text);
                 command.Parameters.AddWithValue("@Grund_areal_tb", Grund_areal_tb.Text);
@@ -95,6 +101,7 @@ namespace UCL_Projekt_1
                 command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
                 command.Parameters.AddWithValue("@solgt", 0);
                 command.Parameters.AddWithValue("@mæglerId", ((KeyValuePair<string, string>)Mæglere.SelectedItem).Key);
+                command.Parameters.AddWithValue("@sælger", ((KeyValuePair<string, string>)Sælger_comboBox.SelectedItem).Key);
 
                 try
                 {
@@ -122,28 +129,25 @@ namespace UCL_Projekt_1
 
         private void VisInformation(string id)
         {
-            if (TjekOpretBolig() == true)
+            //VIS
+            Bolig b = SQLRead.VisBolig(id);
+            Adresse_tb.Text = b.Addresse;
+            Grund_areal_tb.Text = b.Grund_areal.ToString();
+            Bolig_areal_tb.Text = b.Bolig_areal.ToString();
+            Bolig_type_tb.Text = b.Boligtype;
+            Udbudspris_tb.Text = b.Udbuds_pris.ToString();
+            Bolig_id_tb.Text = b.Bolig_Id.ToString();
+            Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(b.Mægler_Id.ToString());
+            Mæglere.Items.Add(new KeyValuePair<string, string>(mægler.Mægler_Id.ToString(), $"{mægler.Navn}, Id: {mægler.Mægler_Id}"));
+            Kunde sælger = SQLRead.VisKunder(b.Kunde_sælger.ToString());
+            if(sælger != null)
             {
-                //VIS
-                Bolig b = SQLRead.VisBolig(id);
-                Adresse_tb.Text = b.Addresse;
-                Grund_areal_tb.Text = b.Grund_areal.ToString();
-                Bolig_areal_tb.Text = b.Bolig_areal.ToString();
-                Bolig_type_tb.Text = b.Boligtype;
-                Udbudspris_tb.Text = b.Udbuds_pris.ToString();
-                Bolig_id_tb.Text = b.Bolig_Id.ToString();
-                Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(b.Mægler_Id.ToString());
-                Mæglere.Items.Add(new KeyValuePair<string, string>(mægler.Mægler_Id.ToString(), $"{mægler.Navn}, Id: {mægler.Mægler_Id}"));
-                Kunde sælger = SQLRead.VisKunder(b.Kunde_sælger.ToString());
+
                 Sælger_comboBox.Items.Add(new KeyValuePair<string, string>(sælger.Kunde_Id.ToString(), $"{sælger.Navn}, Id: {sælger.Kunde_Id}"));
-                Kunde køber = SQLRead.VisKunder(b.Kunde_køber.ToString());
-                Køber_comboBox.Items.Add(new KeyValuePair<string, string>(køber.Kunde_Id.ToString(), $"{køber.Navn}, Id: {køber.Kunde_Id}"));
-                Mæglere.SelectedIndex = 0;
             }
-            else
-            {
-                MessageBox.Show("Der opstod en fejl, prøv igen ");
-            }
+            Kunde[] købere = kunder.Where(item => item.Er_køber == true).ToArray();
+            SætKøbereSælgerVærdier(købere, Køber_comboBox);
+            Mæglere.SelectedIndex = 0;
         }
 
         private void Rediger_Click(object sender, EventArgs e)
@@ -155,7 +159,7 @@ namespace UCL_Projekt_1
                 SqlCommand command = new SqlCommand(Rediger, BaseForm.conn);
                 command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
                 command.Parameters.AddWithValue("@Udbudspris_tb", Udbudspris_tb.Text);
-                
+
 
                 try
                 {
@@ -265,10 +269,11 @@ namespace UCL_Projekt_1
 
 
             //REDIGER
-            string Rediger = $"UPDATE Bolig SET Solgt=@Solgt WHERE Bolig_id=@Bolig_id_tb";
+            string Rediger = $"UPDATE Bolig SET Solgt=@Solgt, Kunde_køber=@Køber WHERE Bolig_id=@Bolig_id_tb";
             SqlCommand command2 = new SqlCommand(Rediger, BaseForm.conn);
             command2.Parameters.AddWithValue("@Solgt", 1);
             command2.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
+            command2.Parameters.AddWithValue("@Køber", ((KeyValuePair<string, string>)Køber_comboBox.SelectedItem).Key);
 
             try
             {
