@@ -208,7 +208,6 @@ namespace UCL_Projekt_1
 
         private void Sælg_bolig_Click(object sender, EventArgs e)
         {
-            
             //OPRET
             string Opret = $"INSERT INTO Salg (Dato, Pris, Mægler_id, Bolig_id) VALUES (@Dato, @Udbudspris, @Mægler_id, @Bolig_id)";
             SqlCommand command = new SqlCommand(Opret, BaseForm.conn);
