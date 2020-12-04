@@ -41,7 +41,7 @@ namespace UCL_Projekt_1
                     {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
                     }
-                    streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Kunde id: {item.Kunde_Id}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
+                    streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Køber: {item.Kunde_køber}, Sælger: {item.Kunde_sælger}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
                 }
             }
             Process.Start(path);
@@ -61,7 +61,7 @@ namespace UCL_Projekt_1
                     {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
                     }
-                    streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Kunde id: {item.Kunde_Id}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
+                    streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Køber: {item.Kunde_køber}, Sælger: {item.Kunde_sælger}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
                 }
             }
             Process.Start(path);
@@ -81,7 +81,7 @@ namespace UCL_Projekt_1
                     {
                         mæglerInfo = $"Mægler navn: {mægler.Navn}, Mægler tlf: {mægler.Telefon}, Mægler email: {mægler.Email}";
                     }
-                    streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Kunde id: {item.Kunde_Id}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
+                    streamWriter.WriteLine($"Id: {item.Bolig_Id}, Adresse: {item.Addresse}, Boligtype: {item.Boligtype}, Bolig areal: {item.Bolig_areal}, Grund areal: {item.Grund_areal}, Køber: {item.Kunde_køber}, Sælger: {item.Kunde_sælger}, Solgt: {(item.Solgt == true ? "Ja" : "Nej")}, {mæglerInfo}");
                 }
             }
             Process.Start(path);

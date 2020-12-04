@@ -17,21 +17,38 @@ namespace UCL_Projekt_1
     {
 
         private BaseForm _baseForm;
+        private Ejendomsmægler[] mæglers = SQLRead.LoadEjendomsmægler();
+        private Kunde[] kunder = SQLRead.LoadKunder();
 
-        public RedigerBoligerForm(BaseForm form)
-        {
+        public RedigerBoligerForm(BaseForm form) {
             InitializeComponent();
             _baseForm = form;
-            Ejendomsmægler[] mæglers = SQLRead.LoadEjendomsmægler();
+            Kunde[] købere = kunder.Where(item => item.Er_køber == true).ToArray();
+            Kunde[] sælgere = kunder.Where(item => item.Er_sælger == true).ToArray();
+            SætMæglereVærdier(mæglers);
+            SætKøbereSælgerVærdier(købere, Køber_comboBox);
+            SætKøbereSælgerVærdier(sælgere, Sælger_comboBox);
+            OpretForm();
+        }
+
+        private void SætMæglereVærdier(Ejendomsmægler[] mæglers) {
             var options = new BindingList<KeyValuePair<string, string>>();
-            foreach(var item in mæglers) {
+            foreach (var item in mæglers) {
                 options.Add(new KeyValuePair<string, string>(item.Mægler_Id.ToString(), $"{item.Navn}, Id: {item.Mægler_Id}"));
             }
             Mæglere.DataSource = options;
             Mæglere.ValueMember = "Key";
             Mæglere.DisplayMember = "Value";
-            Mæglere.SelectedIndex = 0;
-            OpretForm();
+        }
+
+        private void SætKøbereSælgerVærdier(Kunde[] mæglers, ComboBox comboBox) {
+            var options = new BindingList<KeyValuePair<string, string>>();
+            foreach (var item in mæglers) {
+                options.Add(new KeyValuePair<string, string>(item.Kunde_Id.ToString(), $"{item.Navn}, Id: {item.Kunde_Id}"));
+            }
+            comboBox.DataSource = options;
+            comboBox.ValueMember = "Key";
+            comboBox.DisplayMember = "Value";
         }
 
         public RedigerBoligerForm(BaseForm form, int id)
@@ -117,6 +134,10 @@ namespace UCL_Projekt_1
                 Bolig_id_tb.Text = b.Bolig_Id.ToString();
                 Ejendomsmægler mægler = SQLRead.VisEjendomsmægler(b.Mægler_Id.ToString());
                 Mæglere.Items.Add(new KeyValuePair<string, string>(mægler.Mægler_Id.ToString(), $"{mægler.Navn}, Id: {mægler.Mægler_Id}"));
+                Kunde sælger = SQLRead.VisKunder(b.Kunde_sælger.ToString());
+                Sælger_comboBox.Items.Add(new KeyValuePair<string, string>(sælger.Kunde_Id.ToString(), $"{sælger.Navn}, Id: {sælger.Kunde_Id}"));
+                Kunde køber = SQLRead.VisKunder(b.Kunde_køber.ToString());
+                Køber_comboBox.Items.Add(new KeyValuePair<string, string>(køber.Kunde_Id.ToString(), $"{køber.Navn}, Id: {køber.Kunde_Id}"));
                 Mæglere.SelectedIndex = 0;
             }
             else
@@ -253,6 +274,5 @@ namespace UCL_Projekt_1
                 MessageBox.Show("Der opstod en fejl, prøv igen " + Rediger);
             }
         }
-
     }
 }

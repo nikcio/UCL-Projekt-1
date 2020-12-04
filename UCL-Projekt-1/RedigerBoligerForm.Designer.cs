@@ -45,6 +45,10 @@ namespace UCL_Projekt_1 {
             this.Sælg_bolig = new System.Windows.Forms.Button();
             this.Date = new System.Windows.Forms.MonthCalendar();
             this.SlagsDatoText = new System.Windows.Forms.Label();
+            this.Sælger_comboBox = new System.Windows.Forms.ComboBox();
+            this.Sælger = new System.Windows.Forms.Label();
+            this.Køber_comboBox = new System.Windows.Forms.ComboBox();
+            this.Køber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Adresse
@@ -61,7 +65,7 @@ namespace UCL_Projekt_1 {
             // 
             this.Bolig_id.AutoSize = true;
             this.Bolig_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_id.Location = new System.Drawing.Point(733, 82);
+            this.Bolig_id.Location = new System.Drawing.Point(735, 31);
             this.Bolig_id.Name = "Bolig_id";
             this.Bolig_id.Size = new System.Drawing.Size(75, 25);
             this.Bolig_id.TabIndex = 1;
@@ -110,7 +114,7 @@ namespace UCL_Projekt_1 {
             // Bolig_id_tb
             // 
             this.Bolig_id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bolig_id_tb.Location = new System.Drawing.Point(872, 79);
+            this.Bolig_id_tb.Location = new System.Drawing.Point(874, 28);
             this.Bolig_id_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Bolig_id_tb.Name = "Bolig_id_tb";
             this.Bolig_id_tb.Size = new System.Drawing.Size(124, 30);
@@ -238,7 +242,7 @@ namespace UCL_Projekt_1 {
             // 
             // Date
             // 
-            this.Date.Location = new System.Drawing.Point(797, 182);
+            this.Date.Location = new System.Drawing.Point(874, 180);
             this.Date.MaxSelectionCount = 1;
             this.Date.Name = "Date";
             this.Date.TabIndex = 24;
@@ -247,17 +251,57 @@ namespace UCL_Projekt_1 {
             // 
             this.SlagsDatoText.AutoSize = true;
             this.SlagsDatoText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SlagsDatoText.Location = new System.Drawing.Point(735, 148);
+            this.SlagsDatoText.Location = new System.Drawing.Point(735, 180);
             this.SlagsDatoText.Name = "SlagsDatoText";
             this.SlagsDatoText.Size = new System.Drawing.Size(105, 25);
             this.SlagsDatoText.TabIndex = 25;
             this.SlagsDatoText.Text = "Salgs dato";
+            // 
+            // Sælger_comboBox
+            // 
+            this.Sælger_comboBox.FormattingEnabled = true;
+            this.Sælger_comboBox.Location = new System.Drawing.Point(874, 77);
+            this.Sælger_comboBox.Name = "Sælger_comboBox";
+            this.Sælger_comboBox.Size = new System.Drawing.Size(232, 24);
+            this.Sælger_comboBox.TabIndex = 27;
+            // 
+            // Sælger
+            // 
+            this.Sælger.AutoSize = true;
+            this.Sælger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sælger.Location = new System.Drawing.Point(735, 73);
+            this.Sælger.Name = "Sælger";
+            this.Sælger.Size = new System.Drawing.Size(75, 25);
+            this.Sælger.TabIndex = 26;
+            this.Sælger.Text = "Sælger";
+            // 
+            // Køber_comboBox
+            // 
+            this.Køber_comboBox.FormattingEnabled = true;
+            this.Køber_comboBox.Location = new System.Drawing.Point(874, 127);
+            this.Køber_comboBox.Name = "Køber_comboBox";
+            this.Køber_comboBox.Size = new System.Drawing.Size(232, 24);
+            this.Køber_comboBox.TabIndex = 29;
+            // 
+            // Køber
+            // 
+            this.Køber.AutoSize = true;
+            this.Køber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Køber.Location = new System.Drawing.Point(735, 123);
+            this.Køber.Name = "Køber";
+            this.Køber.Size = new System.Drawing.Size(65, 25);
+            this.Køber.TabIndex = 28;
+            this.Køber.Text = "Køber";
             // 
             // RedigerBoligerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1351, 598);
+            this.Controls.Add(this.Køber_comboBox);
+            this.Controls.Add(this.Køber);
+            this.Controls.Add(this.Sælger_comboBox);
+            this.Controls.Add(this.Sælger);
             this.Controls.Add(this.SlagsDatoText);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Sælg_bolig);
@@ -311,5 +355,9 @@ namespace UCL_Projekt_1 {
         private System.Windows.Forms.Button Sælg_bolig;
         private System.Windows.Forms.MonthCalendar Date;
         private System.Windows.Forms.Label SlagsDatoText;
+        private System.Windows.Forms.ComboBox Sælger_comboBox;
+        private System.Windows.Forms.Label Sælger;
+        private System.Windows.Forms.ComboBox Køber_comboBox;
+        private System.Windows.Forms.Label Køber;
     }
 }
