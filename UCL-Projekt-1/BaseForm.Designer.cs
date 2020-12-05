@@ -32,7 +32,6 @@
             this.Boliger = new System.Windows.Forms.Button();
             this.Personale = new System.Windows.Forms.Button();
             this.Kunder = new System.Windows.Forms.Button();
-            this.Udskriv = new System.Windows.Forms.Button();
             this.Body = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
@@ -117,10 +116,9 @@
             this.flowLayoutPanel1.Controls.Add(this.Boliger);
             this.flowLayoutPanel1.Controls.Add(this.Personale);
             this.flowLayoutPanel1.Controls.Add(this.Kunder);
-            this.flowLayoutPanel1.Controls.Add(this.Udskriv);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1293, 79);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1443, 79);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 68);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(450, 68);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // Boliger
@@ -182,26 +180,6 @@
             this.Kunder.UseCompatibleTextRendering = true;
             this.Kunder.UseVisualStyleBackColor = false;
             this.Kunder.Click += new System.EventHandler(this.Kunder_Click);
-            // 
-            // Udskriv
-            // 
-            this.Udskriv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Udskriv.AutoSize = true;
-            this.Udskriv.BackColor = System.Drawing.Color.Transparent;
-            this.Udskriv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Udskriv.FlatAppearance.BorderSize = 0;
-            this.Udskriv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Udskriv.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Udskriv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(74)))), ((int)(((byte)(77)))));
-            this.Udskriv.Location = new System.Drawing.Point(453, 4);
-            this.Udskriv.Margin = new System.Windows.Forms.Padding(4);
-            this.Udskriv.Name = "Udskriv";
-            this.Udskriv.Size = new System.Drawing.Size(143, 58);
-            this.Udskriv.TabIndex = 5;
-            this.Udskriv.Text = "Udskriv";
-            this.Udskriv.UseCompatibleTextRendering = true;
-            this.Udskriv.UseVisualStyleBackColor = false;
-            this.Udskriv.Click += new System.EventHandler(this.Udskriv_Click);
             // 
             // Body
             // 
@@ -276,7 +254,6 @@
         private System.Windows.Forms.Button Kunder;
         private System.Windows.Forms.Panel Body;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button Udskriv;
     }
 }
 
