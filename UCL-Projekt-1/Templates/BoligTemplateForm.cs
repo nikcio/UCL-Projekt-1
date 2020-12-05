@@ -21,5 +21,9 @@ namespace UCL_Projekt_1
         {
 
         }
+
+        private void SælgBolig_Click(object sender, EventArgs e) {
+
+        }
     }
 }

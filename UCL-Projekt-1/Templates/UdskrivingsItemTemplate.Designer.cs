@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Item = new System.Windows.Forms.Panel();
+            this.SolgtDato = new System.Windows.Forms.Label();
             this.Grund_areal = new System.Windows.Forms.Label();
             this.Bolig_areal = new System.Windows.Forms.Label();
             this.Boligtype = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             // 
             // Item
             // 
+            this.Item.Controls.Add(this.SolgtDato);
             this.Item.Controls.Add(this.Grund_areal);
             this.Item.Controls.Add(this.Bolig_areal);
             this.Item.Controls.Add(this.Boligtype);
@@ -52,53 +54,75 @@
             this.Item.Controls.Add(this.Køber);
             this.Item.Controls.Add(this.Mægler);
             this.Item.Controls.Add(this.Adresse);
-            this.Item.Location = new System.Drawing.Point(209, 113);
+            this.Item.Location = new System.Drawing.Point(45, 77);
+            this.Item.Margin = new System.Windows.Forms.Padding(2);
             this.Item.Name = "Item";
-            this.Item.Size = new System.Drawing.Size(1000, 70);
+            this.Item.Size = new System.Drawing.Size(1100, 151);
             this.Item.TabIndex = 0;
+            // 
+            // SolgtDato
+            // 
+            this.SolgtDato.AutoSize = true;
+            this.SolgtDato.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.SolgtDato.Location = new System.Drawing.Point(847, 59);
+            this.SolgtDato.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SolgtDato.Name = "SolgtDato";
+            this.SolgtDato.Size = new System.Drawing.Size(72, 19);
+            this.SolgtDato.TabIndex = 10;
+            this.SolgtDato.Text = "SolgtDato";
             // 
             // Grund_areal
             // 
             this.Grund_areal.AutoSize = true;
-            this.Grund_areal.Location = new System.Drawing.Point(272, 43);
+            this.Grund_areal.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Grund_areal.Location = new System.Drawing.Point(197, 95);
+            this.Grund_areal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Grund_areal.Name = "Grund_areal";
-            this.Grund_areal.Size = new System.Drawing.Size(84, 17);
+            this.Grund_areal.Size = new System.Drawing.Size(132, 19);
             this.Grund_areal.TabIndex = 9;
-            this.Grund_areal.Text = "Grund areal";
+            this.Grund_areal.Text = "Grund areal: 12345";
             // 
             // Bolig_areal
             // 
             this.Bolig_areal.AutoSize = true;
-            this.Bolig_areal.Location = new System.Drawing.Point(134, 43);
+            this.Bolig_areal.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Bolig_areal.Location = new System.Drawing.Point(17, 95);
+            this.Bolig_areal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Bolig_areal.Name = "Bolig_areal";
-            this.Bolig_areal.Size = new System.Drawing.Size(75, 17);
+            this.Bolig_areal.Size = new System.Drawing.Size(127, 19);
             this.Bolig_areal.TabIndex = 8;
-            this.Bolig_areal.Text = "Bolig areal";
+            this.Bolig_areal.Text = "Bolig areal: 12345";
             // 
             // Boligtype
             // 
             this.Boligtype.AutoSize = true;
-            this.Boligtype.Location = new System.Drawing.Point(3, 43);
+            this.Boligtype.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Boligtype.Location = new System.Drawing.Point(426, 95);
+            this.Boligtype.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Boligtype.Name = "Boligtype";
-            this.Boligtype.Size = new System.Drawing.Size(66, 17);
+            this.Boligtype.Size = new System.Drawing.Size(70, 19);
             this.Boligtype.TabIndex = 7;
             this.Boligtype.Text = "Boligtype";
             // 
             // Pris
             // 
             this.Pris.AutoSize = true;
-            this.Pris.Location = new System.Drawing.Point(768, 10);
+            this.Pris.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Pris.Location = new System.Drawing.Point(847, 27);
+            this.Pris.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Pris.Name = "Pris";
-            this.Pris.Size = new System.Drawing.Size(32, 17);
+            this.Pris.Size = new System.Drawing.Size(34, 19);
             this.Pris.TabIndex = 6;
             this.Pris.Text = "Pris";
             // 
             // Solgt
             // 
             this.Solgt.AutoSize = true;
-            this.Solgt.Location = new System.Drawing.Point(935, 10);
+            this.Solgt.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Solgt.Location = new System.Drawing.Point(1022, 23);
+            this.Solgt.Margin = new System.Windows.Forms.Padding(2);
             this.Solgt.Name = "Solgt";
-            this.Solgt.Size = new System.Drawing.Size(62, 21);
+            this.Solgt.Size = new System.Drawing.Size(61, 23);
             this.Solgt.TabIndex = 5;
             this.Solgt.Text = "Solgt";
             this.Solgt.UseVisualStyleBackColor = true;
@@ -106,46 +130,55 @@
             // Sælger
             // 
             this.Sælger.AutoSize = true;
-            this.Sælger.Location = new System.Drawing.Point(611, 10);
+            this.Sælger.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Sælger.Location = new System.Drawing.Point(197, 59);
+            this.Sælger.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Sælger.Name = "Sælger";
-            this.Sælger.Size = new System.Drawing.Size(54, 17);
+            this.Sælger.Size = new System.Drawing.Size(54, 19);
             this.Sælger.TabIndex = 4;
             this.Sælger.Text = "Sælger";
             // 
             // Køber
             // 
             this.Køber.AutoSize = true;
-            this.Køber.Location = new System.Drawing.Point(453, 10);
+            this.Køber.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Køber.Location = new System.Drawing.Point(17, 59);
+            this.Køber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Køber.Name = "Køber";
-            this.Køber.Size = new System.Drawing.Size(46, 17);
+            this.Køber.Size = new System.Drawing.Size(47, 19);
             this.Køber.TabIndex = 3;
             this.Køber.Text = "Køber";
             // 
             // Mægler
             // 
             this.Mægler.AutoSize = true;
-            this.Mægler.Location = new System.Drawing.Point(272, 10);
+            this.Mægler.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Mægler.Location = new System.Drawing.Point(426, 59);
+            this.Mægler.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Mægler.Name = "Mægler";
-            this.Mægler.Size = new System.Drawing.Size(56, 17);
+            this.Mægler.Size = new System.Drawing.Size(58, 19);
             this.Mægler.TabIndex = 2;
             this.Mægler.Text = "Mægler";
             // 
             // Adresse
             // 
             this.Adresse.AutoSize = true;
-            this.Adresse.Location = new System.Drawing.Point(2, 10);
+            this.Adresse.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Adresse.Location = new System.Drawing.Point(17, 24);
+            this.Adresse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Adresse.Name = "Adresse";
-            this.Adresse.Size = new System.Drawing.Size(60, 17);
+            this.Adresse.Size = new System.Drawing.Size(61, 19);
             this.Adresse.TabIndex = 0;
             this.Adresse.Text = "Adresse";
             // 
             // UdskrivingsItemTemplate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1271, 672);
+            this.ClientSize = new System.Drawing.Size(1224, 546);
             this.Controls.Add(this.Item);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UdskrivingsItemTemplate";
             this.Text = "UdskrivingsItemTemplate";
             this.Item.ResumeLayout(false);
@@ -166,5 +199,6 @@
         private System.Windows.Forms.Label Bolig_areal;
         private System.Windows.Forms.Label Boligtype;
         private System.Windows.Forms.Label Pris;
+        private System.Windows.Forms.Label SolgtDato;
     }
 }

@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace UCL_Projekt_1
 {
-    class Converter
+    /// <summary>
+    /// Konvertere romertal
+    /// </summary>
+    class RomertalKonvertering
     {
+        /// <summary>
+        /// Kovertere en string til et romertal
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static int RomerTalConverter(string number)
         {
             number = number.ToUpper();
@@ -76,10 +84,18 @@ namespace UCL_Projekt_1
         }
     }
 
+    /// <summary>
+    /// Kovertere til romertal
+    /// </summary>
     class TilRomerTal
     {
         static string s = "";
 
+        /// <summary>
+        /// Kovertere tal til romertal
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public static string TilRomer(int number)
         {
 

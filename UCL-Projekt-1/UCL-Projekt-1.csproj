@@ -46,53 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseForm.cs">
+    <Compile Include="Views\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForm.Designer.cs">
+    <Compile Include="Views\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BoligerForm.cs">
+    <Compile Include="Views\BoligerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BoligerForm.Designer.cs">
+    <Compile Include="Views\BoligerForm.Designer.cs">
       <DependentUpon>BoligerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KunderForm.cs">
+    <Compile Include="Views\KunderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KunderForm.Designer.cs">
+    <Compile Include="Views\KunderForm.Designer.cs">
       <DependentUpon>KunderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KundeTemplateForm.cs">
+    <Compile Include="Templates\KundeTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KundeTemplateForm.Designer.cs">
+    <Compile Include="Templates\KundeTemplateForm.Designer.cs">
       <DependentUpon>KundeTemplateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MæglerForm.cs">
+    <Compile Include="Views\MæglerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MæglerForm.Designer.cs">
+    <Compile Include="Views\MæglerForm.Designer.cs">
       <DependentUpon>MæglerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MæglerTemplateForm.cs">
+    <Compile Include="Templates\MæglerTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MæglerTemplateForm.Designer.cs">
+    <Compile Include="Templates\MæglerTemplateForm.Designer.cs">
       <DependentUpon>MæglerTemplateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RedigerBoligerForm.cs">
+    <Compile Include="Views\RedigerBoligerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RedigerBoligerForm.Designer.cs">
+    <Compile Include="Views\RedigerBoligerForm.Designer.cs">
       <DependentUpon>RedigerBoligerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Converter.cs" />
-    <Compile Include="RedigerKunderForm.cs">
+    <Compile Include="RomertalKonvertering.cs" />
+    <Compile Include="Views\RedigerKunderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RedigerKunderForm.Designer.cs">
+    <Compile Include="Views\RedigerKunderForm.Designer.cs">
       <DependentUpon>RedigerKunderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Bolig.cs" />
@@ -100,58 +100,58 @@
     <Compile Include="Models\Kunde.cs" />
     <Compile Include="Models\IPerson.cs" />
     <Compile Include="Models\Salg.cs" />
-    <Compile Include="RedigerMæglerForm.cs">
+    <Compile Include="Views\RedigerMæglerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RedigerMæglerForm.Designer.cs">
+    <Compile Include="Views\RedigerMæglerForm.Designer.cs">
       <DependentUpon>RedigerMæglerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLRead.cs" />
-    <Compile Include="BoligTemplateForm.cs">
+    <Compile Include="IndlæsFraDatabase.cs" />
+    <Compile Include="Templates\BoligTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BoligTemplateForm.Designer.cs">
+    <Compile Include="Templates\BoligTemplateForm.Designer.cs">
       <DependentUpon>BoligTemplateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UdskrivingsForm.cs">
+    <Compile Include="Views\UdskrivingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UdskrivingsForm.Designer.cs">
+    <Compile Include="Views\UdskrivingsForm.Designer.cs">
       <DependentUpon>UdskrivingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UdskrivingsItemTemplate.cs">
+    <Compile Include="Templates\UdskrivingsItemTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UdskrivingsItemTemplate.Designer.cs">
+    <Compile Include="Templates\UdskrivingsItemTemplate.Designer.cs">
       <DependentUpon>UdskrivingsItemTemplate.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BaseForm.resx">
+    <EmbeddedResource Include="Views\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BoligerForm.resx">
+    <EmbeddedResource Include="Views\BoligerForm.resx">
       <DependentUpon>BoligerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KunderForm.resx">
+    <EmbeddedResource Include="Views\KunderForm.resx">
       <DependentUpon>KunderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KundeTemplateForm.resx">
+    <EmbeddedResource Include="Templates\KundeTemplateForm.resx">
       <DependentUpon>KundeTemplateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MæglerForm.resx">
+    <EmbeddedResource Include="Views\MæglerForm.resx">
       <DependentUpon>MæglerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MæglerTemplateForm.resx">
+    <EmbeddedResource Include="Templates\MæglerTemplateForm.resx">
       <DependentUpon>MæglerTemplateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RedigerBoligerForm.resx">
+    <EmbeddedResource Include="Views\RedigerBoligerForm.resx">
       <DependentUpon>RedigerBoligerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RedigerKunderForm.resx">
+    <EmbeddedResource Include="Views\RedigerKunderForm.resx">
       <DependentUpon>RedigerKunderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RedigerMæglerForm.resx">
+    <EmbeddedResource Include="Views\RedigerMæglerForm.resx">
       <DependentUpon>RedigerMæglerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -159,13 +159,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="BoligTemplateForm.resx">
+    <EmbeddedResource Include="Templates\BoligTemplateForm.resx">
       <DependentUpon>BoligTemplateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UdskrivingsForm.resx">
+    <EmbeddedResource Include="Views\UdskrivingsForm.resx">
       <DependentUpon>UdskrivingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UdskrivingsItemTemplate.resx">
+    <EmbeddedResource Include="Templates\UdskrivingsItemTemplate.resx">
       <DependentUpon>UdskrivingsItemTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -194,6 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Linje.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UCL_Projekt_1.Models {
-    public class Ejendomsmægler : IPerson{
-        public Ejendomsmægler(int mægler_Id, string navn, int telefon, string email) {
+﻿namespace UCL_Projekt_1.Models
+{
+    public class Ejendomsmægler : IPerson
+    {
+        public Ejendomsmægler(int mægler_Id, string navn, int telefon, string email)
+        {
             Mægler_Id = mægler_Id;
             Navn = navn;
             Telefon = telefon;
