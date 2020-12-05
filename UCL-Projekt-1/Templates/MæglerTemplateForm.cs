@@ -8,10 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UCL_Projekt_1 {
-    public partial class PersonaleForm : Form {
-        public PersonaleForm() {
+namespace UCL_Projekt_1
+{
+    public partial class MæglerTemplateForm : Form
+    {
+        public MæglerTemplateForm()
+        {
             InitializeComponent();
+        }
+
+        private void RedigerMægler_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

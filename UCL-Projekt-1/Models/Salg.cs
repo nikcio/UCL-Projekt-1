@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace UCL_Projekt_1.Models {
-    public class Salg {
-        public Salg(int salgs_Id, DateTime dato, int pris, int mægler_Id, int bolig_Id) {
+namespace UCL_Projekt_1.Models
+{
+    public class Salg
+    {
+        public Salg(int salgs_Id, DateTime dato, int pris, int mægler_Id, int bolig_Id)
+        {
             Salgs_Id = salgs_Id;
             Dato = dato;
             Pris = pris;
