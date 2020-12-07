@@ -82,7 +82,7 @@ namespace UCL_Projekt_1
         /// <returns>Success</returns>
         private bool ValiderNavn()
         {
-            if (Regex.IsMatch(Navn_tb.Text, ("^[a-zA-z æøåÆØÅ]+$")) || Navn_tb.Text == "")
+            if (Regex.IsMatch(Navn_tb.Text, ("^[a-zA-z æøåÆØÅ-]+$")) || Navn_tb.Text == "")
             {
                 NavnValidering.Text = "";
                 return true;

@@ -634,6 +634,7 @@ namespace UCL_Projekt_1
             {
                 return false;
             }
+            // TODO: Dato og Køber validering?
             return true;
         }
 

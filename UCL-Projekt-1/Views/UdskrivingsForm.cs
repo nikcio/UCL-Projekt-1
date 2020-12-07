@@ -43,7 +43,7 @@ namespace UCL_Projekt_1
         public UdskrivingsForm()
         {
             InitializeComponent();
-
+            
             // Viser alle boliger
             VisResultat(boliger);
         }
@@ -98,7 +98,7 @@ namespace UCL_Projekt_1
             #endregion
 
             VisResultat(filterBoliger);
-
+            
         }
 
         /// <summary>

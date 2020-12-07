@@ -56,6 +56,11 @@ namespace UCL_Projekt_1
             {
                 VisEnKunde(item.Kunde_Id, item.Navn, item.Email, item.Telefon, item.Er_køber, item.Er_sælger);
             }
+
+            if(kunder.Count() == 0)
+            {
+                VisEnFejl("Der blev ikke fundet nogen kunder");
+            }
         }
 
         /// <summary>
@@ -71,6 +76,11 @@ namespace UCL_Projekt_1
             foreach (var item in filterKunder)
             {
                 VisEnKunde(item.Kunde_Id, item.Navn, item.Email, item.Telefon, item.Er_køber, item.Er_sælger);
+            }
+
+            if(filterKunder.Count() == 0)
+            {
+                VisEnFejl("Der blev ikke fundet nogen kunder");
             }
         }
 
@@ -98,13 +108,13 @@ namespace UCL_Projekt_1
             if (Navn_tb.Text != "" && ValiderNavn())
             {
 
-                // Viser boliger med matchende adresse.
+                // Viser kunder med matchende navn.
                 VisKunder(Navn_tb.Text);
             }
             else
             {
 
-                // Viser alle boliger.
+                // Viser alle kunder.
                 VisKunder();
             }
         }
@@ -115,7 +125,7 @@ namespace UCL_Projekt_1
         /// <returns>Success</returns>
         private bool ValiderNavn()
         {
-            if (Regex.IsMatch(Navn_tb.Text, ("^[a-zA-z æøåÆØÅ]+$")) || Navn_tb.Text == "")
+            if (Regex.IsMatch(Navn_tb.Text, ("^[a-zA-z æøåÆØÅ-]+$")) || Navn_tb.Text == "")
             {
                 NavnValidering.Text = "";
                 return true;
