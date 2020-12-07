@@ -30,6 +30,8 @@
             this.Filtre = new System.Windows.Forms.Label();
             this.Adresse = new System.Windows.Forms.Label();
             this.Navn_tb = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TilføjMægler
@@ -38,8 +40,8 @@
             this.TilføjMægler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TilføjMægler.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.TilføjMægler.ForeColor = System.Drawing.Color.White;
-            this.TilføjMægler.Location = new System.Drawing.Point(16, 10);
-            this.TilføjMægler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TilføjMægler.Location = new System.Drawing.Point(2, 12);
+            this.TilføjMægler.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.TilføjMægler.Name = "TilføjMægler";
             this.TilføjMægler.Size = new System.Drawing.Size(145, 38);
             this.TilføjMægler.TabIndex = 0;
@@ -54,7 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlowLayout.AutoScroll = true;
             this.FlowLayout.Location = new System.Drawing.Point(9, 57);
-            this.FlowLayout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FlowLayout.Margin = new System.Windows.Forms.Padding(2);
             this.FlowLayout.Name = "FlowLayout";
             this.FlowLayout.Size = new System.Drawing.Size(1122, 541);
             this.FlowLayout.TabIndex = 1;
@@ -75,7 +77,7 @@
             this.Søg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Søg.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.Søg.ForeColor = System.Drawing.Color.White;
-            this.Søg.Location = new System.Drawing.Point(620, 10);
+            this.Søg.Location = new System.Drawing.Point(517, 13);
             this.Søg.Name = "Søg";
             this.Søg.Size = new System.Drawing.Size(80, 38);
             this.Søg.TabIndex = 15;
@@ -87,8 +89,8 @@
             // 
             this.Filtre.AutoSize = true;
             this.Filtre.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Filtre.Location = new System.Drawing.Point(231, 18);
-            this.Filtre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Filtre.Location = new System.Drawing.Point(164, 20);
+            this.Filtre.Margin = new System.Windows.Forms.Padding(2, 10, 2, 0);
             this.Filtre.Name = "Filtre";
             this.Filtre.Size = new System.Drawing.Size(55, 22);
             this.Filtre.TabIndex = 14;
@@ -98,8 +100,8 @@
             // 
             this.Adresse.AutoSize = true;
             this.Adresse.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Adresse.Location = new System.Drawing.Point(318, 18);
-            this.Adresse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Adresse.Location = new System.Drawing.Point(223, 20);
+            this.Adresse.Margin = new System.Windows.Forms.Padding(2, 10, 2, 0);
             this.Adresse.Name = "Adresse";
             this.Adresse.Size = new System.Drawing.Size(47, 22);
             this.Adresse.TabIndex = 10;
@@ -108,12 +110,26 @@
             // Navn_tb
             // 
             this.Navn_tb.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Navn_tb.Location = new System.Drawing.Point(369, 15);
-            this.Navn_tb.Margin = new System.Windows.Forms.Padding(2);
+            this.Navn_tb.Location = new System.Drawing.Point(274, 17);
+            this.Navn_tb.Margin = new System.Windows.Forms.Padding(2, 7, 15, 2);
             this.Navn_tb.Name = "Navn_tb";
             this.Navn_tb.Size = new System.Drawing.Size(225, 29);
             this.Navn_tb.TabIndex = 9;
             this.Navn_tb.TextChanged += new System.EventHandler(this.Navn_tb_TextChanged);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.TilføjMægler);
+            this.flowLayoutPanel1.Controls.Add(this.Filtre);
+            this.flowLayoutPanel1.Controls.Add(this.Adresse);
+            this.flowLayoutPanel1.Controls.Add(this.Navn_tb);
+            this.flowLayoutPanel1.Controls.Add(this.Søg);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1140, 55);
+            this.flowLayoutPanel1.TabIndex = 17;
             // 
             // MæglerForm
             // 
@@ -121,17 +137,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1140, 608);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.NavnValidering);
-            this.Controls.Add(this.Søg);
-            this.Controls.Add(this.Filtre);
-            this.Controls.Add(this.Adresse);
-            this.Controls.Add(this.Navn_tb);
             this.Controls.Add(this.FlowLayout);
-            this.Controls.Add(this.TilføjMægler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MæglerForm";
             this.Text = "MæglerForm";
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +160,6 @@
         private System.Windows.Forms.Label Filtre;
         private System.Windows.Forms.Label Adresse;
         private System.Windows.Forms.TextBox Navn_tb;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

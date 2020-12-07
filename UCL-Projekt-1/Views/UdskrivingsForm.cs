@@ -183,7 +183,7 @@ namespace UCL_Projekt_1
                             (sælger != null ? sælger.Navn : "Der er ingen sælger"),
                             (køber != null ? køber.Navn : "Der er ingen køber"),
                             item.Addresse,
-                            item.Udbuds_pris.ToString(),
+                            item.Udbuds_pris,
                             item.Solgt,
                             (salg != null ? salg.Dato.ToShortDateString() : ""));
             }
@@ -232,7 +232,7 @@ namespace UCL_Projekt_1
         /// <param name="pris"></param>
         /// <param name="solgt"></param>
         /// <param name="dato"></param>
-        private void TilføjRække(string grundareal, string boligareal, string boligtype, string mægler, string sælger, string køber, string adresse, string pris, bool solgt, string dato)
+        private void TilføjRække(string grundareal, string boligareal, string boligtype, string mægler, string sælger, string køber, string adresse, int pris, bool solgt, string dato)
         {
             Panel Item = new Panel();
             Label Grund_areal = new Label();
@@ -306,7 +306,7 @@ namespace UCL_Projekt_1
             Pris.Name = "Pris";
             Pris.Size = new Size(34, 19);
             Pris.TabIndex = 6;
-            Pris.Text = $"{pris:C2}";
+            Pris.Text = $"Pris: {pris:C2}";
             // 
             // Solgt
             // 
