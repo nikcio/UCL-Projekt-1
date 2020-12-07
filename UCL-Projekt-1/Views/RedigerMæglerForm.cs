@@ -82,7 +82,8 @@ namespace UCL_Projekt_1
             if (TjekOpretMægler() == true)
             {
                 // Her skriver vi den sql commando som skal køres for at danne en bolig
-                string sqlcommandoString = $"INSERT INTO Ejendomsmægler (Navn, Telefon, Email) VALUES (@Mægler_navn_tb, @Mægler_Telefon_tb, @Mægler_Email_tb)";
+                string sqlcommandoString = $"INSERT INTO Ejendomsmægler (Navn, Telefon, Email) " +
+                    $"VALUES (@Mægler_navn_tb, @Mægler_Telefon_tb, @Mægler_Email_tb)";
 
                 // Her opretter vi den forige comando som en sqlcommand som skal eksekveres på vores data connection.
                 SqlCommand command = new SqlCommand(sqlcommandoString, BaseForm.dataConnection);
@@ -340,7 +341,7 @@ namespace UCL_Projekt_1
         /// <returns></returns>
         public bool NavnRegex(string input)
         {
-            return Regex.IsMatch(input, "^[a-zA-Z æøåÆØÅ]+$");
+            return Regex.IsMatch(input, ("^[a-zA-z æøåÆØÅ-]+$"));
         }
 
     }

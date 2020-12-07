@@ -315,7 +315,7 @@ namespace UCL_Projekt_1
         {
             // En liste til resultatet
             List<Salg> Salgs = new List<Salg>();
-            
+
             // Sqlcommandoen til at hente alle salg
             SqlCommand command = new SqlCommand("SELECT * FROM Salg", BaseForm.dataConnection);
 

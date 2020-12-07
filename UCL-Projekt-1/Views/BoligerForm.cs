@@ -48,7 +48,7 @@ namespace UCL_Projekt_1
         private void VisBoliger()
         {
             // Alle boliger gennemløbes.
-            foreach (var bolig in _boliger)
+            foreach (Bolig bolig in _boliger)
             {
                 // Adressen splittes ved komma for at kunne adskilde vej og by.
                 string[] adresse = bolig.Addresse.Split(',');
@@ -84,7 +84,7 @@ namespace UCL_Projekt_1
             Bolig[] filterBoliger = _boliger.Where(item => item.Addresse.ToLower().Contains(område.ToLower())).ToArray();
 
             // Alle de filterede boliger gennemløbes
-            foreach (var bolig in filterBoliger)
+            foreach (Bolig bolig in filterBoliger)
             {
 
                 // Adressen splittes ved komma for at kunne adskilde vej og by.
@@ -284,14 +284,16 @@ namespace UCL_Projekt_1
             //
             // Fejl
             //
-            var fejl = new Label();
-            fejl.AutoSize = true;
-            fejl.Font = new Font("Roboto Condensed", 16F, FontStyle.Regular, GraphicsUnit.Pixel, 0);
-            fejl.Location = new Point(3, 0);
-            fejl.Name = "fejl";
-            fejl.Size = new Size(249, 19);
-            fejl.TabIndex = 0;
-            fejl.Text = besked;
+            Label fejl = new Label
+            {
+                AutoSize = true,
+                Font = new Font("Roboto Condensed", 16F, FontStyle.Regular, GraphicsUnit.Pixel, 0),
+                Location = new Point(3, 0),
+                Name = "fejl",
+                Size = new Size(249, 19),
+                TabIndex = 0,
+                Text = besked
+            };
 
             // Labelet tilføjet til flow layoutet.
             FlowLayout.Controls.Add(fejl);
@@ -306,13 +308,13 @@ namespace UCL_Projekt_1
         /// <param name="id">Id'et for boligen</param>
         private void VisEnBolig(string adresse, string by, int pris, int id, bool solgt)
         {
-            var Bolig = new Panel();
-            var Pris_label = new Label();
-            var SælgBolig = new Button();
-            var RedigerBolig = new Button();
-            var Pris = new Label();
-            var By = new Label();
-            var Adresse = new Label();
+            Panel Bolig = new Panel();
+            Label Pris_label = new Label();
+            Button SælgBolig = new Button();
+            Button RedigerBolig = new Button();
+            Label Pris = new Label();
+            Label By = new Label();
+            Label Adresse = new Label();
             // 
             // Bolig
             // 

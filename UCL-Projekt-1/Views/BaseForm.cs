@@ -26,6 +26,9 @@ namespace UCL_Projekt_1
         /// </summary>
         private Form aktiveForm = null;
 
+        /// <summary>
+        /// Den aktive knap. Den der er blå.
+        /// </summary>
         private Button aktiveButton;
 
         /// <summary>
