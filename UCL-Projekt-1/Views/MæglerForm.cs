@@ -43,7 +43,7 @@ namespace UCL_Projekt_1
         /// </summary>
         private void VisMæglere()
         {
-            foreach (var item in ejendomsmæglere)
+            foreach (Ejendomsmægler item in ejendomsmæglere)
             {
                 VisEnMægler(item.Mægler_Id, item.Navn, item.Email, item.Telefon);
             }
@@ -65,7 +65,7 @@ namespace UCL_Projekt_1
             Ejendomsmægler[] filterEjendomsmægler = ejendomsmæglere.Where(item => item.Navn.ToLower().Contains(navn.ToLower())).ToArray();
 
             // Her gennemløbes de fundne mæglere
-            foreach (var item in filterEjendomsmægler)
+            foreach (Ejendomsmægler item in filterEjendomsmægler)
             {
                 VisEnMægler(item.Mægler_Id, item.Navn, item.Email, item.Telefon);
             }
@@ -159,14 +159,16 @@ namespace UCL_Projekt_1
             //
             // Fejl
             //
-            var fejl = new Label();
-            fejl.AutoSize = true;
-            fejl.Font = new Font("Roboto Condensed", 16F, FontStyle.Regular, GraphicsUnit.Pixel, 0);
-            fejl.Location = new Point(3, 0);
-            fejl.Name = "fejl";
-            fejl.Size = new Size(249, 19);
-            fejl.TabIndex = 0;
-            fejl.Text = besked;
+            Label fejl = new Label
+            {
+                AutoSize = true,
+                Font = new Font("Roboto Condensed", 16F, FontStyle.Regular, GraphicsUnit.Pixel, 0),
+                Location = new Point(3, 0),
+                Name = "fejl",
+                Size = new Size(249, 19),
+                TabIndex = 0,
+                Text = besked
+            };
 
             // Labelet tilføjet til flow layoutet.
             FlowLayout.Controls.Add(fejl);
@@ -174,12 +176,12 @@ namespace UCL_Projekt_1
 
         private void VisEnMægler(int id, string navn, string email, int tlf)
         {
-            var Mægler = new Panel();
-            var RedigerMægler = new Button();
-            var Tlf = new Label();
-            var Email = new Label();
-            var Ejendomsmægler = new Label();
-            var Navn = new Label();
+            Panel Mægler = new Panel();
+            Button RedigerMægler = new Button();
+            Label Tlf = new Label();
+            Label Email = new Label();
+            Label Ejendomsmægler = new Label();
+            Label Navn = new Label();
             // 
             // Mægler
             // 
@@ -198,7 +200,7 @@ namespace UCL_Projekt_1
             // 
             RedigerMægler.BackColor = Color.FromArgb(77, 157, 224);
             RedigerMægler.FlatStyle = FlatStyle.Flat;
-            RedigerMægler.Font = new Font("Roboto Condensed", 15.75F, FontStyle.Bold, GraphicsUnit.Pixel, ((byte)(0)));
+            RedigerMægler.Font = new Font("Roboto Condensed", 15.75F, FontStyle.Bold, GraphicsUnit.Pixel, 0);
             RedigerMægler.ForeColor = Color.White;
             RedigerMægler.Location = new Point(6, 132);
             RedigerMægler.Margin = new Padding(2, 2, 2, 2);

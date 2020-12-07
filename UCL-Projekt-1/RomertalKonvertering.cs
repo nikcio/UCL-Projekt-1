@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UCL_Projekt_1
 {
     /// <summary>
     /// Konvertere romertal
     /// </summary>
-    class RomertalKonvertering
+    internal class RomertalKonvertering
     {
         /// <summary>
         /// Kovertere en string til et romertal
@@ -19,21 +15,28 @@ namespace UCL_Projekt_1
         public static int RomerTalConverter(string number)
         {
             number = number.ToUpper();
-            var result = 0;
+            int result = 0;
 
-            foreach (var Bogstav in number)
+            foreach (char Bogstav in number)
             {
                 result += ConvertBogstavToTal(Bogstav);
             }
 
             if (number.Contains("IV") || number.Contains("IX"))
+            {
                 result -= 2;
+            }
 
             if (number.Contains("XL") || number.Contains("XC"))
+            {
                 result -= 20;
+            }
 
             if (number.Contains("CD") || number.Contains("CM"))
+            {
                 result -= 200;
+            }
+
             return result;
         }
 
@@ -87,9 +90,9 @@ namespace UCL_Projekt_1
     /// <summary>
     /// Kovertere til romertal
     /// </summary>
-    class TilRomerTal
+    internal class TilRomerTal
     {
-        static string s = "";
+        private static string s = "";
 
         /// <summary>
         /// Kovertere tal til romertal
@@ -103,20 +106,37 @@ namespace UCL_Projekt_1
             {
                 s = s + "Ugyldigt imput";
             }
-            if (number < 1) return s;
-            if (number >= 1000) { s = s + "M"; TilRomer(number - 1000); }
-            if (number >= 900) { s = s + "CM"; TilRomer(number - 900); }
-            if (number >= 500) { s = s + "D"; TilRomer(number - 500); }
-            if (number >= 400) { s = s + "CD"; TilRomer(number - 400); }
-            if (number >= 100) { s = s + "C"; TilRomer(number - 100); }
-            if (number >= 90) { s = s + "XC"; TilRomer(number - 90); }
-            if (number >= 50) { s = s + "L"; TilRomer(number - 50); }
-            if (number >= 40) { s = s + "XL"; TilRomer(number - 40); }
-            if (number >= 10) { s = s + "X"; TilRomer(number - 10); }
-            if (number >= 9) { s = s + "IX"; TilRomer(number - 9); }
-            if (number >= 5) { s = s + "V"; TilRomer(number - 5); }
-            if (number >= 4) { s = s + "IV"; TilRomer(number - 4); }
-            if (number >= 1) { s = s + "I"; TilRomer(number - 1); }
+            if (number < 1)
+            {
+                return s;
+            }
+
+            if (number >= 1000)
+            { s = s + "M"; TilRomer(number - 1000); }
+            if (number >= 900)
+            { s = s + "CM"; TilRomer(number - 900); }
+            if (number >= 500)
+            { s = s + "D"; TilRomer(number - 500); }
+            if (number >= 400)
+            { s = s + "CD"; TilRomer(number - 400); }
+            if (number >= 100)
+            { s = s + "C"; TilRomer(number - 100); }
+            if (number >= 90)
+            { s = s + "XC"; TilRomer(number - 90); }
+            if (number >= 50)
+            { s = s + "L"; TilRomer(number - 50); }
+            if (number >= 40)
+            { s = s + "XL"; TilRomer(number - 40); }
+            if (number >= 10)
+            { s = s + "X"; TilRomer(number - 10); }
+            if (number >= 9)
+            { s = s + "IX"; TilRomer(number - 9); }
+            if (number >= 5)
+            { s = s + "V"; TilRomer(number - 5); }
+            if (number >= 4)
+            { s = s + "IV"; TilRomer(number - 4); }
+            if (number >= 1)
+            { s = s + "I"; TilRomer(number - 1); }
             return s;
         }
     }
