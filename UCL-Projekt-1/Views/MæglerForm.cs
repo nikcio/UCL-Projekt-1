@@ -9,12 +9,12 @@ namespace UCL_Projekt_1
 {
 
     /// <summary>
-    /// Viser mæglere og giver mulighed for at sotere mellem dem.
+    /// Viser mæglere og giver mulighed for at sortere mellem dem.
     /// </summary>
     public partial class MæglerForm : Form
     {
         /// <summary>
-        /// En refrence til BaseForm.
+        /// En reference til BaseForm.
         /// </summary>
         private readonly BaseForm _baseForm;
 

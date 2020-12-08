@@ -98,13 +98,13 @@ namespace UCL_Projekt_1
             if (Navn_tb.Text != "" && ValiderNavn())
             {
 
-                // Viser boliger med matchende adresse.
+                // Viser kunder med matchende navn.
                 VisKunder(Navn_tb.Text);
             }
             else
             {
 
-                // Viser alle boliger.
+                // Viser alle kunder.
                 VisKunder();
             }
         }
