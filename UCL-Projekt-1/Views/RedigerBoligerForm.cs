@@ -316,7 +316,7 @@ namespace UCL_Projekt_1
         private void MarkerBoligSomSolgt()
         {
             // Her skriver vi den sql commando som skal køres for at redigere en bolig
-            string sqlcommandoString = $"UPDATE Bolig SET Solgt=@Solgt, Kunde_køber=@Køber WHERE Bolig_id=@Bolig_id_tb";
+            string sqlcommandoString = $"UPDATE Bolig SET Solgt=@Solgt, Udbuds_pris=@Udbudspris, Kunde_køber=@Køber WHERE Bolig_id=@Bolig_id_tb";
 
             // Her opretter vi den forige comando som en sqlcommand som skal eksekveres på vores data connection.
             SqlCommand command = new SqlCommand(sqlcommandoString, BaseForm.dataConnection);
@@ -324,6 +324,7 @@ namespace UCL_Projekt_1
             // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerheds lag.
             command.Parameters.AddWithValue("@Solgt", 1);
             command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
+            command.Parameters.AddWithValue("@Udbudspris", Udbudspris_tb.Text);
 
             // Her tager vi key værdien fra vores køber combobox og bruger den som værdi da, den refere til kunde id'et for køberen.
             command.Parameters.AddWithValue("@Køber", ((KeyValuePair<int, string>)Køber_comboBox.SelectedItem).Key);
@@ -546,6 +547,9 @@ namespace UCL_Projekt_1
             // Her indlæses sælger information fra databasen.
             Kunde sælger = IndlæsFraDatabase.IndlæsKunde(bolig.Kunde_sælger);
 
+            // Her indlæses køber information fra databasen.
+            Kunde køber = IndlæsFraDatabase.IndlæsKunde(bolig.Kunde_køber);
+
             //Her indsættes dataen i felterne.
             Adresse_tb.Text = bolig.Addresse;
             Grund_areal_tb.Text = bolig.Grund_areal.ToString();
@@ -584,6 +588,22 @@ namespace UCL_Projekt_1
                 // Her stiller vi den tilføjet værdi som den markeret værdi. Hvilket vil sige det er den som vises.
                 Sælger_comboBox.SelectedIndex = 0;
             }
+
+            // Her tages højde for mulig manglende information i databasen.
+            if (køber != null)
+            {
+                Køber_comboBox.Items.Add(new KeyValuePair<int, string>(køber.Kunde_Id, $"{køber.Navn}, Id: {køber.Kunde_Id}"));
+
+                // Her sættes comboboksens value til at være vores key i key value pairet.
+                Køber_comboBox.ValueMember = "Key";
+
+                // Her sættes comboBoxens visning til vores value i key value pairet.
+                Køber_comboBox.DisplayMember = "Value";
+
+                // Her stiller vi den tilføjet værdi som den markeret værdi. Hvilket vil sige det er den som vises.
+                Køber_comboBox.SelectedIndex = 0;
+            }
+
         }
 
         /// <summary>
@@ -684,6 +704,5 @@ namespace UCL_Projekt_1
             return true;
         }
         #endregion
-
     }
 }

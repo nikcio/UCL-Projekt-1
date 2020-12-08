@@ -59,6 +59,7 @@ namespace UCL_Projekt_1
         {
             Rediger_kunde.Visible = false;
             Slet_Kunde.Visible = false;
+            Kunde_id_tb.Enabled = false;
         }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace UCL_Projekt_1
         private void RedigerForm()
         {
             Opret_kunde.Visible = false;
+            Kunde_id_tb.Enabled = false;
         }
 
         /// <summary>
