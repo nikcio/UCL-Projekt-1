@@ -60,8 +60,9 @@ namespace UCL_Projekt_1
                                                 .Where(item => item.Addresse.ToLower().Contains(Område_tb.Text.ToLower()) || Område_tb.Text == "")
                                                 .Where(item => alleSalg.Any(salg => salg.Bolig_Id == item.Bolig_Id && DatoMellem(salg.Dato)) ||
                                                     Startdato.Text == "" ||
-                                                    Slutdato.Text == ""
-                                                ).ToArray();
+                                                    Slutdato.Text == "")
+                                                .Where(item => alleSalg.Any(salg => salg.Bolig_Id == item.Bolig_Id && SalgsPrisMatch(salg)) || textBox1.Text == "")
+                                                .ToArray();
 
             #region Forklaring
             // Forklaring af søg_click øverste linje
@@ -99,6 +100,24 @@ namespace UCL_Projekt_1
 
             VisResultat(filterBoliger);
 
+        }
+
+        /// <summary>
+        /// Tjekker om der er skrevet et tal ind i salgspris textboxen og hvis ikke returere true for at inkludere alt.
+        /// Hvis der er et tal skrevet ind returnere den om prisen er lig med salgsprisen der er skrevet ind. (For at sotere på dette)
+        /// </summary>
+        /// <param name="salg"></param>
+        /// <returns></returns>
+        private bool SalgsPrisMatch(Salg salg)
+        {
+            if (int.TryParse(textBox1.Text, out int resultat))
+            {
+                return resultat <= salg.Pris;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         /// <summary>

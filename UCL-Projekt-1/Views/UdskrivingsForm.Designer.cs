@@ -35,6 +35,8 @@
             this.Søg = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +103,7 @@
             // Startdato
             // 
             this.Startdato.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Startdato.Location = new System.Drawing.Point(728, 21);
+            this.Startdato.Location = new System.Drawing.Point(724, 21);
             this.Startdato.Margin = new System.Windows.Forms.Padding(3, 9, 20, 2);
             this.Startdato.Name = "Startdato";
             this.Startdato.Size = new System.Drawing.Size(100, 29);
@@ -110,7 +112,7 @@
             // Slutdato
             // 
             this.Slutdato.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Slutdato.Location = new System.Drawing.Point(934, 21);
+            this.Slutdato.Location = new System.Drawing.Point(926, 21);
             this.Slutdato.Margin = new System.Windows.Forms.Padding(3, 9, 20, 2);
             this.Slutdato.Name = "Slutdato";
             this.Slutdato.Size = new System.Drawing.Size(100, 29);
@@ -123,20 +125,20 @@
             this.Startdato_label.Location = new System.Drawing.Point(637, 24);
             this.Startdato_label.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
             this.Startdato_label.Name = "Startdato_label";
-            this.Startdato_label.Size = new System.Drawing.Size(85, 23);
+            this.Startdato_label.Size = new System.Drawing.Size(81, 23);
             this.Startdato_label.TabIndex = 13;
-            this.Startdato_label.Text = "Start dato";
+            this.Startdato_label.Text = "Startdato";
             // 
             // Slutdato_label
             // 
             this.Slutdato_label.AutoSize = true;
             this.Slutdato_label.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Slutdato_label.Location = new System.Drawing.Point(851, 24);
+            this.Slutdato_label.Location = new System.Drawing.Point(847, 24);
             this.Slutdato_label.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
             this.Slutdato_label.Name = "Slutdato_label";
-            this.Slutdato_label.Size = new System.Drawing.Size(77, 23);
+            this.Slutdato_label.Size = new System.Drawing.Size(73, 23);
             this.Slutdato_label.TabIndex = 14;
-            this.Slutdato_label.Text = "Slut dato";
+            this.Slutdato_label.Text = "Slutdato";
             // 
             // Søg
             // 
@@ -144,7 +146,7 @@
             this.Søg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Søg.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Søg.ForeColor = System.Drawing.Color.White;
-            this.Søg.Location = new System.Drawing.Point(1057, 14);
+            this.Søg.Location = new System.Drawing.Point(1336, 14);
             this.Søg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Søg.Name = "Søg";
             this.Søg.Size = new System.Drawing.Size(95, 50);
@@ -175,13 +177,35 @@
             this.flowLayoutPanel1.Controls.Add(this.Startdato);
             this.flowLayoutPanel1.Controls.Add(this.Slutdato_label);
             this.flowLayoutPanel1.Controls.Add(this.Slutdato);
+            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.textBox1);
             this.flowLayoutPanel1.Controls.Add(this.Søg);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(15, 12, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1493, 76);
             this.flowLayoutPanel1.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Location = new System.Drawing.Point(1049, 24);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 23);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Salgsbeløb";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.Location = new System.Drawing.Point(1146, 21);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 9, 20, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(167, 29);
+            this.textBox1.TabIndex = 17;
             // 
             // UdskrivingsForm
             // 
@@ -215,5 +239,7 @@
         private System.Windows.Forms.Button Søg;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
