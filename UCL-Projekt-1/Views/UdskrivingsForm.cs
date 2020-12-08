@@ -183,7 +183,7 @@ namespace UCL_Projekt_1
                             (sælger != null ? sælger.Navn : "Der er ingen sælger"),
                             (køber != null ? køber.Navn : "Der er ingen køber"),
                             item.Addresse,
-                            item.Udbuds_pris.ToString(),
+                            item.Udbuds_pris,
                             item.Solgt,
                             (salg != null ? salg.Dato.ToShortDateString() : ""));
             }
@@ -232,7 +232,7 @@ namespace UCL_Projekt_1
         /// <param name="pris"></param>
         /// <param name="solgt"></param>
         /// <param name="dato"></param>
-        private void TilføjRække(string grundareal, string boligareal, string boligtype, string mægler, string sælger, string køber, string adresse, string pris, bool solgt, string dato)
+        private void TilføjRække(string grundareal, string boligareal, string boligtype, string mægler, string sælger, string køber, string adresse, int pris, bool solgt, string dato)
         {
             Panel Item = new Panel();
             Label Grund_areal = new Label();
@@ -245,19 +245,17 @@ namespace UCL_Projekt_1
             Label Mægler = new Label();
             Label Adresse = new Label();
             Label SolgtDato = new Label();
+            FlowLayoutPanel flowlayoutpanel1 = new FlowLayoutPanel();
+            FlowLayoutPanel flowlayoutpanel2 = new FlowLayoutPanel();
             // 
             // Item
             // 
             Item.Controls.Add(SolgtDato);
-            Item.Controls.Add(Grund_areal);
-            Item.Controls.Add(Bolig_areal);
-            Item.Controls.Add(Boligtype);
             Item.Controls.Add(Pris);
             Item.Controls.Add(Solgt);
-            Item.Controls.Add(Sælger);
-            Item.Controls.Add(Køber);
-            Item.Controls.Add(Mægler);
             Item.Controls.Add(Adresse);
+            Item.Controls.Add(flowlayoutpanel1);
+            Item.Controls.Add(flowlayoutpanel2);
             Item.Location = new Point(45, 77);
             Item.Margin = new Padding(2, 2, 2, 2);
             Item.Name = "Item";
@@ -306,7 +304,7 @@ namespace UCL_Projekt_1
             Pris.Name = "Pris";
             Pris.Size = new Size(34, 19);
             Pris.TabIndex = 6;
-            Pris.Text = $"{pris:C2}";
+            Pris.Text = $"Pris: {pris:C2}";
             // 
             // Solgt
             // 
@@ -376,6 +374,32 @@ namespace UCL_Projekt_1
             SolgtDato.Size = new Size(72, 19);
             SolgtDato.TabIndex = 10;
             SolgtDato.Text = (dato != "" ? $"Solgt d. {dato}" : "");
+            // 
+            // flowLayoutPanel1
+            // 
+            flowlayoutpanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            flowlayoutpanel1.Controls.Add(Sælger);
+            flowlayoutpanel1.Controls.Add(Køber);
+            flowlayoutpanel1.Controls.Add(Mægler);
+            flowlayoutpanel1.Location = new System.Drawing.Point(16, 64);
+            flowlayoutpanel1.Name = "flowLayoutPanel1";
+            flowlayoutpanel1.Size = new System.Drawing.Size(1103, 41);
+            flowlayoutpanel1.TabIndex = 11;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowlayoutpanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            flowlayoutpanel2.Controls.Add(Grund_areal);
+            flowlayoutpanel2.Controls.Add(Bolig_areal);
+            flowlayoutpanel2.Controls.Add(Boligtype);
+            flowlayoutpanel2.Location = new System.Drawing.Point(16, 104);
+            flowlayoutpanel2.Name = "flowLayoutPanel2";
+            flowlayoutpanel2.Size = new System.Drawing.Size(1102, 50);
+            flowlayoutpanel2.TabIndex = 12;
 
             FlowLayout.Controls.Add(Item);
         }

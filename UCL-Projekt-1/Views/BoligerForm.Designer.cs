@@ -33,6 +33,8 @@
             this.Filtre = new System.Windows.Forms.Label();
             this.Søg = new System.Windows.Forms.Button();
             this.AdresseValidering = new System.Windows.Forms.Label();
+            this.HeaderMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.HeaderMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // TilføjBolig
@@ -42,10 +44,10 @@
             this.TilføjBolig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TilføjBolig.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.TilføjBolig.ForeColor = System.Drawing.Color.White;
-            this.TilføjBolig.Location = new System.Drawing.Point(9, 5);
-            this.TilføjBolig.Margin = new System.Windows.Forms.Padding(2);
+            this.TilføjBolig.Location = new System.Drawing.Point(26, 14);
+            this.TilføjBolig.Margin = new System.Windows.Forms.Padding(3, 2, 20, 2);
             this.TilføjBolig.Name = "TilføjBolig";
-            this.TilføjBolig.Size = new System.Drawing.Size(145, 38);
+            this.TilføjBolig.Size = new System.Drawing.Size(193, 47);
             this.TilføjBolig.TabIndex = 0;
             this.TilføjBolig.Text = "Tilføj Bolig";
             this.TilføjBolig.UseVisualStyleBackColor = false;
@@ -57,19 +59,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlowLayout.AutoScroll = true;
-            this.FlowLayout.Location = new System.Drawing.Point(9, 72);
-            this.FlowLayout.Margin = new System.Windows.Forms.Padding(2);
+            this.FlowLayout.Location = new System.Drawing.Point(12, 89);
+            this.FlowLayout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FlowLayout.Name = "FlowLayout";
-            this.FlowLayout.Size = new System.Drawing.Size(1122, 526);
+            this.FlowLayout.Size = new System.Drawing.Size(1496, 647);
             this.FlowLayout.TabIndex = 0;
             // 
             // Adresse_tb
             // 
             this.Adresse_tb.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Adresse_tb.Location = new System.Drawing.Point(341, 10);
-            this.Adresse_tb.Margin = new System.Windows.Forms.Padding(2);
+            this.Adresse_tb.Location = new System.Drawing.Point(600, 21);
+            this.Adresse_tb.Margin = new System.Windows.Forms.Padding(3, 9, 20, 2);
             this.Adresse_tb.Name = "Adresse_tb";
-            this.Adresse_tb.Size = new System.Drawing.Size(225, 29);
+            this.Adresse_tb.Size = new System.Drawing.Size(299, 29);
             this.Adresse_tb.TabIndex = 1;
             this.Adresse_tb.TextChanged += new System.EventHandler(this.Adresse_tb_TextChanged);
             // 
@@ -77,10 +79,10 @@
             // 
             this.Adresse.AutoSize = true;
             this.Adresse.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Adresse.Location = new System.Drawing.Point(271, 13);
-            this.Adresse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Adresse.Location = new System.Drawing.Point(522, 24);
+            this.Adresse.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
             this.Adresse.Name = "Adresse";
-            this.Adresse.Size = new System.Drawing.Size(66, 22);
+            this.Adresse.Size = new System.Drawing.Size(72, 23);
             this.Adresse.TabIndex = 2;
             this.Adresse.Text = "Adresse";
             // 
@@ -88,20 +90,20 @@
             // 
             this.Id.AutoSize = true;
             this.Id.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Id.Location = new System.Drawing.Point(618, 13);
-            this.Id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Id.Location = new System.Drawing.Point(309, 24);
+            this.Id.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
             this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(24, 22);
+            this.Id.Size = new System.Drawing.Size(24, 23);
             this.Id.TabIndex = 3;
             this.Id.Text = "Id";
             // 
             // BoligId
             // 
             this.BoligId.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.BoligId.Location = new System.Drawing.Point(646, 10);
-            this.BoligId.Margin = new System.Windows.Forms.Padding(2);
+            this.BoligId.Location = new System.Drawing.Point(339, 21);
+            this.BoligId.Margin = new System.Windows.Forms.Padding(3, 9, 20, 2);
             this.BoligId.Name = "BoligId";
-            this.BoligId.Size = new System.Drawing.Size(121, 29);
+            this.BoligId.Size = new System.Drawing.Size(160, 29);
             this.BoligId.TabIndex = 4;
             this.BoligId.TextChanged += new System.EventHandler(this.BoligId_TextChanged);
             // 
@@ -109,20 +111,19 @@
             // 
             this.BoligIdValidation.AutoSize = true;
             this.BoligIdValidation.ForeColor = System.Drawing.Color.Red;
-            this.BoligIdValidation.Location = new System.Drawing.Point(643, 41);
-            this.BoligIdValidation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BoligIdValidation.Location = new System.Drawing.Point(303, 12);
             this.BoligIdValidation.Name = "BoligIdValidation";
-            this.BoligIdValidation.Size = new System.Drawing.Size(0, 13);
+            this.BoligIdValidation.Size = new System.Drawing.Size(0, 17);
             this.BoligIdValidation.TabIndex = 5;
             // 
             // Filtre
             // 
             this.Filtre.AutoSize = true;
             this.Filtre.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Filtre.Location = new System.Drawing.Point(203, 13);
-            this.Filtre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Filtre.Location = new System.Drawing.Point(242, 24);
+            this.Filtre.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
             this.Filtre.Name = "Filtre";
-            this.Filtre.Size = new System.Drawing.Size(55, 22);
+            this.Filtre.Size = new System.Drawing.Size(55, 23);
             this.Filtre.TabIndex = 6;
             this.Filtre.Text = "Filtre:";
             // 
@@ -132,9 +133,10 @@
             this.Søg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Søg.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.Søg.ForeColor = System.Drawing.Color.White;
-            this.Søg.Location = new System.Drawing.Point(795, 5);
+            this.Søg.Location = new System.Drawing.Point(923, 16);
+            this.Søg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Søg.Name = "Søg";
-            this.Søg.Size = new System.Drawing.Size(80, 38);
+            this.Søg.Size = new System.Drawing.Size(107, 47);
             this.Søg.TabIndex = 7;
             this.Søg.Text = "Søg";
             this.Søg.UseVisualStyleBackColor = false;
@@ -145,34 +147,47 @@
             this.AdresseValidering.AutoSize = true;
             this.AdresseValidering.BackColor = System.Drawing.Color.Transparent;
             this.AdresseValidering.ForeColor = System.Drawing.Color.Red;
-            this.AdresseValidering.Location = new System.Drawing.Point(341, 41);
+            this.AdresseValidering.Location = new System.Drawing.Point(19, 12);
+            this.AdresseValidering.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdresseValidering.Name = "AdresseValidering";
-            this.AdresseValidering.Size = new System.Drawing.Size(0, 13);
+            this.AdresseValidering.Size = new System.Drawing.Size(0, 17);
             this.AdresseValidering.TabIndex = 8;
+            // 
+            // HeaderMenu
+            // 
+            this.HeaderMenu.Controls.Add(this.AdresseValidering);
+            this.HeaderMenu.Controls.Add(this.TilføjBolig);
+            this.HeaderMenu.Controls.Add(this.Filtre);
+            this.HeaderMenu.Controls.Add(this.BoligIdValidation);
+            this.HeaderMenu.Controls.Add(this.Id);
+            this.HeaderMenu.Controls.Add(this.BoligId);
+            this.HeaderMenu.Controls.Add(this.Adresse);
+            this.HeaderMenu.Controls.Add(this.Adresse_tb);
+            this.HeaderMenu.Controls.Add(this.Søg);
+            this.HeaderMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderMenu.Location = new System.Drawing.Point(0, 0);
+            this.HeaderMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HeaderMenu.Name = "HeaderMenu";
+            this.HeaderMenu.Padding = new System.Windows.Forms.Padding(15, 12, 0, 0);
+            this.HeaderMenu.Size = new System.Drawing.Size(1520, 69);
+            this.HeaderMenu.TabIndex = 9;
             // 
             // BoligerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1140, 608);
-            this.Controls.Add(this.AdresseValidering);
-            this.Controls.Add(this.Søg);
-            this.Controls.Add(this.Filtre);
-            this.Controls.Add(this.BoligIdValidation);
-            this.Controls.Add(this.BoligId);
-            this.Controls.Add(this.Id);
-            this.Controls.Add(this.Adresse);
-            this.Controls.Add(this.Adresse_tb);
+            this.ClientSize = new System.Drawing.Size(1520, 748);
+            this.Controls.Add(this.HeaderMenu);
             this.Controls.Add(this.FlowLayout);
-            this.Controls.Add(this.TilføjBolig);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BoligerForm";
             this.Text = "BoligerForm";
+            this.HeaderMenu.ResumeLayout(false);
+            this.HeaderMenu.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -188,5 +203,6 @@
         private System.Windows.Forms.Label Filtre;
         private System.Windows.Forms.Button Søg;
         private System.Windows.Forms.Label AdresseValidering;
+        private System.Windows.Forms.FlowLayoutPanel HeaderMenu;
     }
 }
