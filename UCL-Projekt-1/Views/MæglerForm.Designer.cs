@@ -55,10 +55,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlowLayout.AutoScroll = true;
-            this.FlowLayout.Location = new System.Drawing.Point(12, 70);
+            this.FlowLayout.Location = new System.Drawing.Point(12, 96);
             this.FlowLayout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FlowLayout.Name = "FlowLayout";
-            this.FlowLayout.Size = new System.Drawing.Size(1496, 666);
+            this.FlowLayout.Size = new System.Drawing.Size(1496, 640);
             this.FlowLayout.TabIndex = 1;
             // 
             // NavnValidering
@@ -66,7 +66,7 @@
             this.NavnValidering.AutoSize = true;
             this.NavnValidering.BackColor = System.Drawing.Color.Transparent;
             this.NavnValidering.ForeColor = System.Drawing.Color.Red;
-            this.NavnValidering.Location = new System.Drawing.Point(492, 57);
+            this.NavnValidering.Location = new System.Drawing.Point(346, 72);
             this.NavnValidering.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NavnValidering.Name = "NavnValidering";
             this.NavnValidering.Size = new System.Drawing.Size(0, 17);
@@ -79,7 +79,7 @@
             this.Søg.Font = new System.Drawing.Font("Roboto Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.Søg.ForeColor = System.Drawing.Color.White;
             this.Søg.Location = new System.Drawing.Point(672, 16);
-            this.Søg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Søg.Margin = new System.Windows.Forms.Padding(4);
             this.Søg.Name = "Søg";
             this.Søg.Size = new System.Drawing.Size(107, 47);
             this.Søg.TabIndex = 15;
@@ -128,7 +128,7 @@
             this.flowLayoutPanel1.Controls.Add(this.Søg);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(15, 12, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1520, 68);
@@ -140,8 +140,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1520, 748);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.NavnValidering);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.FlowLayout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

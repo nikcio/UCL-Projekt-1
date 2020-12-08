@@ -48,7 +48,7 @@
             this.TilføjKunde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TilføjKunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.TilføjKunde.ForeColor = System.Drawing.Color.White;
-            this.TilføjKunde.Location = new System.Drawing.Point(26, 14);
+            this.TilføjKunde.Location = new System.Drawing.Point(18, 14);
             this.TilføjKunde.Margin = new System.Windows.Forms.Padding(3, 2, 20, 2);
             this.TilføjKunde.Name = "TilføjKunde";
             this.TilføjKunde.Size = new System.Drawing.Size(193, 47);
@@ -74,10 +74,10 @@
             this.NavnValidering.AutoSize = true;
             this.NavnValidering.BackColor = System.Drawing.Color.Transparent;
             this.NavnValidering.ForeColor = System.Drawing.Color.Red;
-            this.NavnValidering.Location = new System.Drawing.Point(19, 12);
+            this.NavnValidering.Location = new System.Drawing.Point(356, 0);
             this.NavnValidering.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NavnValidering.Name = "NavnValidering";
-            this.NavnValidering.Size = new System.Drawing.Size(0, 17);
+            this.NavnValidering.Size = new System.Drawing.Size(0, 46);
             this.NavnValidering.TabIndex = 21;
             // 
             // Søg
@@ -86,7 +86,7 @@
             this.Søg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Søg.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.Søg.ForeColor = System.Drawing.Color.White;
-            this.Søg.Location = new System.Drawing.Point(693, 14);
+            this.Søg.Location = new System.Drawing.Point(685, 14);
             this.Søg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Søg.Name = "Søg";
             this.Søg.Size = new System.Drawing.Size(107, 47);
@@ -99,7 +99,7 @@
             // 
             this.Filtre.AutoSize = true;
             this.Filtre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Filtre.Location = new System.Drawing.Point(242, 24);
+            this.Filtre.Location = new System.Drawing.Point(234, 24);
             this.Filtre.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
             this.Filtre.Name = "Filtre";
             this.Filtre.Size = new System.Drawing.Size(63, 24);
@@ -110,7 +110,7 @@
             // 
             this.Adresse.AutoSize = true;
             this.Adresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Adresse.Location = new System.Drawing.Point(311, 24);
+            this.Adresse.Location = new System.Drawing.Point(303, 24);
             this.Adresse.Margin = new System.Windows.Forms.Padding(3, 12, 3, 0);
             this.Adresse.Name = "Adresse";
             this.Adresse.Size = new System.Drawing.Size(54, 24);
@@ -120,7 +120,7 @@
             // Navn_tb
             // 
             this.Navn_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Navn_tb.Location = new System.Drawing.Point(371, 21);
+            this.Navn_tb.Location = new System.Drawing.Point(363, 21);
             this.Navn_tb.Margin = new System.Windows.Forms.Padding(3, 9, 20, 2);
             this.Navn_tb.Name = "Navn_tb";
             this.Navn_tb.Size = new System.Drawing.Size(299, 28);
@@ -169,7 +169,6 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.NavnValidering);
             this.flowLayoutPanel1.Controls.Add(this.TilføjKunde);
             this.flowLayoutPanel1.Controls.Add(this.Filtre);
             this.flowLayoutPanel1.Controls.Add(this.Adresse);
@@ -207,6 +206,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.NavnValidering);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
