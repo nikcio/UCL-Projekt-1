@@ -99,6 +99,7 @@
             this.Solgt_checkBox.TabIndex = 10;
             this.Solgt_checkBox.Text = "Solgt";
             this.Solgt_checkBox.UseVisualStyleBackColor = true;
+            this.Solgt_checkBox.CheckedChanged += new System.EventHandler(this.Solgt_checkBox_CheckedChanged);
             // 
             // Startdato
             // 

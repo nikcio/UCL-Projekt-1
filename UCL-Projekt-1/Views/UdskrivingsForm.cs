@@ -44,8 +44,34 @@ namespace UCL_Projekt_1
         {
             InitializeComponent();
 
+            // Låser de felter som høre til solgte boliger som standard.
+            textBox1.Enabled = false;
+            Startdato.Enabled = false;
+            Slutdato.Enabled = false;
+
             // Viser alle boliger
             VisResultat(boliger);
+        }
+
+        /// <summary>
+        /// De aktivere de bokse som der høre til salg når checkboken er markeret.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Solgt_checkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Solgt_checkBox.Checked)
+            {
+                textBox1.Enabled = true;
+                Startdato.Enabled = true;
+                Slutdato.Enabled = true;
+            }
+            else
+            {
+                textBox1.Enabled = false;
+                Startdato.Enabled = false;
+                Slutdato.Enabled = false;
+            }
         }
 
         /// <summary>
