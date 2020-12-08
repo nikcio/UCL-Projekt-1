@@ -169,7 +169,7 @@ namespace UCL_Projekt_1
             resultat = filter;
 
             // Her gennemløbes alle boligerne
-            foreach (var item in filter)
+            foreach (Bolig item in filter)
             {
                 Ejendomsmægler mægler = ejendomsmæglers.FirstOrDefault(ejendomsmægler => ejendomsmægler.Mægler_Id == item.Mægler_Id);
                 Kunde køber = kunder.FirstOrDefault(kundeKøber => kundeKøber.Kunde_Id == item.Kunde_køber);
@@ -204,14 +204,16 @@ namespace UCL_Projekt_1
             //
             // Fejl
             //
-            var fejl = new Label();
-            fejl.AutoSize = true;
-            fejl.Font = new Font("Roboto Condensed", 16F, FontStyle.Regular, GraphicsUnit.Pixel, 0);
-            fejl.Location = new Point(3, 0);
-            fejl.Name = "fejl";
-            fejl.Size = new Size(249, 19);
-            fejl.TabIndex = 0;
-            fejl.Text = besked;
+            Label fejl = new Label
+            {
+                AutoSize = true,
+                Font = new Font("Roboto Condensed", 16F, FontStyle.Regular, GraphicsUnit.Pixel, 0),
+                Location = new Point(3, 0),
+                Name = "fejl",
+                Size = new Size(249, 19),
+                TabIndex = 0,
+                Text = besked
+            };
 
             // Labelet tilføjet til flow layoutet.
             FlowLayout.Controls.Add(fejl);
@@ -232,17 +234,17 @@ namespace UCL_Projekt_1
         /// <param name="dato"></param>
         private void TilføjRække(string grundareal, string boligareal, string boligtype, string mægler, string sælger, string køber, string adresse, string pris, bool solgt, string dato)
         {
-            var Item = new Panel();
-            var Grund_areal = new Label();
-            var Bolig_areal = new Label();
-            var Boligtype = new Label();
-            var Pris = new Label();
-            var Solgt = new CheckBox();
-            var Sælger = new Label();
-            var Køber = new Label();
-            var Mægler = new Label();
-            var Adresse = new Label();
-            var SolgtDato = new Label();
+            Panel Item = new Panel();
+            Label Grund_areal = new Label();
+            Label Bolig_areal = new Label();
+            Label Boligtype = new Label();
+            Label Pris = new Label();
+            CheckBox Solgt = new CheckBox();
+            Label Sælger = new Label();
+            Label Køber = new Label();
+            Label Mægler = new Label();
+            Label Adresse = new Label();
+            Label SolgtDato = new Label();
             // 
             // Item
             // 

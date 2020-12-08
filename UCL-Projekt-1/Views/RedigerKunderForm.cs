@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using UCL_Projekt_1.Models;
 
 namespace UCL_Projekt_1
 {
@@ -259,7 +260,7 @@ namespace UCL_Projekt_1
         private void IndlæsInformation(int id)
         {
             // Her indlæses kunden fra databasen
-            Models.Kunde kunde = IndlæsFraDatabase.IndlæsKunde(id);
+            Kunde kunde = IndlæsFraDatabase.IndlæsKunde(id);
 
             // Her udfyldes informationen i felterne
             Kunde_navn_tb.Text = kunde.Navn;
@@ -315,7 +316,7 @@ namespace UCL_Projekt_1
         /// <returns></returns>
         public bool NavnRegex(string input)
         {
-            return Regex.IsMatch(input, ("^[a-zA-z æøåÆØÅ]"));
+            return Regex.IsMatch(input, ("^[a-zA-z æøåÆØÅ-]+$"));
         }
     }
 }

@@ -52,9 +52,14 @@ namespace UCL_Projekt_1
         /// </summary>
         private void VisKunder()
         {
-            foreach (var item in kunder)
+            foreach (Kunde item in kunder)
             {
                 VisEnKunde(item.Kunde_Id, item.Navn, item.Email, item.Telefon, item.Er_køber, item.Er_sælger);
+            }
+
+            if (kunder.Count() == 0)
+            {
+                VisEnFejl("Der blev ikke fundet nogen kunder");
             }
         }
 
@@ -68,9 +73,14 @@ namespace UCL_Projekt_1
             // Her finder vi de mæglere som matcher med den string vi søger efter.
             Kunde[] filterKunder = kunder.Where(item => item.Navn.ToLower().Contains(navn.ToLower())).ToArray();
 
-            foreach (var item in filterKunder)
+            foreach (Kunde item in filterKunder)
             {
                 VisEnKunde(item.Kunde_Id, item.Navn, item.Email, item.Telefon, item.Er_køber, item.Er_sælger);
+            }
+
+            if (filterKunder.Count() == 0)
+            {
+                VisEnFejl("Der blev ikke fundet nogen kunder");
             }
         }
 
@@ -115,7 +125,7 @@ namespace UCL_Projekt_1
         /// <returns>Success</returns>
         private bool ValiderNavn()
         {
-            if (Regex.IsMatch(Navn_tb.Text, ("^[a-zA-z æøåÆØÅ]+$")) || Navn_tb.Text == "")
+            if (Regex.IsMatch(Navn_tb.Text, ("^[a-zA-z æøåÆØÅ-]+$")) || Navn_tb.Text == "")
             {
                 NavnValidering.Text = "";
                 return true;
@@ -147,14 +157,16 @@ namespace UCL_Projekt_1
             //
             // Fejl
             //
-            var fejl = new Label();
-            fejl.AutoSize = true;
-            fejl.Font = new Font("Roboto Condensed", 16F, FontStyle.Regular, GraphicsUnit.Pixel, 0);
-            fejl.Location = new Point(3, 0);
-            fejl.Name = "fejl";
-            fejl.Size = new Size(249, 19);
-            fejl.TabIndex = 0;
-            fejl.Text = besked;
+            Label fejl = new Label
+            {
+                AutoSize = true,
+                Font = new Font("Roboto Condensed", 16F, FontStyle.Regular, GraphicsUnit.Pixel, 0),
+                Location = new Point(3, 0),
+                Name = "fejl",
+                Size = new Size(249, 19),
+                TabIndex = 0,
+                Text = besked
+            };
 
             // Labelet tilføjet til flow layoutet.
             FlowLayout.Controls.Add(fejl);
@@ -162,14 +174,14 @@ namespace UCL_Projekt_1
 
         private void VisEnKunde(int id, string navn, string email, int tlf, bool Er_køber, bool Er_sælger)
         {
-            var Kunde = new Panel();
-            var RedigerKunde = new Button();
-            var Email = new Label();
-            var Tlf = new Label();
-            var Navn = new Label();
-            var KundeId = new Label();
-            var Køber = new CheckBox();
-            var Sælger = new CheckBox();
+            Panel Kunde = new Panel();
+            Button RedigerKunde = new Button();
+            Label Email = new Label();
+            Label Tlf = new Label();
+            Label Navn = new Label();
+            Label KundeId = new Label();
+            CheckBox Køber = new CheckBox();
+            CheckBox Sælger = new CheckBox();
             // 
             // Kunde
             // 
