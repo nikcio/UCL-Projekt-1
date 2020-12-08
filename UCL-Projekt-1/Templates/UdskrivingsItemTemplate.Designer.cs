@@ -39,35 +39,34 @@
             this.Køber = new System.Windows.Forms.Label();
             this.Mægler = new System.Windows.Forms.Label();
             this.Adresse = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.Item.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Item
             // 
+            this.Item.Controls.Add(this.flowLayoutPanel2);
+            this.Item.Controls.Add(this.flowLayoutPanel1);
             this.Item.Controls.Add(this.SolgtDato);
-            this.Item.Controls.Add(this.Grund_areal);
-            this.Item.Controls.Add(this.Bolig_areal);
-            this.Item.Controls.Add(this.Boligtype);
             this.Item.Controls.Add(this.Pris);
             this.Item.Controls.Add(this.Solgt);
-            this.Item.Controls.Add(this.Sælger);
-            this.Item.Controls.Add(this.Køber);
-            this.Item.Controls.Add(this.Mægler);
             this.Item.Controls.Add(this.Adresse);
-            this.Item.Location = new System.Drawing.Point(45, 77);
-            this.Item.Margin = new System.Windows.Forms.Padding(2);
+            this.Item.Location = new System.Drawing.Point(60, 95);
+            this.Item.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Item.Name = "Item";
-            this.Item.Size = new System.Drawing.Size(1100, 151);
+            this.Item.Size = new System.Drawing.Size(1467, 186);
             this.Item.TabIndex = 0;
             // 
             // SolgtDato
             // 
             this.SolgtDato.AutoSize = true;
             this.SolgtDato.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.SolgtDato.Location = new System.Drawing.Point(847, 59);
-            this.SolgtDato.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SolgtDato.Location = new System.Drawing.Point(1129, 73);
             this.SolgtDato.Name = "SolgtDato";
-            this.SolgtDato.Size = new System.Drawing.Size(72, 19);
+            this.SolgtDato.Size = new System.Drawing.Size(76, 20);
             this.SolgtDato.TabIndex = 10;
             this.SolgtDato.Text = "SolgtDato";
             // 
@@ -75,10 +74,10 @@
             // 
             this.Grund_areal.AutoSize = true;
             this.Grund_areal.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Grund_areal.Location = new System.Drawing.Point(197, 95);
-            this.Grund_areal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Grund_areal.Location = new System.Drawing.Point(3, 10);
+            this.Grund_areal.Margin = new System.Windows.Forms.Padding(3, 10, 50, 0);
             this.Grund_areal.Name = "Grund_areal";
-            this.Grund_areal.Size = new System.Drawing.Size(132, 19);
+            this.Grund_areal.Size = new System.Drawing.Size(133, 20);
             this.Grund_areal.TabIndex = 9;
             this.Grund_areal.Text = "Grund areal: 12345";
             // 
@@ -86,10 +85,10 @@
             // 
             this.Bolig_areal.AutoSize = true;
             this.Bolig_areal.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Bolig_areal.Location = new System.Drawing.Point(17, 95);
-            this.Bolig_areal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Bolig_areal.Location = new System.Drawing.Point(189, 10);
+            this.Bolig_areal.Margin = new System.Windows.Forms.Padding(3, 10, 50, 0);
             this.Bolig_areal.Name = "Bolig_areal";
-            this.Bolig_areal.Size = new System.Drawing.Size(127, 19);
+            this.Bolig_areal.Size = new System.Drawing.Size(128, 20);
             this.Bolig_areal.TabIndex = 8;
             this.Bolig_areal.Text = "Bolig areal: 12345";
             // 
@@ -97,10 +96,10 @@
             // 
             this.Boligtype.AutoSize = true;
             this.Boligtype.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Boligtype.Location = new System.Drawing.Point(426, 95);
-            this.Boligtype.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Boligtype.Location = new System.Drawing.Point(370, 10);
+            this.Boligtype.Margin = new System.Windows.Forms.Padding(3, 10, 50, 0);
             this.Boligtype.Name = "Boligtype";
-            this.Boligtype.Size = new System.Drawing.Size(70, 19);
+            this.Boligtype.Size = new System.Drawing.Size(71, 20);
             this.Boligtype.TabIndex = 7;
             this.Boligtype.Text = "Boligtype";
             // 
@@ -108,10 +107,9 @@
             // 
             this.Pris.AutoSize = true;
             this.Pris.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Pris.Location = new System.Drawing.Point(847, 27);
-            this.Pris.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Pris.Location = new System.Drawing.Point(1129, 33);
             this.Pris.Name = "Pris";
-            this.Pris.Size = new System.Drawing.Size(34, 19);
+            this.Pris.Size = new System.Drawing.Size(35, 20);
             this.Pris.TabIndex = 6;
             this.Pris.Text = "Pris";
             // 
@@ -119,10 +117,10 @@
             // 
             this.Solgt.AutoSize = true;
             this.Solgt.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Solgt.Location = new System.Drawing.Point(1022, 23);
-            this.Solgt.Margin = new System.Windows.Forms.Padding(2);
+            this.Solgt.Location = new System.Drawing.Point(1363, 28);
+            this.Solgt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Solgt.Name = "Solgt";
-            this.Solgt.Size = new System.Drawing.Size(61, 23);
+            this.Solgt.Size = new System.Drawing.Size(66, 24);
             this.Solgt.TabIndex = 5;
             this.Solgt.Text = "Solgt";
             this.Solgt.UseVisualStyleBackColor = true;
@@ -131,10 +129,10 @@
             // 
             this.Sælger.AutoSize = true;
             this.Sælger.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Sælger.Location = new System.Drawing.Point(197, 59);
-            this.Sælger.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Sælger.Location = new System.Drawing.Point(3, 10);
+            this.Sælger.Margin = new System.Windows.Forms.Padding(3, 10, 50, 0);
             this.Sælger.Name = "Sælger";
-            this.Sælger.Size = new System.Drawing.Size(54, 19);
+            this.Sælger.Size = new System.Drawing.Size(55, 20);
             this.Sælger.TabIndex = 4;
             this.Sælger.Text = "Sælger";
             // 
@@ -142,10 +140,10 @@
             // 
             this.Køber.AutoSize = true;
             this.Køber.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Køber.Location = new System.Drawing.Point(17, 59);
-            this.Køber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Køber.Location = new System.Drawing.Point(111, 10);
+            this.Køber.Margin = new System.Windows.Forms.Padding(3, 10, 50, 0);
             this.Køber.Name = "Køber";
-            this.Køber.Size = new System.Drawing.Size(47, 19);
+            this.Køber.Size = new System.Drawing.Size(47, 20);
             this.Køber.TabIndex = 3;
             this.Køber.Text = "Køber";
             // 
@@ -153,10 +151,10 @@
             // 
             this.Mægler.AutoSize = true;
             this.Mægler.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Mægler.Location = new System.Drawing.Point(426, 59);
-            this.Mægler.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Mægler.Location = new System.Drawing.Point(211, 10);
+            this.Mægler.Margin = new System.Windows.Forms.Padding(3, 10, 50, 0);
             this.Mægler.Name = "Mægler";
-            this.Mægler.Size = new System.Drawing.Size(58, 19);
+            this.Mægler.Size = new System.Drawing.Size(59, 20);
             this.Mægler.TabIndex = 2;
             this.Mægler.Text = "Mægler";
             // 
@@ -164,25 +162,54 @@
             // 
             this.Adresse.AutoSize = true;
             this.Adresse.Font = new System.Drawing.Font("Roboto Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Adresse.Location = new System.Drawing.Point(17, 24);
-            this.Adresse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Adresse.Location = new System.Drawing.Point(23, 30);
             this.Adresse.Name = "Adresse";
-            this.Adresse.Size = new System.Drawing.Size(61, 19);
+            this.Adresse.Size = new System.Drawing.Size(64, 20);
             this.Adresse.TabIndex = 0;
             this.Adresse.Text = "Adresse";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.Sælger);
+            this.flowLayoutPanel1.Controls.Add(this.Køber);
+            this.flowLayoutPanel1.Controls.Add(this.Mægler);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 64);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1103, 41);
+            this.flowLayoutPanel1.TabIndex = 11;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.Controls.Add(this.Grund_areal);
+            this.flowLayoutPanel2.Controls.Add(this.Bolig_areal);
+            this.flowLayoutPanel2.Controls.Add(this.Boligtype);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(16, 104);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1102, 50);
+            this.flowLayoutPanel2.TabIndex = 12;
+            // 
             // UdskrivingsItemTemplate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 546);
+            this.ClientSize = new System.Drawing.Size(1632, 672);
             this.Controls.Add(this.Item);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UdskrivingsItemTemplate";
             this.Text = "UdskrivingsItemTemplate";
             this.Item.ResumeLayout(false);
             this.Item.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +227,7 @@
         private System.Windows.Forms.Label Boligtype;
         private System.Windows.Forms.Label Pris;
         private System.Windows.Forms.Label SolgtDato;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
