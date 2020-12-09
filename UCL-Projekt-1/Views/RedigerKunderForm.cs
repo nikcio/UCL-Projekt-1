@@ -81,7 +81,7 @@ namespace UCL_Projekt_1
             // Her tjekkets om værdierne i felterne opfylder vores krav inden vi opretter kunden.
             if (TjekKundeVærdier() == true)
             {
-                // Her skriver vi den sql commando som skal køres for at danne en bolig
+                // Her skriver vi den sql commando som skal køres for at danne en bolig.
                 string sqlcommandoString = $"INSERT INTO Kunde (Navn, Telefon, Email,Er_sælger, Er_køber) " +
                     $"VALUES (@Kunde_navn_tb, @Kunde_tlf_tb, @Kunde_email_tb, @Er_sælger, @Er_køber)";
 
