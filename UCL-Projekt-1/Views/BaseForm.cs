@@ -40,6 +40,9 @@ namespace UCL_Projekt_1
 
             // Her sættes det aktive knap til at bære boliger knappen
             aktiveButton = Boliger;
+
+            //Her åbnes vores boliger form
+            ÅbenNyForm(new BoligerForm(this));
         }
 
 
