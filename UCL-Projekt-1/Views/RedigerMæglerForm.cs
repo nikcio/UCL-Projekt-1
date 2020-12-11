@@ -316,12 +316,12 @@ namespace UCL_Projekt_1
         private bool TjekOpretMægler()
         {
             int j = 0;
-            if (!int.TryParse(Mægler_telefon_tb.Text, out j))
+            if (!int.TryParse(Mægler_telefon_tb.Text, out j)) //Tjekker for at det kun er tal
             {
                 return false;
             }
 
-            string[] email = Mægler_email_tb.Text.Split('@');
+            string[] email = Mægler_email_tb.Text.Split('@'); //Tjekker for at der er et snabbel a
             if (email.Length != 2)
             {
                 return false;
