@@ -61,7 +61,7 @@ namespace UCL_Projekt_1
         /// </summary>
         /// <param name="boliger">En liste til at opbevare boligerne i</param>
         /// <param name="command">Den commando som skal køres</param>
-        public static void HentBoliger(List<Bolig> boliger, SqlCommand command)
+        private static void HentBoliger(List<Bolig> boliger, SqlCommand command)
         {
             // Her forsøger vi at køre vores commando på databasen.
             try
@@ -159,7 +159,7 @@ namespace UCL_Projekt_1
             return Kunder.FirstOrDefault();
         }
 
-        public static void HentKunder(List<Kunde> Kunder, SqlCommand command)
+        private static void HentKunder(List<Kunde> Kunder, SqlCommand command)
         {
             // Her forsøger vi at køre vores commando på databasen.
             try
@@ -258,7 +258,7 @@ namespace UCL_Projekt_1
         /// </summary>
         /// <param name="Ejendomsmæglere"></param>
         /// <param name="command"></param>
-        public static void HentEjendomsmægler(List<Ejendomsmægler> Ejendomsmæglere, SqlCommand command)
+        private static void HentEjendomsmægler(List<Ejendomsmægler> Ejendomsmæglere, SqlCommand command)
         {
             // Her forsøger vi at køre vores commando på databasen.
             try
@@ -331,7 +331,7 @@ namespace UCL_Projekt_1
         /// </summary>
         /// <param name="Salgs"></param>
         /// <param name="command"></param>
-        public static void HentSalg(List<Salg> Salgs, SqlCommand command)
+        private static void HentSalg(List<Salg> Salgs, SqlCommand command)
         {
             // Her forsøger vi at køre vores commando på databasen.
             try
