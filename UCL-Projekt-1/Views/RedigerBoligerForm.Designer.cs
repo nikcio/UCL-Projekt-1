@@ -23,7 +23,8 @@ namespace UCL_Projekt_1 {
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.Adresse = new System.Windows.Forms.Label();
             this.Bolig_id = new System.Windows.Forms.Label();
             this.Udbudspris = new System.Windows.Forms.Label();

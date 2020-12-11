@@ -42,93 +42,89 @@ namespace UCL_Projekt_1 {
             // Kunde_id
             // 
             this.Kunde_id.AutoSize = true;
-            this.Kunde_id.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Kunde_id.Location = new System.Drawing.Point(446, 33);
-            this.Kunde_id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Kunde_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Kunde_id.Location = new System.Drawing.Point(669, 51);
             this.Kunde_id.Name = "Kunde_id";
-            this.Kunde_id.Size = new System.Drawing.Size(85, 24);
+            this.Kunde_id.Size = new System.Drawing.Size(97, 25);
             this.Kunde_id.TabIndex = 0;
             this.Kunde_id.Text = "Kunde Id:";
             // 
             // Navn
             // 
             this.Navn.AutoSize = true;
-            this.Navn.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Navn.Location = new System.Drawing.Point(69, 33);
-            this.Navn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Navn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Navn.Location = new System.Drawing.Point(104, 51);
             this.Navn.Name = "Navn";
-            this.Navn.Size = new System.Drawing.Size(56, 24);
+            this.Navn.Size = new System.Drawing.Size(64, 25);
             this.Navn.TabIndex = 1;
             this.Navn.Text = "Navn:";
             // 
             // Telefon
             // 
             this.Telefon.AutoSize = true;
-            this.Telefon.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Telefon.Location = new System.Drawing.Point(69, 108);
-            this.Telefon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Telefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Telefon.Location = new System.Drawing.Point(104, 166);
             this.Telefon.Name = "Telefon";
-            this.Telefon.Size = new System.Drawing.Size(36, 24);
+            this.Telefon.Size = new System.Drawing.Size(40, 25);
             this.Telefon.TabIndex = 2;
             this.Telefon.Text = "Tlf:";
             // 
             // Email
             // 
             this.Email.AutoSize = true;
-            this.Email.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Email.Location = new System.Drawing.Point(69, 183);
-            this.Email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Email.Location = new System.Drawing.Point(104, 282);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(60, 24);
+            this.Email.Size = new System.Drawing.Size(66, 25);
             this.Email.TabIndex = 3;
             this.Email.Text = "Email:";
             // 
             // Kunde_id_tb
             // 
-            this.Kunde_id_tb.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Kunde_id_tb.Location = new System.Drawing.Point(450, 58);
-            this.Kunde_id_tb.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Kunde_id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Kunde_id_tb.Location = new System.Drawing.Point(675, 89);
+            this.Kunde_id_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Kunde_id_tb.Name = "Kunde_id_tb";
-            this.Kunde_id_tb.Size = new System.Drawing.Size(111, 32);
+            this.Kunde_id_tb.Size = new System.Drawing.Size(164, 30);
             this.Kunde_id_tb.TabIndex = 5;
             // 
             // Kunde_navn_tb
             // 
-            this.Kunde_navn_tb.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Kunde_navn_tb.Location = new System.Drawing.Point(73, 58);
-            this.Kunde_navn_tb.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Kunde_navn_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Kunde_navn_tb.Location = new System.Drawing.Point(110, 89);
+            this.Kunde_navn_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Kunde_navn_tb.Name = "Kunde_navn_tb";
-            this.Kunde_navn_tb.Size = new System.Drawing.Size(368, 32);
+            this.Kunde_navn_tb.Size = new System.Drawing.Size(550, 30);
             this.Kunde_navn_tb.TabIndex = 6;
             // 
             // Kunde_tlf_tb
             // 
-            this.Kunde_tlf_tb.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Kunde_tlf_tb.Location = new System.Drawing.Point(73, 133);
-            this.Kunde_tlf_tb.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Kunde_tlf_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Kunde_tlf_tb.Location = new System.Drawing.Point(110, 205);
+            this.Kunde_tlf_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Kunde_tlf_tb.Name = "Kunde_tlf_tb";
-            this.Kunde_tlf_tb.Size = new System.Drawing.Size(368, 32);
+            this.Kunde_tlf_tb.Size = new System.Drawing.Size(550, 30);
             this.Kunde_tlf_tb.TabIndex = 7;
             // 
             // Kunde_email_tb
             // 
-            this.Kunde_email_tb.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Kunde_email_tb.Location = new System.Drawing.Point(73, 208);
-            this.Kunde_email_tb.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Kunde_email_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Kunde_email_tb.Location = new System.Drawing.Point(110, 320);
+            this.Kunde_email_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Kunde_email_tb.Name = "Kunde_email_tb";
-            this.Kunde_email_tb.Size = new System.Drawing.Size(368, 32);
+            this.Kunde_email_tb.Size = new System.Drawing.Size(550, 30);
             this.Kunde_email_tb.TabIndex = 8;
             // 
             // Opret_kunde
             // 
             this.Opret_kunde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(157)))), ((int)(((byte)(224)))));
             this.Opret_kunde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Opret_kunde.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Opret_kunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Opret_kunde.ForeColor = System.Drawing.Color.White;
-            this.Opret_kunde.Location = new System.Drawing.Point(73, 302);
-            this.Opret_kunde.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Opret_kunde.Location = new System.Drawing.Point(110, 465);
+            this.Opret_kunde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Opret_kunde.Name = "Opret_kunde";
-            this.Opret_kunde.Size = new System.Drawing.Size(139, 32);
+            this.Opret_kunde.Size = new System.Drawing.Size(208, 49);
             this.Opret_kunde.TabIndex = 12;
             this.Opret_kunde.Text = "Opret kunde";
             this.Opret_kunde.UseVisualStyleBackColor = false;
@@ -138,12 +134,12 @@ namespace UCL_Projekt_1 {
             // 
             this.Rediger_kunde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(157)))), ((int)(((byte)(224)))));
             this.Rediger_kunde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Rediger_kunde.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Rediger_kunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Rediger_kunde.ForeColor = System.Drawing.Color.White;
-            this.Rediger_kunde.Location = new System.Drawing.Point(73, 302);
-            this.Rediger_kunde.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Rediger_kunde.Location = new System.Drawing.Point(110, 465);
+            this.Rediger_kunde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Rediger_kunde.Name = "Rediger_kunde";
-            this.Rediger_kunde.Size = new System.Drawing.Size(139, 32);
+            this.Rediger_kunde.Size = new System.Drawing.Size(208, 49);
             this.Rediger_kunde.TabIndex = 14;
             this.Rediger_kunde.Text = "Rediger kunde";
             this.Rediger_kunde.UseVisualStyleBackColor = false;
@@ -153,12 +149,12 @@ namespace UCL_Projekt_1 {
             // 
             this.Slet_Kunde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(157)))), ((int)(((byte)(224)))));
             this.Slet_Kunde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Slet_Kunde.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Slet_Kunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Slet_Kunde.ForeColor = System.Drawing.Color.White;
-            this.Slet_Kunde.Location = new System.Drawing.Point(216, 302);
-            this.Slet_Kunde.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Slet_Kunde.Location = new System.Drawing.Point(324, 465);
+            this.Slet_Kunde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Slet_Kunde.Name = "Slet_Kunde";
-            this.Slet_Kunde.Size = new System.Drawing.Size(139, 32);
+            this.Slet_Kunde.Size = new System.Drawing.Size(208, 49);
             this.Slet_Kunde.TabIndex = 15;
             this.Slet_Kunde.Text = "Slet kunde";
             this.Slet_Kunde.UseVisualStyleBackColor = false;
@@ -167,11 +163,10 @@ namespace UCL_Projekt_1 {
             // Er_køber
             // 
             this.Er_køber.AutoSize = true;
-            this.Er_køber.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Er_køber.Location = new System.Drawing.Point(73, 257);
-            this.Er_køber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Er_køber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Er_køber.Location = new System.Drawing.Point(110, 395);
             this.Er_køber.Name = "Er_køber";
-            this.Er_køber.Size = new System.Drawing.Size(75, 28);
+            this.Er_køber.Size = new System.Drawing.Size(91, 29);
             this.Er_køber.TabIndex = 18;
             this.Er_køber.Text = "Køber";
             this.Er_køber.UseVisualStyleBackColor = true;
@@ -179,21 +174,20 @@ namespace UCL_Projekt_1 {
             // Er_sælger
             // 
             this.Er_sælger.AutoSize = true;
-            this.Er_sælger.Font = new System.Drawing.Font("Roboto Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Er_sælger.Location = new System.Drawing.Point(152, 257);
-            this.Er_sælger.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Er_sælger.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Er_sælger.Location = new System.Drawing.Point(228, 395);
             this.Er_sælger.Name = "Er_sælger";
-            this.Er_sælger.Size = new System.Drawing.Size(84, 28);
+            this.Er_sælger.Size = new System.Drawing.Size(101, 29);
             this.Er_sælger.TabIndex = 19;
             this.Er_sælger.Text = "Sælger";
             this.Er_sælger.UseVisualStyleBackColor = true;
             // 
             // RedigerKunderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1297, 608);
+            this.ClientSize = new System.Drawing.Size(1946, 935);
             this.Controls.Add(this.Er_sælger);
             this.Controls.Add(this.Er_køber);
             this.Controls.Add(this.Slet_Kunde);
@@ -208,6 +202,7 @@ namespace UCL_Projekt_1 {
             this.Controls.Add(this.Navn);
             this.Controls.Add(this.Kunde_id);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RedigerKunderForm";
             this.Text = "KunderForm";
             this.ResumeLayout(false);
