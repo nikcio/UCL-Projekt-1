@@ -322,7 +322,7 @@ namespace UCL_Projekt_1
             SqlCommand command = new SqlCommand(sqlcommandoString, BaseForm.dataConnection);
 
             // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerheds lag.
-            command.Parameters.AddWithValue("@Solgt", 1);
+            command.Parameters.AddWithValue("@Solgt", 1); // 1=true fordi det er en bool.
             command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id_tb.Text);
             command.Parameters.AddWithValue("@Udbudspris", Udbudspris_tb.Text);
 
@@ -371,10 +371,10 @@ namespace UCL_Projekt_1
             // Her skriver vi den sql commando som skal køres for at oprette et salg
             string sqlcommandoString = $"INSERT INTO Salg (Dato, Pris, Mægler_id, Bolig_id) VALUES (@Dato, @Udbudspris, @Mægler_id, @Bolig_id)";
 
-            // Her opretter vi den forige comando som en sqlcommand som skal eksekveres på vores data connection.
+            // Her opretter vi den forrige commando som en sqlcommand som skal eksekveres på vores data connection.
             SqlCommand command = new SqlCommand(sqlcommandoString, BaseForm.dataConnection);
 
-            // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerheds lag.
+            // Her tilføjes vores værdier som parametre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerheds lag.
             command.Parameters.AddWithValue("@Udbudspris", Udbudspris_tb.Text);
             command.Parameters.AddWithValue("@Bolig_id", Bolig_id_tb.Text);
             command.Parameters.AddWithValue("@Dato", Date.SelectionRange.Start.Date);
