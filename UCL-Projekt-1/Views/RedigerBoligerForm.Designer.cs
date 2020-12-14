@@ -414,7 +414,7 @@ namespace UCL_Projekt_1 {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1942, 598);
+            this.ClientSize = new System.Drawing.Size(1520, 598);
             this.Controls.Add(this.BoligType_combobox);
             this.Controls.Add(this.Køber_comboBox);
             this.Controls.Add(this.Køber);
