@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using UCL_Projekt_1.Models;
 
@@ -305,6 +306,42 @@ namespace UCL_Projekt_1
                 MessageBox.Show("Der opstod en fejl, prøv igen ");
             }
 
+        }
+
+        private void Romertal_tb_TextChanged(object sender, EventArgs e)
+        {
+            if(Numerisk_tb.Text != "")
+            {
+                Numerisk_tb.Text = "";
+            }
+        }
+
+        private void Numerisk_tb_TextChanged(object sender, EventArgs e)
+        {
+            if(Romertal_tb.Text != "")
+            {
+                Romertal_tb.Text = "";
+            }
+        }
+
+        private void KonverterTal_Click(object sender, EventArgs e)
+        {
+            if(Numerisk_tb.Text != "" && int.TryParse(Numerisk_tb.Text, out int result))
+            {
+                string output = TilRomerTal.TilRomer(result);
+                Romertal_tb.Text = "Udregner";
+                Romertal_tb.Text = output;
+            }
+            else if(Romertal_tb.Text != "" && Regex.IsMatch(Romertal_tb.Text, ("^[MDCLXVImdclxvi]+$")))
+            {
+                string output = RomertalKonvertering.RomerTalConverter(Romertal_tb.Text).ToString();
+                Numerisk_tb.Text = "Udregner";
+                Numerisk_tb.Text = output;
+            }
+            else
+            {
+                MessageBox.Show("Udfyld en værdi for at konvertatere");
+            }
         }
         #endregion
 
@@ -704,5 +741,6 @@ namespace UCL_Projekt_1
             return true;
         }
         #endregion
+
     }
 }
