@@ -316,7 +316,8 @@ namespace UCL_Projekt_1 {
             "Hus",
             "Lejlighed",
             "Rækkehus",
-            "Værelse"});
+            "Værelse",
+            "Sommerhus"});
             this.BoligType_combobox.Location = new System.Drawing.Point(600, 73);
             this.BoligType_combobox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BoligType_combobox.Name = "BoligType_combobox";
