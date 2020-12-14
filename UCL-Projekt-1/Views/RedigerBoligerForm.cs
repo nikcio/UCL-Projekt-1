@@ -141,7 +141,7 @@ namespace UCL_Projekt_1
                     // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren.
                     if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                     {
-                        MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                        MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                     }
                     else
                     {
@@ -200,7 +200,7 @@ namespace UCL_Projekt_1
                     // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren.
                     if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                     {
-                        MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                        MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                     }
                     else
                     {
@@ -257,7 +257,7 @@ namespace UCL_Projekt_1
                     // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren.
                     if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                     {
-                        MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                        MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                     }
                     else
                     {
@@ -345,7 +345,7 @@ namespace UCL_Projekt_1
                 // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren.
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
@@ -395,7 +395,7 @@ namespace UCL_Projekt_1
                 // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren.
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {

@@ -43,7 +43,7 @@ namespace UCL_Projekt_1
             // En liste til at opbevare boligerne i mens de kommer fra databasen
             List<Bolig> boliger = new List<Bolig>();
 
-            // Sqlcommandoen som indlæser den ene bolig
+            // Sqlcommandoen som indlæser den ene bolig med bestemt bolig id
             SqlCommand command = new SqlCommand("SELECT * FROM Bolig WHERE Bolig_id = @Bolig_id_tb", BaseForm.dataConnection);
 
             // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerheds lag.
@@ -77,7 +77,8 @@ namespace UCL_Projekt_1
                         // reader.GetOrdinal henter colonne tallet for den string som er givet
                         // reader.GetInt32 og GetString henter enten en int eller string
                         // reader.IsDBNull tjekker om værdien er null
-                        boliger.Add(new Bolig(
+                        boliger.Add(new Bolig
+                            (
                             reader.GetInt32(reader.GetOrdinal("Bolig_Id")),
                             reader.GetInt32(reader.GetOrdinal("Udbuds_pris")),
                             reader.GetString(reader.GetOrdinal("Boligtype")),
@@ -87,7 +88,8 @@ namespace UCL_Projekt_1
                             !reader.IsDBNull(reader.GetOrdinal("Kunde_køber")) ? reader.GetInt32(reader.GetOrdinal("Kunde_køber")) : -1,
                             !reader.IsDBNull(reader.GetOrdinal("Kunde_sælger")) ? reader.GetInt32(reader.GetOrdinal("Kunde_sælger")) : -1,
                             !reader.IsDBNull(reader.GetOrdinal("Mægler_Id")) ? reader.GetInt32(reader.GetOrdinal("Mægler_Id")) : -1,
-                            reader.GetBoolean(reader.GetOrdinal("Solgt"))));
+                            reader.GetBoolean(reader.GetOrdinal("Solgt"))
+                            ));
                     }
                 }
                 BaseForm.dataConnection.Close();
@@ -98,13 +100,12 @@ namespace UCL_Projekt_1
                 // Her tjekker vi på om fejdasdlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
@@ -114,7 +115,6 @@ namespace UCL_Projekt_1
                     BaseForm.dataConnection.Close();
                 }
             }
-
         }
 
         /// <summary>
@@ -175,14 +175,15 @@ namespace UCL_Projekt_1
                         // reader.GetOrdinal henter colonne tallet for den string som er givet
                         // reader.GetInt32 og GetString henter enten en int eller string
                         // reader.IsDBNull tjekker om værdien er null
-                        Kunder.Add(new Kunde(
+                        Kunder.Add(new Kunde
+                            (
                             reader.GetString(reader.GetOrdinal("Navn")),
                             reader.GetInt32(reader.GetOrdinal("Telefon")),
                             reader.GetString(reader.GetOrdinal("Email")),
                             reader.GetInt32(reader.GetOrdinal("Kunde_Id")),
                             !reader.IsDBNull(reader.GetOrdinal("Er_sælger")) ? reader.GetBoolean(reader.GetOrdinal("Er_sælger")) : false,
-                            !reader.IsDBNull(reader.GetOrdinal("Er_køber")) ? reader.GetBoolean(reader.GetOrdinal("Er_Køber")) : false
-                            ));
+                            !reader.IsDBNull(reader.GetOrdinal("Er_køber")) ? reader.GetBoolean(reader.GetOrdinal("Er_Køber")) : false)
+                            );
                     }
                 }
                 BaseForm.dataConnection.Close();
@@ -193,13 +194,12 @@ namespace UCL_Projekt_1
                 // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
@@ -273,29 +273,28 @@ namespace UCL_Projekt_1
                         // Hver ejendomsmægler tilføjes med de værdier som kan findes i databasen.
                         // reader.GetOrdinal henter colonne tallet for den string som er givet
                         // reader.GetInt32 og GetString henter enten en int eller string
-                        Ejendomsmæglere.Add(new Ejendomsmægler(
+                        Ejendomsmæglere.Add(new Ejendomsmægler
+                            (
                             reader.GetInt32(reader.GetOrdinal("Mægler_Id")),
                             reader.GetString(reader.GetOrdinal("Navn")),
                             reader.GetInt32(reader.GetOrdinal("Telefon")),
-                            reader.GetString(reader.GetOrdinal("Email"))
-                            ));
+                            reader.GetString(reader.GetOrdinal("Email")))
+                            );
                     }
                 }
                 BaseForm.dataConnection.Close();
             }
             catch (Exception exception)
             {
-
-                // Her tjekker vi på om fejdasdlen skyldes netværket og skriver dertil en passende besked til brugeren
+                // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
@@ -346,7 +345,8 @@ namespace UCL_Projekt_1
                         // Hver salg tilføjes med de værdier som kan findes i databasen.
                         // reader.GetOrdinal henter colonne tallet for den string som er givet
                         // reader.GetInt32, GetDateTime og GetString henter enten en int, DateTime eller string
-                        Salgs.Add(new Salg(
+                        Salgs.Add(new Salg
+                            (
                             reader.GetInt32(reader.GetOrdinal("Salgs_Id")),
                             reader.GetDateTime(reader.GetOrdinal("Dato")),
                             reader.GetInt32(reader.GetOrdinal("Pris")),
@@ -363,13 +363,12 @@ namespace UCL_Projekt_1
                 // Her tjekker vi på om fejdasdlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
