@@ -190,7 +190,7 @@ namespace UCL_Projekt_1
             catch (Exception exception)
             {
 
-                // Her tjekker vi på om fejdasdlen skyldes netværket og skriver dertil en passende besked til brugeren
+                // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
                     MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");

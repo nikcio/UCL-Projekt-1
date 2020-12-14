@@ -9,7 +9,7 @@ using UCL_Projekt_1.Models;
 namespace UCL_Projekt_1
 {
     /// <summary>
-    /// Skaber et vising over alle boliger og gør det muligt at tilgå funktioner for boliger.
+    /// Viser alle boliger og gør det muligt at tilgå funktioner for boliger.
     /// </summary>
     public partial class BoligerForm : Form
     {
@@ -31,7 +31,7 @@ namespace UCL_Projekt_1
         {
             InitializeComponent();
 
-            // Her sættes refrencen til BaseForm.
+            // Her sættes referencen til BaseForm.
             _baseForm = form;
 
             // Her vises alle boliger
@@ -39,7 +39,7 @@ namespace UCL_Projekt_1
         }
 
 
-        // Indeholder de metoder som styre, hvilke boliger der skal vises.
+        // Indeholder de metoder som styrer hvilke boliger der skal vises.
         #region Visning af boliger
 
         /// <summary>
@@ -64,22 +64,22 @@ namespace UCL_Projekt_1
                 );
             }
 
-            // Viser en fejl, hvis der ikke findes nogen boliger.
+            // Viser en fejl, hvis der ikke findes nogle boliger.
             if (_boliger.Count() == 0)
             {
-                VisEnFejl("Der blev ikke fundet nogen boliger");
+                VisEnFejl("Der blev ikke fundet nogle boliger");
             }
         }
 
         /// <summary>
-        /// Viser alle boliger, hvor stringen område kan findes i adressen.
+        /// Viser alle boliger, hvor stringen 'område' kan findes i adressen.
         /// </summary>
         /// <param name="område">Området der søges efter</param>
         private void VisBoliger(string område)
         {
 
-            // Et array med de filterede boliger.
-            // Her filteres efter om adressen indeholder område stringen.
+            // Et array med de filtrerede boliger.
+            // Her filtreres efter om adressen indeholder 'område' stringen.
             // Vi søger for at der ikke er forskel på små og store bogstaver.
             Bolig[] filterBoliger = _boliger.Where(item => item.Addresse.ToLower().Contains(område.ToLower())).ToArray();
 
@@ -101,22 +101,22 @@ namespace UCL_Projekt_1
                 );
             }
 
-            // Viser en fejl, hvis der ikke findes nogen boliger.
+            // Viser en fejl, hvis der ikke findes nogle boliger.
             if (filterBoliger.Count() == 0)
             {
-                VisEnFejl("Der blev ikke fundet nogen boliger");
+                VisEnFejl("Der blev ikke fundet nogle boliger");
             }
         }
 
         /// <summary>
-        /// Viser den bolig med det gældende bolig id, hvis den findes.
+        /// Viser den bolig med det gældende bolig id, hvis den findes
         /// </summary>
         /// <param name="boligId">Bolig id'et der søges efter</param>
         private void VisBolig(int boligId)
         {
 
             // Den bolig med det gældende bolig id.
-            // Her filteres efter bolig id.
+            // Her filtreres efter bolig id.
             Bolig filterBolig = _boliger.FirstOrDefault(item => item.Bolig_Id == boligId);
 
             // Hvis boligen findes vises den.
@@ -139,8 +139,8 @@ namespace UCL_Projekt_1
             else
             {
 
-                // Viser en fejl, hvis der ikke findes nogen boliger.
-                VisEnFejl("Der blev ikke fundet nogen boliger");
+                // Viser en fejl, hvis der ikke findes nogle boliger.
+                VisEnFejl("Der blev ikke fundet nogle boliger");
             }
 
         }
@@ -175,7 +175,7 @@ namespace UCL_Projekt_1
         }
 
         /// <summary>
-        /// Søger efter boliger der matcher søge filtrene
+        /// Søger efter boliger der matcher søgefelts parameterne
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -207,7 +207,7 @@ namespace UCL_Projekt_1
         }
 
         /// <summary>
-        /// Kaldes når adresse boksen ændres. Her søger vi for at der ikke skrives noget i både bolig id og adresse, da vi kun søger på en af delene. Og vi laver validering.
+        /// Kaldes når adresse boksen ændres. Her sørger vi for at der ikke skrives noget i både bolig id og adresse, da vi kun kan søge på en af delene og vi laver validering.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -241,7 +241,7 @@ namespace UCL_Projekt_1
         }
 
         /// <summary>
-        /// Kaldes når bolig id ændres. Her søger vi for at der ikke skrives noge i både bolig id og adresse, da vi kun søger på en af delene. Og vi laver validering.
+        /// Kaldes når bolig id ændres. Her sørger vi for at der ikke skrives noget i både bolig id og adresse, da vi kun kan søge på en af delene og vi laver validering.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -276,7 +276,7 @@ namespace UCL_Projekt_1
 
         #region Opret visuelle elementer
         /// <summary>
-        /// Viser en fejl besked til brugeren.
+        /// Viser en fejlbesked til brugeren.
         /// </summary>
         /// <param name="besked">Den besked der skal vises</param>
         private void VisEnFejl(string besked)

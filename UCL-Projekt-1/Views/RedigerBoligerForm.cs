@@ -315,7 +315,8 @@ namespace UCL_Projekt_1
         /// <returns>Success</returns>
         private void MarkerBoligSomSolgt()
         {
-            // Her skriver vi den sql commando som skal køres for at redigere en bolig
+            // Her skriver vi den sql commando som skal køres for at redigere en bolig 
+            //@=en parameter værdig, som bliver indsat nede i AddWithValue
             string sqlcommandoString = $"UPDATE Bolig SET Solgt=@Solgt, Udbuds_pris=@Udbudspris, Kunde_køber=@Køber WHERE Bolig_id=@Bolig_id_tb";
 
             // Her opretter vi den forige comando som en sqlcommand som skal eksekveres på vores data connection.
@@ -337,7 +338,7 @@ namespace UCL_Projekt_1
                 BaseForm.dataConnection.Close();
 
                 // Hvis commandoen er udført sendes brugeren tilbage til boliger formen.
-                _baseForm.ÅbenNyForm(new BoligerForm(_baseForm));
+                _baseForm.ÅbenNyForm(new BoligerForm(_baseForm)); 
             }
             catch (Exception exception)
             {
@@ -350,7 +351,6 @@ namespace UCL_Projekt_1
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
@@ -538,11 +538,12 @@ namespace UCL_Projekt_1
         /// <param name="id">Bolig id'et for boligen der skal indlæses</param>
         private void IndlæsInformation(int id)
         {
-            // Her indlæses boligen fra databasen.
+            // Her indlæses boligen fra databasen. 
+            //udfylder de properties vi har i bolig formen
             Bolig bolig = IndlæsFraDatabase.IndlæsBolig(id);
 
             // Her indlæses mægler information fra databasen.
-            Ejendomsmægler ejendomsmægler = IndlæsFraDatabase.IndlæsEjendomsmægler(bolig.Mægler_Id);
+            Ejendomsmægler ejendomsmægler = IndlæsFraDatabase.IndlæsEjendomsmægler(bolig.Mægler_Id); //referere til mægler ID vi får fra indlæsBolig
 
             // Her indlæses sælger information fra databasen.
             Kunde sælger = IndlæsFraDatabase.IndlæsKunde(bolig.Kunde_sælger);
@@ -559,7 +560,7 @@ namespace UCL_Projekt_1
             Bolig_id_tb.Text = bolig.Bolig_Id.ToString();
 
             // Her tages højde for mulig manglende information i databasen.
-            if (ejendomsmægler != null)
+            if (ejendomsmægler != null) //at der er blevet hentet en værdi for ejendomsmægler
             {
                 // Her sættes mægler værdien i form af et key value pair med mægler id og en titel
                 Mæglere_comboBox.Items.Add(new KeyValuePair<int, string>(ejendomsmægler.Mægler_Id, $"{ejendomsmægler.Navn}, Id: {ejendomsmægler.Mægler_Id}"));
