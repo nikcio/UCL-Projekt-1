@@ -10,7 +10,7 @@ namespace UCL_Projekt_1
 {
 
     /// <summary>
-    /// Dette er en samling af de metoder som bruges til at indlæse data fra databasen
+    /// Dette er en samling af de metoder som bruge til at indlæse data fra databasen
     /// </summary>
     public class IndlæsFraDatabase
     {
@@ -20,7 +20,7 @@ namespace UCL_Projekt_1
         /// <returns></returns>
         public static Bolig[] IndlæsBoliger()
         {
-            // En liste til at opbevare boligerne i når de bliver hentet fra databasen
+            // En liste til at opbevare boligerne i mens de kommer fra databasen
             List<Bolig> boliger = new List<Bolig>();
 
             // Sqlcommandoen som indlæser alle boligerne
@@ -40,19 +40,19 @@ namespace UCL_Projekt_1
         /// <returns></returns>
         public static Bolig IndlæsBolig(int Bolig_id)
         {
-            // En liste til at opbevare boligerne i når bliver hentet fra databasen
+            // En liste til at opbevare boligerne i mens de kommer fra databasen
             List<Bolig> boliger = new List<Bolig>();
 
-            // Sqlcommandoen som indlæser den ene bolig
+            // Sqlcommandoen som indlæser den ene bolig med bestemt bolig id
             SqlCommand command = new SqlCommand("SELECT * FROM Bolig WHERE Bolig_id = @Bolig_id_tb", BaseForm.dataConnection);
 
-            // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerhedslag.
+            // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerheds lag.
             command.Parameters.AddWithValue("@Bolig_id_tb", Bolig_id);
 
             // Her hentes boligerne fra databasen
             HentBoliger(boliger, command);
 
-            // Her returneres resulatet (retunere null, hvis der ingen blev fundet)
+            // Her returneres resulatet (retunere null, hvis der ingen blev fandt)
             return boliger.FirstOrDefault();
         }
 
@@ -74,10 +74,11 @@ namespace UCL_Projekt_1
                     while (reader.Read())
                     {
                         // Hver bolig tilføjes med de værdier som kan findes i databasen.
-                        // reader.GetOrdinal henter kolonne tallet for den string som er givet
+                        // reader.GetOrdinal henter colonne tallet for den string som er givet
                         // reader.GetInt32 og GetString henter enten en int eller string
                         // reader.IsDBNull tjekker om værdien er null
-                        boliger.Add(new Bolig(
+                        boliger.Add(new Bolig
+                            (
                             reader.GetInt32(reader.GetOrdinal("Bolig_Id")),
                             reader.GetInt32(reader.GetOrdinal("Udbuds_pris")),
                             reader.GetString(reader.GetOrdinal("Boligtype")),
@@ -87,7 +88,8 @@ namespace UCL_Projekt_1
                             !reader.IsDBNull(reader.GetOrdinal("Kunde_køber")) ? reader.GetInt32(reader.GetOrdinal("Kunde_køber")) : -1,
                             !reader.IsDBNull(reader.GetOrdinal("Kunde_sælger")) ? reader.GetInt32(reader.GetOrdinal("Kunde_sælger")) : -1,
                             !reader.IsDBNull(reader.GetOrdinal("Mægler_Id")) ? reader.GetInt32(reader.GetOrdinal("Mægler_Id")) : -1,
-                            reader.GetBoolean(reader.GetOrdinal("Solgt"))));
+                            reader.GetBoolean(reader.GetOrdinal("Solgt"))
+                            ));
                     }
                 }
                 BaseForm.dataConnection.Close();
@@ -95,26 +97,24 @@ namespace UCL_Projekt_1
             catch (Exception exception)
             {
 
-                // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren
+                // Her tjekker vi på om fejdasdlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne ikke oprettes forbinelse til serveren. Tjek venligst din netværksforbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
-                // Hvis vores connection ikke blev lukket sørger vi for at lukke den her.
+                // Hvis vores connection ikke blev lukket søger vi for at lukke den her.
                 if (BaseForm.dataConnection.State == ConnectionState.Open)
                 {
                     BaseForm.dataConnection.Close();
                 }
             }
-
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace UCL_Projekt_1
             // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerheds lag.
             command.Parameters.AddWithValue("@Kunde_id_tb", kunde_id);
 
-            // Her hentes kunderne fra databasen
+            // Henter informationen fra databasen
             HentKunder(Kunder, command);
 
             // Her returneres resulatet (retunere null, hvis der ingen blev fandt)
@@ -172,17 +172,18 @@ namespace UCL_Projekt_1
                     while (reader.Read())
                     {
                         // Hver kunde tilføjes med de værdier som kan findes i databasen.
-                        // reader.GetOrdinal henter kolonne tallet for den string som er givet
+                        // reader.GetOrdinal henter colonne tallet for den string som er givet
                         // reader.GetInt32 og GetString henter enten en int eller string
                         // reader.IsDBNull tjekker om værdien er null
-                        Kunder.Add(new Kunde(
+                        Kunder.Add(new Kunde
+                            (
                             reader.GetString(reader.GetOrdinal("Navn")),
                             reader.GetInt32(reader.GetOrdinal("Telefon")),
                             reader.GetString(reader.GetOrdinal("Email")),
                             reader.GetInt32(reader.GetOrdinal("Kunde_Id")),
                             !reader.IsDBNull(reader.GetOrdinal("Er_sælger")) ? reader.GetBoolean(reader.GetOrdinal("Er_sælger")) : false,
-                            !reader.IsDBNull(reader.GetOrdinal("Er_køber")) ? reader.GetBoolean(reader.GetOrdinal("Er_Køber")) : false
-                            ));
+                            !reader.IsDBNull(reader.GetOrdinal("Er_køber")) ? reader.GetBoolean(reader.GetOrdinal("Er_Køber")) : false)
+                            );
                     }
                 }
                 BaseForm.dataConnection.Close();
@@ -193,17 +194,16 @@ namespace UCL_Projekt_1
                 // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne ikke oprettes forbinelse til serveren. Tjek venligst din netværksforbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
-                // Hvis vores connection ikke blev lukket sørger vi for at lukke den her.
+                // Hvis vores connection ikke blev lukket søger vi for at lukke den her.
                 if (BaseForm.dataConnection.State == ConnectionState.Open)
                 {
                     BaseForm.dataConnection.Close();
@@ -223,7 +223,7 @@ namespace UCL_Projekt_1
             // Sqlcommandoen til at hente alle ejendomsmæglere
             SqlCommand command = new SqlCommand("SELECT * FROM Ejendomsmægler", BaseForm.dataConnection);
 
-            // Her hentes ejendomsmægler indformationerne
+            // Henter informationen
             HentEjendomsmægler(Ejendomsmæglere, command);
 
             // Returnere resultatet
@@ -243,10 +243,10 @@ namespace UCL_Projekt_1
             // Sqlcommandoen til at hente ejendomsmægleren
             SqlCommand command = new SqlCommand("SELECT * FROM Ejendomsmægler WHERE Mægler_Id=@id", BaseForm.dataConnection);
 
-            // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerhedslag.
+            // Her tilføjes vores værdier som parameretre. Dette forhindre at der opstår en uventet sql injection og virker derfor som et ekstra sikkerheds lag.
             command.Parameters.AddWithValue("@id", id);
 
-            // Her hentes ejendomsmæglers id
+            // Henter informationen
             HentEjendomsmægler(Ejendomsmæglere, command);
 
             // Returnere resultatet
@@ -271,31 +271,30 @@ namespace UCL_Projekt_1
                     while (reader.Read())
                     {
                         // Hver ejendomsmægler tilføjes med de værdier som kan findes i databasen.
-                        // reader.GetOrdinal henter kolonne tallet for den string som er givet
+                        // reader.GetOrdinal henter colonne tallet for den string som er givet
                         // reader.GetInt32 og GetString henter enten en int eller string
-                        Ejendomsmæglere.Add(new Ejendomsmægler(
+                        Ejendomsmæglere.Add(new Ejendomsmægler
+                            (
                             reader.GetInt32(reader.GetOrdinal("Mægler_Id")),
                             reader.GetString(reader.GetOrdinal("Navn")),
                             reader.GetInt32(reader.GetOrdinal("Telefon")),
-                            reader.GetString(reader.GetOrdinal("Email"))
-                            ));
+                            reader.GetString(reader.GetOrdinal("Email")))
+                            );
                     }
                 }
                 BaseForm.dataConnection.Close();
             }
             catch (Exception exception)
             {
-
-                // Her tjekker vi på om fejdasdlen skyldes netværket og skriver dertil en passende besked til brugeren
+                // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne ikke oprettes forbinelse til serveren. Tjek venligst din netværksforbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
@@ -344,9 +343,10 @@ namespace UCL_Projekt_1
                     while (reader.Read())
                     {
                         // Hver salg tilføjes med de værdier som kan findes i databasen.
-                        // reader.GetOrdinal henter kolonne tallet for den string som er givet
+                        // reader.GetOrdinal henter colonne tallet for den string som er givet
                         // reader.GetInt32, GetDateTime og GetString henter enten en int, DateTime eller string
-                        Salgs.Add(new Salg(
+                        Salgs.Add(new Salg
+                            (
                             reader.GetInt32(reader.GetOrdinal("Salgs_Id")),
                             reader.GetDateTime(reader.GetOrdinal("Dato")),
                             reader.GetInt32(reader.GetOrdinal("Pris")),
@@ -363,17 +363,16 @@ namespace UCL_Projekt_1
                 // Her tjekker vi på om fejdasdlen skyldes netværket og skriver dertil en passende besked til brugeren
                 if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                 {
-                    MessageBox.Show("Der kunne ikke oprettes forbinelse til serveren. Tjek venligst din netværksforbindelse og prøv igen.");
+                    MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                 }
                 else
                 {
                     MessageBox.Show("Der opstod en fejl, prøv igen");
                 }
-
             }
             finally
             {
-                // Hvis vores connection ikke blev lukket sørger vi for at lukke den her.
+                // Hvis vores connection ikke blev lukket søger vi for at lukke den her.
                 if (BaseForm.dataConnection.State == ConnectionState.Open)
                 {
                     BaseForm.dataConnection.Close();

@@ -109,7 +109,7 @@ namespace UCL_Projekt_1
                     // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren.
                     if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                     {
-                        MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                        MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                     }
                     else
                     {
@@ -130,7 +130,6 @@ namespace UCL_Projekt_1
             {
                 MessageBox.Show("Der opstod en fejl, prøv igen ");
             }
-
         }
 
         /// <summary>
@@ -187,7 +186,7 @@ namespace UCL_Projekt_1
                     // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren.
                     if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                     {
-                        MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                        MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                     }
                     else
                     {
@@ -208,9 +207,7 @@ namespace UCL_Projekt_1
             {
                 MessageBox.Show("Der opstod en fejl, prøv igen ");
             }
-
         }
-
 
         private void Slet_mægler_Click(object sender, EventArgs e)
         {
@@ -241,7 +238,7 @@ namespace UCL_Projekt_1
                     // Her tjekker vi på om fejlen skyldes netværket og skriver dertil en passende besked til brugeren.
                     if (exception.GetType() == typeof(SqlException) && exception.Source == ".Net SqlClient Data Provider")
                     {
-                        MessageBox.Show("Der kunne oprettes forbinelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
+                        MessageBox.Show("Der kunne ikke oprettes forbindelse til serveren. Tjek venligst din netværks forbindelse og prøv igen.");
                     }
                     else
                     {
@@ -316,12 +313,12 @@ namespace UCL_Projekt_1
         private bool TjekOpretMægler()
         {
             int j = 0;
-            if (!int.TryParse(Mægler_telefon_tb.Text, out j))
+            if (!int.TryParse(Mægler_telefon_tb.Text, out j)) //Tjekker for at det kun er tal
             {
                 return false;
             }
 
-            string[] email = Mægler_email_tb.Text.Split('@');
+            string[] email = Mægler_email_tb.Text.Split('@'); //Tjekker for at der er et snabbel a
             if (email.Length != 2)
             {
                 return false;
