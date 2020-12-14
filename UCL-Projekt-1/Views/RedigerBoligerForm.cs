@@ -64,7 +64,7 @@ namespace UCL_Projekt_1
         {
             InitializeComponent();
 
-            // Her sættes refrencen til BaseForm.
+            // Her sættes referencen til BaseForm. 
             _baseForm = form;
 
             // Her indlæses informationen omkring boligen i felterne.
