@@ -190,7 +190,7 @@ namespace UCL_Projekt_1
         /// <returns>Success</returns>
         private bool DatoMellem(DateTime dato)
         {
-            if (DateTime.TryParse(Startdato.Text, out DateTime start) && DateTime.TryParse(Startdato.Text, out DateTime slut))
+            if (DateTime.TryParse(Startdato.Text, out DateTime start) && DateTime.TryParse(Slutdato.Text, out DateTime slut))
             {
                 return start <= dato && dato <= slut;
             }
