@@ -678,7 +678,7 @@ namespace UCL_Projekt_1
         /// <returns>Er felterne valide</returns>
         private bool TjekOpretBolig()
         {
-            int j = 0;
+            int j = 0; //Hvis væriden kan parses returnere den værdien til j
             if (!int.TryParse(Grund_areal_tb.Text, out j))
             {
                 return false;
