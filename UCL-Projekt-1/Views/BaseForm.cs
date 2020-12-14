@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace UCL_Projekt_1
 {
     /// <summary>
-    /// Basis formen for programmet. Den står for at skabe den funktionalitet vi forventer i et form program og holde vores SQL connection.
+    /// Basis formen for programmet. Den står for at skabe den funktionalitet vi forventer i et formsprogram og holde vores sqlconnection.
     /// </summary>
     public partial class BaseForm : Form
     {
@@ -17,7 +17,7 @@ namespace UCL_Projekt_1
         private static readonly string connectionString = @"Data Source=den1.mssql8.gear.host;User ID=proevedatabase;Password=Ph0CSw_9V-FS;Database=proevedatabase;";
 
         /// <summary>
-        /// SQL connection til databasen.
+        /// Sqlconnection til databasen.
         /// </summary>
         public static SqlConnection dataConnection = new SqlConnection(connectionString);
 
@@ -38,8 +38,11 @@ namespace UCL_Projekt_1
         {
             InitializeComponent();
 
-            // Her sættes det aktive knap til at bære boliger knappen
+            // Her sættes den aktive knap til at bære boliger knappen
             aktiveButton = Boliger;
+
+            //Her åbnes vores boliger form
+            ÅbenNyForm(new BoligerForm(this));
         }
 
 
@@ -79,7 +82,7 @@ namespace UCL_Projekt_1
             // Vi gemmer den gamle aktive knap
             Button gammelAktivButton = aktiveButton;
 
-            // Vi tjekker på, hvilken slags form bliver indlæst og sætter derefter værdierne.
+            // Vi tjekker på hvilken slags form bliver indlæst og sætter derefter værdierne.
             if (form.GetType() == typeof(BoligerForm))
             {
                 if (aktiveButton != Boliger)
@@ -176,10 +179,10 @@ namespace UCL_Projekt_1
 
         // **FormFunktionalitet**
         //
-        // Alt i denne region søger for at vi får funktionalitet, som normalt er tilgænnelkigt i en form tilbage. 
+        // Alt i denne region søger for at vi får funktionalitet, som normalt er tilgængeligt i en form tilbage. 
         // Dette skal til, da vi har fjernet vores form border som normalt står for dette.
         // Vi giver mulighed for at flytte på programmet ved at trykke og holde på den øverste bjælke.
-        // Vi giver mulighed for at forstørre og mindske programmet ved at trække på formen kanter i bunden.
+        // Vi giver mulighed for at forstørre og formindske programmet ved at trække på formkanten i bunden.
         // Vi giver mulighed for at bruge kryds knappen til at lukke programmet.
         // Vi giver mulighed for at minimere programmet ved at trykke på den tilhørende knap.
         #region FormFunktionalitet
